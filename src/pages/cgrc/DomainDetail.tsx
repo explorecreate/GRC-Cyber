@@ -68,9 +68,11 @@ export default function DomainDetail() {
                 {lesson.title}
                 <span className="ml-3 shrink-0 text-slate-400 transition-transform group-open:rotate-180">▾</span>
               </summary>
-              <p className="border-t border-slate-100 px-4 py-3 text-sm leading-relaxed text-slate-700">
-                {lesson.body}
-              </p>
+              <div className="space-y-3 border-t border-slate-100 px-4 py-3 text-sm leading-relaxed text-slate-700">
+                {lesson.body.split('\n\n').map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </details>
           ))}
         </div>

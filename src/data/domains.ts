@@ -13,43 +13,43 @@ export const domains: Domain[] = [
     weight: '16%',
     rmfStep: 'Prepare',
     overview:
-      'The exam\'s foundation domain: building the organizational program that everything else sits on top of. It combines governance (policy, roles, legal/regulatory obligations, ethics) with the risk management program that governance exists to support — organizational risk tolerance, enterprise risk management, and integrating risk management into the SDLC from day one. If you can\'t explain why an organization needs a governance and risk program before you talk about controls, you\'re missing the exam\'s starting point.',
+      'This is the foundation domain — everything else builds on it. It covers two things: governance (the policies, roles, and rules an organization sets) and risk management (deciding which risks matter and how to handle them). Before you get into specific security controls, you need to understand why an organization builds a governance and risk program in the first place. That\'s what this domain teaches.',
     keyConcepts: [
-      'Governance structures: boards, risk committees, CISO/CRO reporting lines, three lines of defense model',
-      'Legal, regulatory, and contractual requirements (FISMA, Privacy Act, HIPAA, GDPR, SOX as comparators)',
-      'Organizational policies, standards, procedures, and guidelines — and how they differ',
-      'Security and privacy roles & responsibilities (Authorizing Official, ISSO, System Owner, Privacy Officer)',
-      '(ISC)² Code of Ethics and professional conduct expectations',
-      'Risk management strategy and organizational risk tolerance/appetite',
-      'Enterprise risk management (ERM) vs. system-level risk management',
-      'Integrating risk management into the System Development Life Cycle (SDLC)',
-      'Business Impact Analysis (BIA) and its inputs to risk decisions',
-      'Supply chain risk management (SCRM) at the program level',
+      'Governance structures: boards, risk committees, reporting lines like CISO/CRO, and the "three lines of defense" model',
+      'Laws and regulations that apply, such as FISMA, the Privacy Act, HIPAA, and GDPR',
+      'The difference between a policy, a standard, a procedure, and a guideline',
+      'Key roles: Authorizing Official, ISSO, System Owner, and Privacy Officer',
+      'The (ISC)² Code of Ethics — the conduct rules for certified professionals',
+      'Setting the organization\'s risk tolerance (how much risk it\'s willing to accept)',
+      'Enterprise Risk Management (ERM) — looking at risk across the whole organization, not just one system',
+      'Building risk management into projects from day one, instead of adding it later',
+      'Business Impact Analysis (BIA) — figuring out which business functions matter most',
+      'Supply Chain Risk Management (SCRM) — managing risk from vendors and suppliers',
     ],
     lessons: [
       {
         title: 'Governance Structures & Roles',
         body:
-          'Governance is about who decides what, and who\'s accountable when it goes wrong. At the top, a board or risk committee sets direction; the CISO/CRO reporting line determines how much independence security has from IT. The "three lines of defense" model formalizes this: operational management (1st line) owns and runs day-to-day controls, risk/compliance functions (2nd line) set policy and monitor, and internal audit (3rd line) independently verifies the whole system works — no single group plays more than one role for the same system. Within a specific system, that translates to named roles: the Authorizing Official (AO) accepts risk, the ISSO handles daily security operations, the System Owner is accountable for the system itself, and the Privacy Officer owns privacy-specific obligations. The exam expects you to know who does what and why the separation matters.',
+          'Governance answers two questions: who decides, and who\'s responsible when something goes wrong? At the top, a board or risk committee sets overall direction. Where the CISO (security lead) or CRO (risk lead) reports to also matters — it affects how independent security can be from IT.\n\nThe "three lines of defense" model splits responsibility three ways. Operational management (1st line) runs the controls day to day. Risk and compliance teams (2nd line) set policy and check that it\'s followed. Internal audit (3rd line) independently verifies that everything actually works. No single group should play more than one of these roles for the same system — that keeps things honest, since the people building controls shouldn\'t be the only ones checking their own work.\n\nWithin a specific system, this breaks down into named roles. The Authorizing Official (AO) accepts the risk and gives final approval. The ISSO handles day-to-day security. The System Owner is responsible for the system overall. The Privacy Officer owns privacy-specific requirements. Know what each role does and why they\'re kept separate — it\'s a common exam topic.',
       },
       {
         title: 'Policy Hierarchy & the Legal/Regulatory Landscape',
         body:
-          'Everything an organization requires gets written down somewhere, and where it\'s written down signals how mandatory it is. Policy is the top: a broad, mandatory statement of management intent ("we will protect PII"). Standards get specific and are still mandatory ("passwords must be 14+ characters"). Procedures are step-by-step instructions for meeting a standard. Guidelines are recommended but optional. This hierarchy exists so organizations don\'t have to reinvent "how mandatory is this?" for every document. Layered on top of internal policy are external legal and regulatory requirements the organization doesn\'t get to choose — FISMA for US federal systems, the Privacy Act, and sector-specific or international laws like HIPAA and GDPR, which the exam often uses as comparators to test whether you understand FISMA is US-federal-specific rather than universal.',
+          'Every organization writes down its rules, but not all rules carry the same weight. There are four levels, from most to least mandatory. A policy is a broad statement of intent, like "we will protect personal data" — mandatory. A standard is specific and still mandatory, like "passwords must be at least 14 characters." A procedure is the step-by-step instructions for meeting a standard. A guideline is just a recommendation, not mandatory. This hierarchy exists so everyone knows how strict a rule is, just by knowing which level it\'s written at.\n\nOn top of internal policy, organizations also have to follow outside laws they don\'t get to choose. Examples include FISMA (for US federal systems), the Privacy Act, and laws like HIPAA (health data) and GDPR (EU privacy). The exam likes to test whether you know FISMA applies only to US federal systems, while GDPR and HIPAA are broader comparisons from outside that scope.',
       },
       {
         title: 'Building & Running the Risk Management Program',
         body:
-          'A risk management program starts with a documented risk management strategy and an explicit statement of organizational risk tolerance/appetite — without that, "acceptable risk" is just a guess made differently by every team. Enterprise Risk Management (ERM) takes a holistic, organization-wide view of risk (financial, operational, reputational, cyber) as opposed to a single system\'s risk picture, and good governance connects the two so a system-level risk decision reflects the organization\'s actual risk appetite. Risk management also has to start early: integrating it into the System Development Life Cycle (SDLC) from requirements and design, rather than retrofitting security after a system is already built, is dramatically cheaper and more effective — a recurring theme across the whole RMF.',
+          'A risk program starts with two things: a written risk management strategy, and a clear statement of how much risk the organization is willing to accept — its risk tolerance. Without that, "acceptable risk" ends up meaning something different to every team.\n\nEnterprise Risk Management (ERM) looks at risk across the whole organization — financial, operational, reputational, and cyber — not just one system. Good governance connects ERM to system-level decisions, so a single system\'s risk choices match what the organization as a whole is willing to accept.\n\nRisk management also works best when it starts early. Building it in from the requirements and design stage of a project — instead of adding security after the system is already built — is cheaper and far more effective. You\'ll see this idea repeat throughout the whole RMF process.',
       },
       {
         title: 'Ethics, Supply Chain, and Business Impact',
         body:
-          'The (ISC)² Code of Ethics sets the professional conduct bar for certified practitioners — protecting society, acting honorably, and not exploiting a vulnerability you discover instead of responsibly disclosing it. Two more program-level concerns round out this domain: Supply Chain Risk Management (SCRM) at the organizational level, which asks "what risk do our vendors and suppliers introduce before we even get to a specific system," and Business Impact Analysis (BIA), which identifies which business functions are actually critical and quantifies the cost of their disruption — the BIA\'s output directly feeds the Recovery Time/Point Objectives you\'ll see later in Compliance Maintenance (Domain 7).',
+          'The (ISC)² Code of Ethics sets the standard for how certified professionals should behave: protect society, act honorably, and report vulnerabilities responsibly instead of exploiting them.\n\nTwo more program-level topics round out this domain. Supply Chain Risk Management (SCRM) means managing the risk that vendors and suppliers bring to the organization, before you even look at a specific system. Business Impact Analysis (BIA) means identifying which business functions matter most, and estimating the cost if they go down. The BIA\'s findings later set the recovery targets you\'ll learn about in Domain 7 (Compliance Maintenance).',
       },
     ],
     aiNote:
-      'The current outline adds AI-specific governance tasks here: establishing policy and accountability for AI systems, defining organizational risk tolerance for algorithmic decision-making, and accounting for the global AI regulatory landscape (e.g., the EU AI Act) alongside traditional privacy/security law. See the NIST AI RMF deep-dive in the AI Learning Center for the direct counterpart to this domain.',
+      'The exam now includes AI-specific governance tasks: setting policy for AI systems, deciding how much risk the organization will accept for automated decisions, and keeping up with AI laws worldwide (like the EU AI Act). For the AI-focused version of this same idea, see the NIST AI RMF page in the AI Learning Center.',
     resources: [
       { title: 'CGRC Certification Overview', source: 'ISC2', url: 'https://www.isc2.org/certifications/cgrc', kind: 'article' },
       { title: 'ISC2 CGRC Domain 1: Information Security Risk Management Program', source: 'Infosec Institute', url: 'https://www.infosecinstitute.com/resources/isc2-cgrc/isc2-cgrc-domain-1-information-security-risk-management-program/', kind: 'article' },
@@ -64,39 +64,39 @@ export const domains: Domain[] = [
     weight: '10%',
     rmfStep: 'Categorize',
     overview:
-      'Before you can secure a system you must define its boundary. This domain covers system categorization under FIPS 199, defining the authorization boundary, and the growing challenge of assessing risk introduced by vendors, cloud providers, and interconnected systems — third-party risk lives here because it\'s fundamentally a question of what falls inside your scope.',
+      'Before you can secure a system, you have to know exactly what "the system" includes. This domain covers drawing that line — rating the system\'s impact level, defining what\'s inside vs. outside it, and thinking through the risk that vendors, cloud providers, and connected systems bring with them.',
     keyConcepts: [
-      'Authorization boundary definition and system interconnections',
-      'FIPS 199 categorization (Confidentiality/Integrity/Availability impact levels)',
+      'Drawing the authorization boundary and identifying system interconnections',
+      'FIPS 199 categorization (rating Confidentiality, Integrity, and Availability impact)',
       'System types: general support system vs. major application',
-      'Third-party/vendor risk assessment, SLAs, and shared responsibility models (cloud)',
+      'Third-party and vendor risk, service agreements, and cloud shared responsibility',
       'Interconnection Security Agreements (ISAs) and Memoranda of Understanding (MOUs)',
-      'Supply chain risk at the system/component level (SBOM, provenance)',
+      'Supply chain risk at the component level, like SBOMs',
     ],
     lessons: [
       {
         title: 'Defining the Authorization Boundary',
         body:
-          'The authorization boundary is the set of resources, components, and connections that fall under a single AO\'s authority and a single authorization decision. Get it wrong and you either leave things unprotected (drawn too small) or waste effort protecting things you don\'t control (drawn too large). A useful test: if the AO can\'t realistically accept the risk for a component, it probably belongs outside the boundary and should be treated as an interconnection instead. Every boundary should be documented as a diagram, with every connection crossing it explicitly listed — an undocumented interconnection is risk flowing across the boundary that was never evaluated or accepted by anyone.',
+          'The authorization boundary is everything that falls under one AO\'s authority and one authorization decision — the resources, components, and connections that count as "the system." Draw it too small, and things go unprotected. Draw it too large, and you waste effort protecting things you don\'t actually control. A simple test: if the AO can\'t realistically accept the risk for something, it probably belongs outside the boundary, treated instead as a connection to an outside system.\n\nEvery boundary should be drawn as a diagram, with every connection crossing it clearly listed. An undocumented connection is risk sneaking across the boundary that no one ever evaluated or approved.',
       },
       {
         title: 'FIPS 199 Categorization, Step by Step',
         body:
-          'FIPS 199 requires rating a system\'s impact — Low, Moderate, or High — separately for Confidentiality, Integrity, and Availability, based on what would happen if each were compromised. The overall system categorization takes the highest ("high-water mark") across all three: a system that\'s Low for confidentiality but Moderate for integrity is categorized Moderate overall. This categorization is the single most consequential decision in the whole RMF, because it determines which control baseline you start from in Domain 3 (Select) — get the categorization wrong and everything downstream is built on the wrong foundation.',
+          'FIPS 199 asks you to rate a system\'s impact — Low, Moderate, or High — separately for three things: Confidentiality, Integrity, and Availability. You\'re rating what would happen if each one were compromised.\n\nThe overall rating uses the highest of the three. A system that\'s Low for confidentiality but Moderate for integrity gets categorized Moderate overall. This is one of the most important decisions in the whole process, because it decides which set of controls you start with in Domain 3. Get it wrong here, and everything built on top of it is built on the wrong foundation.',
       },
       {
         title: 'System Types: GSS vs. Major Application',
         body:
-          'Not everything in scope is the same kind of thing. A General Support System (GSS) is shared infrastructure — a network, a data center, a common platform — that many individual applications rely on and often inherit common controls from. A major application is a distinct, mission-specific system that performs a clearly defined function significant enough to warrant its own dedicated security planning, rather than being folded into the shared GSS. Knowing which one you\'re scoping changes how categorization and control inheritance work: a GSS is often where common controls originate, while a major application is usually the one inheriting them.',
+          'Not everything you\'re scoping is the same kind of thing. A General Support System (GSS) is shared infrastructure — a network, a data center, a shared platform — that many different applications rely on. A major application is its own distinct system, built for a specific purpose important enough to need its own security planning, rather than just being part of the shared GSS.\n\nKnowing which one you\'re looking at matters, because a GSS is usually where shared controls come from, and a major application is usually the one borrowing (inheriting) them.',
       },
       {
         title: 'Third-Party & Cloud Risk in Scope',
         body:
-          'Scope doesn\'t stop at infrastructure you host yourself. Vendors, cloud providers, and third-party services introduce risk that the organization still bears, even without owning the underlying code. Cloud\'s "shared responsibility model" splits duties by service type — IaaS leaves the customer responsible for more of the stack than SaaS does, but the customer always keeps responsibility for data classification and access management. Interconnections with other organizations get formalized through an MOU (the business-terms handshake) paired with an ISA (the technical/security wiring specification), and component-level supply chain risk gets tracked through tools like an SBOM (Software Bill of Materials), which inventories exactly what\'s inside the software you\'re running.',
+          'Scope doesn\'t stop at what you host yourself. Vendors, cloud providers, and outside services all bring risk the organization still owns, even if it doesn\'t own the code. Cloud\'s "shared responsibility model" splits the work by service type — with IaaS, the customer handles more of the stack; with SaaS, the provider handles more. But the customer always keeps responsibility for classifying its own data and managing who can access it.\n\nConnections to other organizations get formalized through two documents: an MOU (the business agreement) and an ISA (the technical security details). And at the component level, tools like an SBOM (Software Bill of Materials) list exactly what\'s inside the software you\'re running, so supply chain risk isn\'t hidden.',
       },
     ],
     aiNote:
-      'Scoping now explicitly considers whether an AI/ML component is inside the authorization boundary — including third-party foundation models accessed via API, which introduce a supply-chain-style dependency even though no code is hosted on your own infrastructure.',
+      'Scoping now also asks whether an AI or machine learning component falls inside the boundary — including outside AI models you access over an API. Even without hosting any of that code yourself, using it still creates a dependency worth thinking about, similar to any other vendor risk.',
     resources: [
       { title: 'FIPS 199 & 200 Compliance: Comparing Security Standards', source: 'Ignyte Platform', url: 'https://www.ignyteplatform.com/blog/compliance/fips-199-200-compliance/', kind: 'article' },
       { title: 'FIPS 199 — Standards for Security Categorization', source: 'NIST', url: 'https://csrc.nist.gov/pubs/fips/199/final', kind: 'pdf' },
@@ -110,39 +110,39 @@ export const domains: Domain[] = [
     weight: '14%',
     rmfStep: 'Select',
     overview:
-      'The "Select" step of the RMF: choosing an appropriate control framework and baseline, tailoring it to the system, and getting stakeholder approval before anything gets implemented. This is a decision-and-documentation domain — you\'re choosing what controls apply, not yet building them.',
+      'This is the "Select" step: choosing which security and privacy controls apply to the system, adjusting them to fit, and getting them approved — before anyone starts building anything. Think of it as deciding what needs to happen, not yet making it happen.',
     keyConcepts: [
-      'NIST SP 800-53 control families and control structure (control, enhancement, parameter)',
-      'Control baselines (Low/Moderate/High) and tailoring (scoping, compensating controls)',
-      'Privacy controls and the privacy control baseline (SP 800-53B / the PT control family)',
-      'Common controls, hybrid controls, and system-specific controls — deciding allocation before implementation',
-      'Organization-defined parameters (ODPs) and documenting selection rationale',
-      'Stakeholder approval of the selected control set',
+      'NIST SP 800-53 control families and how a control is structured',
+      'Control baselines (Low/Moderate/High) and adjusting them to fit (tailoring)',
+      'Privacy controls and the privacy baseline',
+      'Common, hybrid, and system-specific controls — deciding who builds what',
+      'Filling in organization-specific values and writing down why you chose what you chose',
+      'Getting the selected controls approved by stakeholders',
     ],
     lessons: [
       {
         title: 'Control Structure: Families, Enhancements, Parameters',
         body:
-          'SP 800-53 organizes controls into families by topic — AC (Access Control), AU (Audit and Accountability), IR (Incident Response), and roughly twenty others. Each control has a base statement (the minimum requirement) and optional enhancements that add strength or capability on top of it — think of the base statement as the requirement and the enhancement as an upgrade. Many controls also include organization-defined parameters (ODPs): blanks the organization fills in with its own values, like "lock the account after [Assignment: organization-defined number] failed attempts." Selection means picking which controls, enhancements, and parameter values apply — before anyone builds anything.',
+          'SP 800-53 groups controls into families by topic: AC for Access Control, AU for Audit and Accountability, IR for Incident Response, and about twenty others. Each control has a base requirement, plus optional enhancements that add more strength on top of it — think of the base as the minimum, and the enhancement as the upgrade.\n\nMany controls also have blanks the organization has to fill in, called organization-defined parameters (ODPs). For example: "lock the account after [X] failed login attempts" — your organization decides what X is. Selecting controls means choosing which controls, which enhancements, and which parameter values apply, before anyone builds a single thing.',
       },
       {
         title: 'Choosing a Baseline',
         body:
-          'SP 800-53B provides pre-built Low, Moderate, and High control baselines, and you pick the one matching the system\'s FIPS 199 categorization from Domain 2 — this is why categorization has to happen first. A baseline is a starting point, not a finished answer. Privacy controls get similar treatment: the PT control family (Personally Identifiable Information Processing and Transparency) and the privacy baseline address consent, transparency, and PII-specific risk, layered in alongside the traditional confidentiality/integrity/availability-focused baseline rather than treated as a separate afterthought.',
+          'SP 800-53B gives you ready-made Low, Moderate, and High baselines. You pick the one that matches the system\'s FIPS 199 rating from Domain 2 — which is exactly why categorization has to happen first. A baseline is a starting point, not the final answer.\n\nPrivacy controls work the same way. The PT control family and privacy baseline cover things like consent and how PII gets handled. These get added alongside the regular security baseline — not treated as a separate afterthought.',
       },
       {
-        title: 'Tailoring: Scoping & Compensating Controls',
+        title: 'Tailoring: Adjusting Controls to Fit',
         body:
-          'Blindly applying a baseline as-is either leaves gaps (system-specific risks the generic baseline doesn\'t anticipate) or wastes effort (implementing controls that make no sense for this system, like a physical-access control for a system with no physical facility). Tailoring fixes this: scoping guidance lets you narrow which parts of a control genuinely apply, and compensating controls let you substitute an equivalent protection when the originally specified control isn\'t feasible. Every tailoring decision needs documented rationale — you\'re not allowed to just skip a control because it\'s inconvenient; you have to justify why the substitute (or exclusion) still meets the intent.',
+          'Applying a baseline exactly as written usually doesn\'t work perfectly. Sometimes it misses risks specific to your system. Other times it includes controls that make no sense for you — like a rule about physical door locks for a system with no physical office. Tailoring fixes this.\n\nScoping lets you narrow down which parts of a control actually apply. Compensating controls let you swap in an equally good substitute when the original control just isn\'t possible. Either way, you have to write down why — you can\'t skip a control just because it\'s inconvenient. You have to explain how the substitute still covers the same risk.',
       },
       {
-        title: 'Allocating Controls: Common, Hybrid, System-Specific',
+        title: 'Who Builds What: Common, Hybrid, System-Specific',
         body:
-          'Before implementation even starts, Selection decides how each control will be allocated. A common control is implemented once, centrally, and inherited by many systems (like enterprise badge access). A system-specific control is built entirely by and for one system, with no inheritance. A hybrid control splits the difference — part inherited, part built specifically for this system. Getting this allocation decision right in Selection saves enormous duplicated effort in Implementation (Domain 4), and it\'s also what the final selected control set gets formally approved by stakeholders before anyone starts building.',
+          'Before implementation even starts, someone has to decide who is responsible for building each control. A common control is built once, centrally, and shared by many systems — like company-wide badge access. A system-specific control is built entirely by one system\'s own team, with nothing shared. A hybrid control is a mix of both — part shared, part built just for this system.\n\nGetting this decision right here saves a lot of duplicated work later, in Domain 4. And once every control has an owner and a plan, the whole selected set gets formally approved by stakeholders before building begins.',
       },
     ],
     aiNote:
-      'Selection now includes deciding which controls (or AI-specific overlays) address "black box" model risk, algorithmic transparency, and explainability requirements — treated as a first-class category alongside traditional confidentiality/integrity/availability controls.',
+      'Selection now also covers choosing controls that address AI-specific risks — like "black box" models you can\'t fully explain, or requirements around algorithmic transparency. These sit right alongside the traditional confidentiality/integrity/availability controls, not as a separate category.',
     resources: [
       { title: 'NIST SP 800-53 Rev.5 — Security and Privacy Controls', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final', kind: 'pdf' },
       { title: 'NIST SP 800-53B — Control Baselines', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/53/b/final', kind: 'pdf' },
@@ -155,39 +155,39 @@ export const domains: Domain[] = [
     weight: '17%',
     rmfStep: 'Implement',
     overview:
-      'The RMF\'s "Implement" step now stands on its own as the single largest domain on the exam. Selecting a control on paper is not the same as building it correctly — this domain covers actually deploying the technical, operational, and management controls chosen in Domain 3, documenting exactly how each one is implemented, and making sure that implementation is verifiable before an assessor ever looks at it.',
+      'This is the biggest domain on the exam. Picking a control on paper isn\'t the same as building it correctly. This domain covers actually building the controls chosen in Domain 3, writing down exactly how each one works, and making sure that work can be checked before an assessor ever looks at it.',
     keyConcepts: [
-      'Translating a control\'s base statement into a concrete technical/operational/management implementation',
-      'System Security Plan (SSP) — documenting how each selected control is actually implemented (NIST SP 800-18)',
-      'Implementing common controls, hybrid controls, and system-specific controls correctly, including inheritance documentation',
-      'Secure configuration management and hardening baselines as an implementation activity',
-      'Integrating control implementation into the SDLC / DevSecOps pipeline rather than bolting it on afterward',
-      'Verifying implementation readiness before formal assessment (self-testing, peer review)',
+      'Turning a control\'s requirement into something real and working',
+      'System Security Plan (SSP) — writing down exactly how each control is implemented',
+      'Correctly implementing common, hybrid, and system-specific controls, including who\'s supplying what',
+      'Secure configuration and hardening as part of implementation',
+      'Building controls into development from the start, instead of adding them at the end',
+      'Double-checking your own work before the formal assessment',
     ],
     lessons: [
       {
         title: 'From Selection to Reality: Writing Implementation Statements',
         body:
-          'Selecting a control is a decision on paper; implementing it means the SSP has to state exactly how it works on this real system — the configured values, the mechanism, the process — in enough detail that an independent assessor could verify it without asking you what you meant. "We enforce strong passwords" is not an implementation statement; "the system enforces a minimum 14-character password via [specific mechanism], reviewed every 90 days" is. A generic, copy-pasted restatement of the control\'s base text in the SSP is one of the most common real-world findings, and it usually means a control was selected but never actually built.',
+          'Selecting a control is a decision on paper. Implementing it means writing down exactly how it works on your real system — the settings, the tool, the process — in enough detail that someone else could check it without having to ask you what you meant.\n\n"We enforce strong passwords" is not good enough. "The system requires a 14-character minimum password, enforced by [specific tool], reviewed every 90 days" is. A vague, copy-pasted description is one of the most common problems assessors find — and it usually means a control was picked but never actually built.',
       },
       {
         title: 'Secure Configuration & Hardening',
         body:
-          'Turning "harden the system" from a vague requirement into a concrete, auditable checklist is itself an implementation activity — this is where Security Technical Implementation Guides (STIGs) and similar product-specific hardening standards earn their keep, giving you exact registry keys, service settings, and audit policies rather than inventing them from scratch. Configuration management controls also depend on a Change Control Board (CCB) reviewing and approving changes going forward — implementation isn\'t a one-time event, and an uncontrolled change is a common way a carefully-built control silently stops working.',
+          'Turning "harden the system" from a vague idea into a real, checkable checklist is implementation work. This is where Security Technical Implementation Guides (STIGs) help — they give you exact settings to apply instead of making you guess.\n\nOnce something is built, it also has to stay built. A Change Control Board (CCB) reviews future changes before they happen, because an uncontrolled change is a common way a carefully-built control quietly breaks.',
       },
       {
-        title: 'Implementing Inherited & Hybrid Controls',
+        title: 'Implementing Shared & Split Controls',
         body:
-          'A common control that was allocated in Selection still has to be documented in Implementation: name the providing system/organization, and confirm that provider\'s own implementation (and eventual assessment) is actually current — inheriting a control doesn\'t remove your accountability if the source turns out to be stale. Hybrid controls need both halves documented: the inherited portion and the system-specific portion you built yourself. System-specific controls are the most straightforward — your own team is fully responsible, with nothing to inherit and nowhere to point elsewhere if it doesn\'t work.',
+          'A control shared across systems (a common control) still needs to be written down in your own paperwork: who provides it, and confirmation that it\'s actually up to date. Borrowing a control doesn\'t remove your responsibility if it turns out to be broken or outdated.\n\nA hybrid control needs both halves documented — the shared part and the part your own team built. System-specific controls are the simplest case: your team built it, your team owns it, and there\'s no one else to point to if it doesn\'t work.',
       },
       {
-        title: 'DevSecOps Integration & Readiness Verification',
+        title: 'Building It In Early & Checking Your Own Work',
         body:
-          'Waiting until formal assessment to discover an implementation gap is expensive. Building control implementation into the SDLC/DevSecOps pipeline — automated hardening checks, infrastructure-as-code scanning, security gates in CI/CD — catches problems while they\'re still cheap to fix. Before formal assessment, teams often self-test or peer-review implementation as a readiness check; this doesn\'t replace independent assessment (Domain 5), but it means the formal assessment isn\'t the first time anyone looks critically at whether a control actually works.',
+          'Waiting until the formal assessment to find a problem is expensive. Building checks into the development pipeline — automated scans, security gates before deployment — catches issues while they\'re still cheap to fix.\n\nBefore the formal, independent assessment (Domain 5), teams often test their own work first. That doesn\'t replace the real assessment, but it means the formal review isn\'t the first time anyone actually checks if a control works.',
       },
     ],
     aiNote:
-      'Implementation-stage AI tasks include deploying monitoring for model drift and data poisoning, implementing guardrails/output filtering for generative AI systems, and documenting how "black box" risk is mitigated in practice — not just selected on paper.',
+      'For AI systems, implementation includes things like watching for model drift, adding safety guardrails to filter bad outputs, and writing down how you\'re actually managing "black box" risk — not just deciding to address it on paper.',
     resources: [
       { title: 'NIST SP 800-18 Rev.1 — Guide for Developing Security Plans', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/18/r1/final', kind: 'pdf' },
       { title: 'How to Make a Useful SSP: System Security Plans That Work', source: 'UberEther', url: 'https://uberether.com/how-to-make-an-ssp/', kind: 'article' },
@@ -201,39 +201,39 @@ export const domains: Domain[] = [
     weight: '16%',
     rmfStep: 'Assess',
     overview:
-      'Once controls are implemented, someone independent has to verify they actually work. This domain covers assessment planning, methods (examine/interview/test), the Security Assessment Plan and Report, and how findings feed the POA&M — the RMF\'s "Assess" step.',
+      'Once controls are built, someone independent needs to check that they actually work. This domain covers how that checking happens: planning the assessment, running it, writing up the results, and turning any problems found into a tracked action plan.',
     keyConcepts: [
       'Security Assessment Plan (SAP) and Security Assessment Report (SAR)',
-      'Assessment methods: examine, interview, test — and depth/coverage attributes',
-      'NIST SP 800-53A — assessment procedures aligned to 800-53 controls',
-      'Independence of assessors; assessor qualifications; reciprocity of existing assessments',
-      'Plan of Action and Milestones (POA&M) — creation, tracking, closure',
-      'Audit vs. assessment vs. continuous monitoring — how they differ in purpose',
+      'The three assessment methods: examine, interview, and test',
+      'NIST SP 800-53A — the official procedures for assessing 800-53 controls',
+      'Why assessors need to be independent, and reusing existing assessments (reciprocity)',
+      'Plan of Action and Milestones (POA&M) — creating, tracking, and closing it out',
+      'How an audit, an assessment, and ongoing monitoring are different things',
     ],
     lessons: [
       {
         title: 'Assessment Methods: Examine, Interview, Test',
         body:
-          'SP 800-53A defines three ways to assess a control: examine (review a specification, like a policy document), interview (talk to the individuals who apply the control), and test (directly exercise a mechanism or activity). Relying on only one method gives a shallow picture — reading a policy tells you nothing about whether it\'s actually followed, and interviewing an admin about a login system doesn\'t confirm the system actually behaves as described. Credible assessments match methods to what\'s being verified, with depth and coverage attributes describing how rigorously and how broadly each method was applied (a full population vs. a sample, a basic review vs. a comprehensive one).',
+          'There are three ways to check whether a control works. Examine means reviewing a document, like a written policy. Interview means talking to the people who actually use the control day to day. Test means directly trying the thing out yourself.\n\nUsing just one method gives you a shallow, unreliable picture. Reading a policy doesn\'t tell you whether people actually follow it. Asking an admin about a login system doesn\'t confirm the system really behaves that way. A solid assessment picks the right method for what it\'s checking, and applies it thoroughly — how much of the system it checks and how carefully both matter.',
       },
       {
         title: 'Building the SAP, Writing the SAR',
         body:
-          'The Security Assessment Plan (SAP) is written before assessment begins: it defines scope, which methods apply to which controls, and how assessors will approach the work. The Security Assessment Report (SAR) documents what was actually found — results, risk ratings, and recommendations — after the assessment is complete. Together they turn "we think our controls work" into an evidence-based, independently verified conclusion the Authorizing Official can actually rely on in Domain 6.',
+          'Before the assessment starts, someone writes a Security Assessment Plan (SAP) — what will be checked, how, and by whom. After the assessment is done, the results go into a Security Assessment Report (SAR): what was found, how serious it is, and what should be done about it.\n\nTogether, these two documents turn "we think our controls work" into an actual, evidence-backed conclusion — something the Authorizing Official can rely on later in Domain 6.',
       },
       {
-        title: 'Assessor Independence & Reciprocity',
+        title: 'Why Assessor Independence Matters',
         body:
-          'An assessor grading their own implementation work is far more likely to miss (or downplay) real weaknesses, which is why credible assessments require independence — the assessor should have no vested interest in the outcome, ideally organizationally separate from whoever built the controls. Programs like FedRAMP formalize this through accredited Third-Party Assessment Organizations (3PAOs). Reciprocity is the flip side: rather than re-assessing a system from scratch, an organization can accept another organization\'s existing, credible assessment or authorization — avoiding duplicated work without sacrificing rigor.',
+          'An assessor checking their own work is far more likely to miss real problems, on purpose or not. That\'s why a good assessment uses someone with no stake in the outcome — ideally a completely separate team or organization. Programs like FedRAMP make this official by requiring accredited Third-Party Assessment Organizations (3PAOs).\n\nThere\'s also a shortcut called reciprocity: instead of assessing the exact same system from scratch, an organization can accept someone else\'s existing, trustworthy assessment. It saves duplicated work without cutting corners.',
       },
       {
         title: 'From Findings to POA&M',
         body:
-          'A finding that isn\'t immediately remediated doesn\'t just disappear — it becomes a Plan of Action and Milestones (POA&M) entry: what\'s wrong, who owns fixing it, what resources it needs, and by when. The POA&M is a living document reviewed on a recurring cadence, not a one-time report filed and forgotten, and its open items are something the AO explicitly reviews as part of every authorization decision in Domain 6. This is also where assessment stops being a one-time event and starts feeding the ongoing compliance picture that Domain 7 (Compliance Maintenance) is built on.',
+          'When an assessment finds a problem that isn\'t fixed right away, it doesn\'t just disappear — it becomes a Plan of Action and Milestones (POA&M) entry: what\'s wrong, who\'s fixing it, what they need, and by when.\n\nThe POA&M isn\'t a one-time report you write and forget. It gets checked and updated regularly, and its open items are something the AO looks at every time they make an authorization decision in Domain 6. This is also the point where assessment stops being a one-time event and starts feeding into the ongoing tracking covered in Domain 7.',
       },
     ],
     aiNote:
-      'Assessing AI systems adds testing for bias, robustness against adversarial inputs, and validating that model behavior matches documented intent — assessment methods (examine/interview/test) still apply, but the "mechanism" being tested is now a model rather than only traditional software.',
+      'Assessing an AI system also means testing for bias, checking how it holds up against tricky or adversarial inputs, and confirming it actually behaves the way it\'s documented to. The same examine/interview/test approach still applies — you\'re just checking a model instead of ordinary software.',
     resources: [
       { title: 'NIST SP 800-53A Rev.5 — Assessing Security and Privacy Controls', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/53/a/r5/final', kind: 'pdf' },
       { title: 'An Introduction to the Plan of Actions and Milestones (POA&M)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=DmjRAJc2xXs', kind: 'video' },
@@ -246,39 +246,39 @@ export const domains: Domain[] = [
     weight: '14%',
     rmfStep: 'Authorize',
     overview:
-      'The RMF\'s "Authorize" step: the Authorizing Official reviews the authorization package (SSP, SAR, POA&M) and makes a formal, risk-based decision about whether the system is compliant enough to operate. This domain is about that decision itself — what goes into it, who makes it, and what the possible outcomes are.',
+      'This is the "Authorize" step: the Authorizing Official reviews everything gathered so far and makes a formal call — is this system safe enough to operate? This domain is about that decision itself: what goes into it, who makes it, and what the possible outcomes are.',
     keyConcepts: [
-      'Authorization package contents (SSP, SAR, POA&M) and the Authorization to Operate (ATO) decision',
-      'Authorizing Official (AO) responsibilities and risk acceptance vs. risk transfer',
-      'Types of authorization: full ATO, interim authorization to test (IATT), denial of authorization',
-      'Residual risk and how it\'s communicated to the AO for a compliance decision',
-      'Authorization termination dates and the conditions attached to a compliance decision',
-      'Reciprocity — accepting another organization\'s existing authorization instead of re-authorizing from scratch',
+      'What goes into an authorization package (SSP, SAR, POA&M) and the Authorization to Operate (ATO) decision',
+      'What the Authorizing Official (AO) is responsible for, and accepting risk vs. transferring it',
+      'Types of authorization: full ATO, interim authorization to test (IATT), or denial',
+      'How leftover (residual) risk gets communicated to the AO',
+      'Authorization end dates and any conditions attached to the decision',
+      'Reciprocity — accepting someone else\'s existing authorization instead of starting over',
     ],
     lessons: [
       {
         title: 'The Authorization Package',
         body:
-          'By the time a system reaches Domain 6, three documents converge into a single authorization package: the SSP (what the system is and how controls are implemented, from Domain 4), the SAR (independent findings on whether those controls actually work, from Domain 5), and the POA&M (what\'s still open and being tracked). The AO doesn\'t re-derive any of this from scratch — the whole point of the preceding domains is to hand the AO a complete, evidence-based picture to make one focused decision on.',
+          'By the time a system reaches this domain, three documents come together into one package. The SSP explains what the system is and how its controls work (from Domain 4). The SAR gives independent findings on whether those controls actually work (from Domain 5). The POA&M lists what\'s still unresolved and being tracked.\n\nThe AO doesn\'t redo any of this work — the whole point of the earlier domains is to hand the AO a complete, evidence-backed picture so they can make one focused decision.',
       },
       {
         title: 'The AO\'s Decision: ATO, IATT, or Denial',
         body:
-          'The Authorizing Official reviews that package and issues one of a few outcomes. A full Authorization to Operate (ATO) means the AO accepts residual risk and the system may run in production, usually with a defined termination date forcing periodic review. An Interim Authorization to Test (IATT) is narrower — the system may operate in a test environment only, not production. Denial of authorization means residual risk is unacceptable and cannot currently be mitigated enough to proceed; the system doesn\'t get to operate until that changes. Every decision, including any conditions attached to it, gets documented in a formal authorization decision record — an undocumented decision isn\'t really a decision at all.',
+          'The Authorizing Official reviews the package and lands on one of a few outcomes. A full Authorization to Operate (ATO) means the AO accepts the leftover risk and the system can run in production — usually with an end date that forces a future review. An Interim Authorization to Test (IATT) is more limited: the system can run in a test environment only, never production. Denial means the risk is too high right now, and the system doesn\'t operate until that changes.\n\nEvery decision — including any conditions attached to it — gets written down formally. A decision that isn\'t documented isn\'t really a decision.',
       },
       {
-        title: 'Residual Risk & the Nature of "Compliance"',
+        title: 'What "Compliance" Actually Means',
         body:
-          'Authorization is fundamentally about accepting residual risk, not eliminating all risk — no system reaches zero risk, and pretending otherwise defeats the purpose of a risk-based framework. "System Compliance" doesn\'t mean "perfect"; it means the AO, with full visibility into what remains unresolved, has made an informed, accountable decision that the remaining risk is acceptable given the mission need. This is also where the AO distinguishes risk acceptance (living with the risk) from risk transfer (e.g., shifting some impact to an insurer or a contractual partner) as different ways of handling what\'s left.',
+          'Authorizing a system is really about accepting the risk that\'s left over, not eliminating every risk — no system ever gets to zero. "System Compliance" doesn\'t mean "perfect." It means the AO has a full, honest picture of what\'s still unresolved and has decided, with real accountability, that the remaining risk is acceptable given what the system needs to do.\n\nThere are also two different ways to handle leftover risk: accepting it (living with it as-is) or transferring it (like shifting some of the cost to an insurance policy or a contract).',
       },
       {
         title: 'Reciprocity & Authorization Terms',
         body:
-          'Just as assessments can be reused through reciprocity (Domain 5), authorizations can be too — accepting another organization\'s existing, credible ATO rather than re-authorizing the same system from zero, common in programs like FedRAMP. Every authorization also carries terms: a termination date that forces a scheduled reauthorization checkpoint, and often specific conditions (like closing certain POA&M items within 90 days) that keep the system\'s risk picture honest between now and the next full review — which is exactly the bridge into Domain 7\'s ongoing monitoring.',
+          'Just like assessments can be reused (Domain 5), authorizations can be too. Rather than re-authorizing the same system from scratch, an organization can accept another organization\'s existing, trustworthy ATO — this is common in programs like FedRAMP.\n\nEvery authorization also comes with terms: an end date that forces a future check-in, and often specific conditions, like closing certain POA&M items within 90 days. These keep the system\'s risk picture honest until the next full review — which leads directly into the ongoing tracking covered in Domain 7.',
       },
     ],
     aiNote:
-      'AI-specific compliance decisions weigh algorithmic transparency and regulatory posture (e.g., does this AI use case fall under a "high-risk" category in applicable law?) alongside traditional residual risk before the AO signs off.',
+      'For AI systems, this decision also weighs things like how explainable the model is and whether the AI use case falls under a "high-risk" category under applicable law — on top of the usual leftover-risk question — before the AO signs off.',
     resources: [
       { title: 'Understanding Baselines and Impact Levels for FedRAMP Authorizations', source: 'FedRAMP.gov', url: 'https://www.fedramp.gov/rev5/baselines', kind: 'article' },
     ],
@@ -290,41 +290,41 @@ export const domains: Domain[] = [
     weight: '13%',
     rmfStep: 'Monitor',
     overview:
-      'Authorization is a point-in-time decision — the RMF only works if compliance is actively maintained afterward. This domain covers Information Security Continuous Monitoring (ISCM), change management, ongoing/event-driven reauthorization, and the incident response and contingency planning that keep a system\'s compliance posture valid over time rather than frozen at the moment of the last ATO.',
+      'Authorization is just a decision made at one point in time. This domain is about everything that keeps that decision valid afterward — watching the system continuously, handling changes safely, and being ready to respond when something goes wrong.',
     keyConcepts: [
-      'ISCM strategy: what to monitor, how often, and against what triggers (NIST SP 800-137)',
-      'Ongoing authorization and event-driven reauthorization when significant changes occur',
-      'Security metrics, dashboards, and automated data feeds for monitoring',
-      'Incident response lifecycle (Preparation, Detection & Analysis, Containment/Eradication/Recovery, Post-Incident Activity)',
+      'A continuous monitoring strategy: what to watch, how often, and what triggers action',
+      'Renewing authorization on an ongoing basis, or right away when something major changes',
+      'Security metrics, dashboards, and automated data feeds',
+      'The incident response lifecycle: prepare, detect, contain and fix, then review',
       'Business Continuity Plan (BCP), Disaster Recovery Plan (DRP), and Continuity of Operations Plan (COOP)',
       'Recovery Time Objective (RTO) and Recovery Point Objective (RPO)',
-      'Tabletop, functional, and full-scale exercises; lessons learned feeding back into risk management',
-      'System decommissioning and secure disposal at end of life',
+      'Practicing your plans, and learning from real incidents',
+      'Securely retiring a system at the end of its life',
     ],
     lessons: [
       {
-        title: 'Building an ISCM Strategy',
+        title: 'Building a Continuous Monitoring Strategy',
         body:
-          'An authorization is a snapshot; Information Security Continuous Monitoring (ISCM), defined in SP 800-137, is what keeps that snapshot honest afterward. A good ISCM strategy defines what gets monitored, how often, and what triggers escalation — vulnerability scans, configuration drift alerts, access reviews, all feeding a dashboard rather than sitting in separate silos. Automated data feeds matter here specifically because they reduce lag: manual, periodic checks mean the AO\'s risk picture is always somewhat stale, while automated feeds keep it close to real time.',
+          'An authorization is a snapshot in time. Continuous monitoring is what keeps that snapshot honest afterward. A good monitoring strategy spells out what gets watched, how often, and what should trigger a closer look — things like vulnerability scans, unexpected configuration changes, and access reviews, all feeding into one dashboard instead of sitting in separate silos.\n\nAutomating this matters because it closes the gap between reality and what the AO actually sees. Manual, occasional checks mean the risk picture is always a little out of date. Automated feeds keep it close to real time.',
       },
       {
-        title: 'Ongoing & Event-Driven Reauthorization',
+        title: 'Renewing Authorization: On a Schedule, or Right Away',
         body:
-          'Instead of relying solely on a static reassessment every few years, ongoing authorization uses that continuous monitoring data to keep the AO\'s risk determination current between formal cycles — a movie instead of a photograph. Some changes can\'t wait for the next scheduled review at all: a major architecture change, a significant breach, or a new threat should trigger event-driven reauthorization — an out-of-cycle risk review prompted by the change itself, not the calendar.',
+          'Instead of relying only on a full reassessment every few years, ongoing monitoring data can keep the AO\'s risk picture current the whole time in between — more like a running video than a single photo.\n\nSome changes can\'t wait for the next scheduled review at all. A major system change, a serious breach, or a new type of threat should trigger a fresh, out-of-cycle risk review right away — driven by the event itself, not the calendar.',
       },
       {
         title: 'Incident Response & Contingency Planning',
         body:
-          'When monitoring reveals (or fails to prevent) a real incident, the response follows a defined lifecycle: Preparation, Detection & Analysis, Containment/Eradication/Recovery, and Post-Incident Activity. Contingency planning sits alongside this at different scopes — a Business Continuity Plan (BCP) keeps business functions running, a Disaster Recovery Plan (DRP) restores IT infrastructure specifically, and a Continuity of Operations Plan (COOP) is the federal-agency-specific version emphasizing essential functions and leadership succession. Recovery targets get set in advance: Recovery Time Objective (RTO) is how long you can be down, Recovery Point Objective (RPO) is how much data loss is tolerable — both should trace back to the Business Impact Analysis from Domain 1.',
+          'When something actually goes wrong, the response follows four stages: prepare beforehand, detect and analyze what happened, contain and fix it, then review afterward.\n\nSeparate but related plans cover different scopes of disruption. A Business Continuity Plan (BCP) keeps the business running. A Disaster Recovery Plan (DRP) restores the IT systems specifically. A Continuity of Operations Plan (COOP) is the federal-agency version, focused on keeping essential functions and leadership going.\n\nRecovery targets get set ahead of time: Recovery Time Objective (RTO) is how long you can afford to be down, and Recovery Point Objective (RPO) is how much data you can afford to lose. Both should trace back to the Business Impact Analysis from Domain 1.',
       },
       {
-        title: 'Closing the Loop: Exercises, Lessons Learned, Decommissioning',
+        title: 'Practicing, Learning, and Retiring Systems',
         body:
-          'Plans that have never been tested are just documents. Tabletop exercises (discussion-based), functional exercises (partially hands-on), and full-scale exercises (as close to the real thing as it gets) validate that contingency and incident plans actually work, in increasing order of realism and cost. After any real incident, a lessons-learned review feeds improvements back into risk management and controls — an incident without one is a mistake scheduled to repeat. Compliance maintenance also covers the end of a system\'s life: secure decommissioning, data sanitization, and updating the system inventory when a system is retired, so "maintaining compliance" genuinely covers the system\'s full lifecycle, not just the years it\'s in production.',
+          'A plan that\'s never been tested is just a document. Tabletop exercises (a group discussion), functional exercises (partly hands-on), and full-scale exercises (as close to the real thing as it gets) all confirm your plans actually work — each one more realistic (and more expensive) than the last.\n\nAfter any real incident, a lessons-learned review feeds what you found back into your plans and controls. Skipping this step means you\'re likely to repeat the same mistake. And when a system finally reaches the end of its life, it needs to be retired properly too — data wiped securely, access shut off, and records updated — so "staying compliant" really does cover the system\'s whole life, not just the years it was running.',
       },
     ],
     aiNote:
-      'Maintaining compliance for AI systems means continuously monitoring for model drift, retraining-triggered reauthorization, and incident response plans that specifically cover AI failure modes (e.g., a model producing harmful or biased output at scale) — not just traditional system outages.',
+      'For AI systems, staying compliant means continuously watching for model drift, retraining models when needed (which can trigger a fresh authorization review), and having an incident response plan that specifically covers AI failures — like a model producing harmful or biased output — not just ordinary system outages.',
     resources: [
       { title: 'NIST SP 800-137 — Information Security Continuous Monitoring', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/137/final', kind: 'pdf' },
       { title: 'NIST SP 800-61 Rev.2 — Computer Security Incident Handling Guide', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/61/r2/final', kind: 'pdf' },

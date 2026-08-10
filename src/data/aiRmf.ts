@@ -1,63 +1,63 @@
 import type { NistItem } from './types'
 
-// The NIST AI Risk Management Framework (AI RMF 1.0) is the direct AI-governance
-// counterpart to the security RMF (SP 800-37) — same idea (framing, evaluating, and
-// managing risk continuously) applied to AI systems instead of information systems.
+// The NIST AI Risk Management Framework (AI RMF 1.0) is the AI-focused version of the
+// security RMF you already know — same idea (frame the risk, evaluate it, manage it,
+// keep watching it) just applied to AI systems instead of regular information systems.
 export const aiRmfFunctions: NistItem[] = [
   {
     id: 'govern',
     title: 'Govern',
     summary:
-      'Cultivates a risk-aware culture and establishes the policies, processes, and accountability structures for managing AI risk across the organization — the cross-cutting function that touches all the others.',
+      'Sets up the policies, roles, and accountability for managing AI risk across the organization — the piece that touches everything else.',
     points: [
-      'Establish AI risk management policies, roles, and accountability (an AI equivalent of the AO/ISSO structure)',
-      'Define organizational risk tolerance for AI systems specifically',
-      'Build processes for legal/regulatory compliance and third-party AI risk (vendors, foundation models)',
-      'Foster a culture where teams feel safe raising AI risk concerns',
+      'Set up AI risk policy, roles, and accountability — an AI version of the AO/ISSO structure',
+      'Decide how much AI risk the organization is willing to accept',
+      'Build processes for AI-related legal requirements and third-party AI risk (vendors, outside models)',
+      'Create a culture where people feel safe raising AI risk concerns',
     ],
   },
   {
     id: 'map',
     title: 'Map',
     summary:
-      'Establishes the context to frame AI risks — understanding the system, its intended use, and who is affected — the AI-governance analog to Categorize/Prepare in the security RMF.',
+      'Figures out the context around an AI risk — what the system is, how it\'s used, and who it affects. This is the AI version of Categorize/Prepare.',
     points: [
-      'Document intended purpose, users, and context of use for the AI system',
-      'Identify potential impacts to individuals, groups, and society, not just the organization',
-      'Map risks arising from the AI system\'s capabilities, limitations, and third-party components',
-      'Involve diverse, cross-functional perspectives (legal, ethics, domain experts) early',
+      'Write down what the AI system is for, who uses it, and how',
+      'Think about impacts to individuals and society, not just the organization',
+      'Map out risks from the system\'s capabilities, limits, and any outside components',
+      'Bring in different perspectives early — legal, ethics, and subject-matter experts',
     ],
   },
   {
     id: 'measure',
     title: 'Measure',
     summary:
-      'Uses quantitative, qualitative, or mixed methods to analyze and track AI risks and their impacts — the analog to Assess in the security RMF.',
+      'Tests and tracks AI risks using real data and defined metrics. This is the AI version of Assess.',
     points: [
-      'Evaluate AI system performance, robustness, fairness, and safety against defined metrics',
-      'Test for bias, security vulnerabilities, and unexpected failure modes',
-      'Track metrics continuously, not just at a single pre-deployment checkpoint',
-      'Document measurement methodology and limitations transparently',
+      'Check the AI system\'s performance, reliability, fairness, and safety against clear metrics',
+      'Test for bias, security weaknesses, and unexpected failures',
+      'Keep tracking these metrics continuously, not just once before launch',
+      'Be transparent about how you measured things, and what the limits of that measurement are',
     ],
   },
   {
     id: 'manage',
     title: 'Manage',
     summary:
-      'Allocates resources to identified risks on a regular basis, and plans responses to incidents, misuse, or unexpected impacts — the analog to Authorize/Monitor in the security RMF.',
+      'Puts resources toward the risks you found, and plans for how to respond if something goes wrong. This is the AI version of Authorize/Monitor.',
     points: [
-      'Prioritize and treat risks based on the Measure function\'s findings',
-      'Plan for incident response specific to AI failures (e.g., harmful outputs, model drift)',
-      'Maintain mechanisms for ongoing monitoring after deployment, not one-time sign-off',
-      'Document risk decisions and residual risk the same way an AO documents an authorization decision',
+      'Decide what to fix first, based on what the Measure step found',
+      'Plan incident response specifically for AI failures, like harmful output or model drift',
+      'Keep monitoring after launch — this isn\'t a one-time sign-off',
+      'Write down risk decisions and what risk is left over, just like an AO documents an authorization',
     ],
   },
 ]
 
 export const aiRmfCrossReference: { securityRmfStep: string; aiRmfFunction: string; note: string }[] = [
-  { securityRmfStep: 'Prepare', aiRmfFunction: 'Govern', note: 'Both set up roles, policy, and risk tolerance before any system-specific work begins.' },
-  { securityRmfStep: 'Categorize', aiRmfFunction: 'Map', note: 'Both establish context and scope — what the system is, who it affects, what could go wrong.' },
-  { securityRmfStep: 'Select / Implement', aiRmfFunction: '(no direct analog)', note: 'AI RMF is risk-management-focused rather than a control-catalog process like SP 800-53.' },
-  { securityRmfStep: 'Assess', aiRmfFunction: 'Measure', note: 'Both evaluate whether the system behaves as intended, using defined methods and metrics.' },
-  { securityRmfStep: 'Authorize / Monitor', aiRmfFunction: 'Manage', note: 'Both close the loop — respond to findings, monitor continuously, and document risk decisions.' },
+  { securityRmfStep: 'Prepare', aiRmfFunction: 'Govern', note: 'Both set up roles, policy, and risk tolerance before any system-specific work starts.' },
+  { securityRmfStep: 'Categorize', aiRmfFunction: 'Map', note: 'Both figure out context and scope — what the system is, who it affects, and what could go wrong.' },
+  { securityRmfStep: 'Select / Implement', aiRmfFunction: '(no direct match)', note: 'The AI RMF focuses on managing risk broadly, not a specific catalog of controls like SP 800-53.' },
+  { securityRmfStep: 'Assess', aiRmfFunction: 'Measure', note: 'Both check whether the system actually behaves as intended, using defined methods and metrics.' },
+  { securityRmfStep: 'Authorize / Monitor', aiRmfFunction: 'Manage', note: 'Both close the loop — respond to what was found, keep monitoring, and document the decisions made.' },
 ]
