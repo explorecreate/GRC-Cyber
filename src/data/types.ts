@@ -28,6 +28,7 @@ export interface GlossaryEntry {
   acronym: string
   expansion: string
   definition: string
+  domainId?: string // the domain this term is most associated with, when it's domain-specific
 }
 
 export interface TermEntry {
