@@ -1,0 +1,94 @@
+import type { AiResource, UseCaseCard } from './types'
+
+export const learningAiResources: AiResource[] = [
+  {
+    title: 'Large Language Models Explained Briefly',
+    source: '3Blue1Brown',
+    url: 'https://www.youtube.com/@3blue1brown',
+    kind: 'video',
+    blurb: 'A visual, intuitive walkthrough of how LLMs actually predict text — the best starting point before anything else.',
+  },
+  {
+    title: 'Prompt Engineering Guide',
+    source: 'promptingguide.ai',
+    url: 'https://www.promptingguide.ai/',
+    kind: 'article',
+    blurb: 'Free, continually-updated reference covering prompting techniques from zero-shot to chain-of-thought and beyond.',
+  },
+  {
+    title: 'What are AI Agents?',
+    source: 'IBM Technology',
+    url: 'https://www.youtube.com/@IBMTechnology',
+    kind: 'video',
+    blurb: 'Clear explanation of agentic AI — planning, tool use, and multi-step task execution — without the hype.',
+  },
+  {
+    title: 'Retrieval-Augmented Generation (RAG), Explained',
+    source: 'IBM Technology',
+    url: 'https://www.youtube.com/@IBMTechnology',
+    kind: 'video',
+    blurb: 'How RAG grounds LLM responses in external data, and why it matters for accuracy and up-to-date answers.',
+  },
+  {
+    title: 'NIST AI Risk Management Framework (AI RMF 1.0)',
+    source: 'NIST',
+    url: 'https://www.nist.gov/itl/ai-risk-management-framework',
+    kind: 'article',
+    blurb: 'The direct AI-governance counterpart to the security RMF — map its Govern/Map/Measure/Manage functions back to what you already know from CGRC.',
+  },
+  {
+    title: 'AI Governance Fundamentals',
+    source: 'ISACA',
+    url: 'https://www.isaca.org/resources/artificial-intelligence',
+    kind: 'article',
+    blurb: 'Free primers on governing AI systems — risk, accountability, and oversight structures for organizations deploying AI.',
+  },
+]
+
+export const useCases: UseCaseCard[] = [
+  {
+    id: 'workflow-automation',
+    title: 'Agentic Workflow Automation',
+    category: 'Workflow Automation',
+    summary: 'AI agents that plan and execute multi-step business processes end-to-end (e.g., triaging support tickets, reconciling invoices) rather than answering single prompts.',
+    source: 'Anthropic — Claude Agent SDK docs',
+    url: 'https://docs.claude.com/',
+    added: '2026-06-01',
+  },
+  {
+    id: 'content-media-gen',
+    title: 'Content & Media Generation',
+    category: 'Content / Media',
+    summary: 'Generative models producing video, voice, and image assets at production quality, reshaping media and marketing workflows.',
+    source: 'General industry coverage',
+    url: 'https://www.theverge.com/ai-artificial-intelligence',
+    added: '2026-05-15',
+  },
+  {
+    id: 'data-analysis-copilots',
+    title: 'Data Analysis Copilots',
+    category: 'Data Analysis',
+    summary: 'LLMs paired with code execution to explore datasets, generate visualizations, and surface findings in natural language.',
+    source: 'General industry coverage',
+    url: 'https://www.anthropic.com/news',
+    added: '2026-05-01',
+  },
+  {
+    id: 'robotics',
+    title: 'Physical / Robotics AI',
+    category: 'Physical & Robotics',
+    summary: 'Foundation models applied to robotic control and manipulation — warehouse automation, humanoid robots, and embodied AI research.',
+    source: 'General industry coverage',
+    url: 'https://spectrum.ieee.org/robotics',
+    added: '2026-04-20',
+  },
+  {
+    id: 'research-acceleration',
+    title: 'Research Acceleration',
+    category: 'Research',
+    summary: 'AI systems assisting with literature review, hypothesis generation, and experiment design across scientific fields.',
+    source: 'General industry coverage',
+    url: 'https://www.nature.com/subjects/machine-learning',
+    added: '2026-03-10',
+  },
+]
