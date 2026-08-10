@@ -18,6 +18,8 @@ export default function QuizRunner({ questions: initial, domainId, domainLabel, 
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [score, setScore] = useState(0)
+  const [streak, setStreak] = useState(0)
+  const [bestStreak, setBestStreak] = useState(0)
   const [finished, setFinished] = useState(false)
   const [secondsLeft, setSecondsLeft] = useState(timedSeconds ?? 0)
 
@@ -66,7 +68,16 @@ export default function QuizRunner({ questions: initial, domainId, domainLabel, 
   function choose(optIndex: number) {
     if (selected !== null) return
     setSelected(optIndex)
-    if (optIndex === current.correctIndex) setScore((s) => s + 1)
+    if (optIndex === current.correctIndex) {
+      setScore((s) => s + 1)
+      setStreak((s) => {
+        const next = s + 1
+        setBestStreak((b) => Math.max(b, next))
+        return next
+      })
+    } else {
+      setStreak(0)
+    }
   }
 
   function next() {
@@ -84,15 +95,29 @@ export default function QuizRunner({ questions: initial, domainId, domainLabel, 
 
   if (finished) {
     const pct = Math.round((score / questions.length) * 100)
+    const tier =
+      pct >= 90
+        ? { emoji: '🏆', headline: 'Outstanding!' }
+        : pct >= 75
+          ? { emoji: '🎉', headline: 'Nice work!' }
+          : pct >= 50
+            ? { emoji: '💪', headline: 'Getting there!' }
+            : { emoji: '📚', headline: 'Good rep — go again!' }
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center">
-        <p className="text-sm font-medium text-slate-500">
-          {mode === 'exam' ? 'Practice Exam Complete' : 'Quiz Complete'}
+        <p className="text-4xl">{tier.emoji}</p>
+        <p className="mt-2 text-sm font-medium text-slate-500">
+          {tier.headline} · {mode === 'exam' ? 'Practice Exam Complete' : 'Quiz Complete'}
         </p>
         <p className="mt-2 text-4xl font-bold text-brand-700">{pct}%</p>
         <p className="mt-1 text-slate-600">
           {score} / {questions.length} correct
         </p>
+        {bestStreak >= 3 && (
+          <p className="mt-2 inline-block rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700">
+            🔥 Best streak: {bestStreak} in a row
+          </p>
+        )}
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => window.location.reload()}
@@ -119,6 +144,7 @@ export default function QuizRunner({ questions: initial, domainId, domainLabel, 
         </span>
         <span className="flex items-center gap-3">
           {timerLabel && <span className="font-mono font-medium text-brand-700">{timerLabel}</span>}
+          {streak >= 3 && <span className="font-medium text-orange-600">🔥 {streak}</span>}
           <span>Score: {score}</span>
         </span>
       </div>
@@ -158,7 +184,9 @@ export default function QuizRunner({ questions: initial, domainId, domainLabel, 
       {selected !== null && (
         <div className="mt-5 rounded-xl bg-slate-50 p-4 text-sm text-slate-700">
           <p className="mb-1 font-semibold text-slate-900">
-            {selected === current.correctIndex ? '✅ Correct' : '❌ Not quite'}
+            {selected === current.correctIndex
+              ? correctFeedback(streak)
+              : '❌ Not quite — here\'s why:'}
           </p>
           <p>{current.explanation}</p>
         </div>
@@ -176,4 +204,10 @@ export default function QuizRunner({ questions: initial, domainId, domainLabel, 
       )}
     </div>
   )
+}
+
+function correctFeedback(streak: number): string {
+  if (streak >= 5) return `🔥 ${streak} in a row — you're on fire!`
+  if (streak >= 3) return `✅ Correct! ${streak}-streak going`
+  return '✅ Correct'
 }

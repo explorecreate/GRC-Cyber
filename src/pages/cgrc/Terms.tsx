@@ -3,11 +3,13 @@ import { terms } from '../../data/terms'
 import { domains } from '../../data/domains'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
 import MarkStudiedButton from '../../components/MarkStudiedButton'
+import FlashcardDeck from '../../components/FlashcardDeck'
 
 export default function Terms() {
   useTrackVisit('/cgrc/terms', 'Terms to Know')
   const [query, setQuery] = useState('')
   const [domainFilter, setDomainFilter] = useState<string>('all')
+  const [mode, setMode] = useState<'list' | 'flashcards'>('list')
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -28,7 +30,7 @@ export default function Terms() {
         <MarkStudiedButton topicId="terms" />
       </div>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -47,23 +49,45 @@ export default function Terms() {
             </option>
           ))}
         </select>
+        <div className="flex rounded-full border border-slate-200 bg-white p-0.5">
+          <button
+            onClick={() => setMode('list')}
+            className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+              mode === 'list' ? 'bg-brand-600 text-white' : 'text-slate-600 hover:bg-slate-50'
+            }`}
+          >
+            📖 Study
+          </button>
+          <button
+            onClick={() => setMode('flashcards')}
+            className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+              mode === 'flashcards' ? 'bg-brand-600 text-white' : 'text-slate-600 hover:bg-slate-50'
+            }`}
+          >
+            🎴 Flashcards
+          </button>
+        </div>
       </div>
 
-      <div className="space-y-4">
-        {filtered.map((t) => (
-          <article key={t.id} className="rounded-xl border border-slate-200 bg-white p-5">
-            <h2 className="text-lg font-semibold text-slate-900">{t.term}</h2>
-            <dl className="mt-3 space-y-3 text-sm">
-              <Row label="Definition" value={t.definition} />
-              <Row label="Real-world example" value={t.example} />
-              <Row label="Why it matters" value={t.whyItMatters} />
-              <Row label="How to apply it" value={t.howToApply} />
-              <Row label="Memory tip" value={t.memoryTip} highlight />
-            </dl>
-          </article>
-        ))}
-        {filtered.length === 0 && <p className="text-slate-500">No matching terms.</p>}
-      </div>
+      {mode === 'flashcards' ? (
+        <FlashcardDeck terms={filtered} />
+      ) : (
+        <div className="space-y-4">
+          {filtered.map((t) => (
+            <article key={t.id} className="rounded-xl border border-slate-200 bg-white p-5">
+              <h2 className="text-lg font-semibold text-slate-900">{t.term}</h2>
+              <dl className="mt-3 space-y-3 text-sm">
+                <Row label="Definition" value={t.definition} />
+                <Row label="Real-world example" value={t.example} />
+                <Row label="Why it matters" value={t.whyItMatters} />
+                <Row label="How to apply it" value={t.howToApply} />
+                <Row label="Memory tip" value={t.memoryTip} highlight />
+              </dl>
+            </article>
+          ))}
+          {filtered.length === 0 && <p className="text-slate-500">No matching terms.</p>}
+        </div>
+      )}
     </div>
   )
 }
