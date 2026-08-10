@@ -18,8 +18,8 @@ export const domains: Domain[] = [
       'Integrating privacy governance alongside security governance (not as an afterthought)',
     ],
     resources: [
-      { title: 'CGRC (CAP) Domain 1 — Governance Overview', source: 'Destination Certification', url: 'https://www.youtube.com/@DestinationCertification', kind: 'video' },
-      { title: 'ISC2 CGRC Certification Overview', source: 'ISC2 Official Channel', url: 'https://www.youtube.com/@ISC2Security', kind: 'video' },
+      { title: 'ISC2 CGRC Domain 1: Information Security Risk Management Program', source: 'Infosec Institute', url: 'https://www.infosecinstitute.com/resources/isc2-cgrc/isc2-cgrc-domain-1-information-security-risk-management-program/', kind: 'article' },
+      { title: 'CGRC Certification Overview', source: 'ISC2', url: 'https://www.isc2.org/certifications/cgrc', kind: 'article' },
       { title: 'NIST RMF Governance Roles', source: 'NIST', url: 'https://csrc.nist.gov/projects/risk-management/about-rmf', kind: 'doc' },
       { title: '(ISC)² Code of Ethics', source: 'ISC2', url: 'https://www.isc2.org/ethics', kind: 'article' },
     ],
@@ -42,7 +42,7 @@ export const domains: Domain[] = [
     ],
     resources: [
       { title: 'NIST SP 800-30 Rev.1 — Guide for Conducting Risk Assessments', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/30/r1/final', kind: 'pdf' },
-      { title: 'Risk Management Framework Explained', source: 'Cybrary', url: 'https://www.cybrary.it', kind: 'video' },
+      { title: 'NIST Risk Management Framework Implementation Step by Step', source: 'YouTube', url: 'https://www.youtube.com/watch?v=egDb4DxP7hQ', kind: 'video' },
       { title: 'NIST SP 800-39 — Managing Information Security Risk', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/39/final', kind: 'pdf' },
     ],
   },
@@ -62,7 +62,7 @@ export const domains: Domain[] = [
       'Supply chain risk at the system/component level (SBOM, provenance)',
     ],
     resources: [
-      { title: 'FIPS 199 Explained Simply', source: 'Destination Certification', url: 'https://www.youtube.com/@DestinationCertification', kind: 'video' },
+      { title: 'FIPS 199 & 200 Compliance: Comparing Security Standards', source: 'Ignyte Platform', url: 'https://www.ignyteplatform.com/blog/compliance/fips-199-200-compliance/', kind: 'article' },
       { title: 'FIPS 199 — Standards for Security Categorization', source: 'NIST', url: 'https://csrc.nist.gov/pubs/fips/199/final', kind: 'pdf' },
       { title: 'Cloud Shared Responsibility Model', source: 'CISA', url: 'https://www.cisa.gov/', kind: 'article' },
     ],
@@ -85,7 +85,7 @@ export const domains: Domain[] = [
     resources: [
       { title: 'NIST SP 800-53 Rev.5 — Security and Privacy Controls', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final', kind: 'pdf' },
       { title: 'NIST SP 800-53B — Control Baselines', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/53/b/final', kind: 'pdf' },
-      { title: 'Understanding the SSP', source: 'Cybrary', url: 'https://www.cybrary.it', kind: 'video' },
+      { title: 'How to Make a Useful SSP: System Security Plans That Work', source: 'UberEther', url: 'https://uberether.com/how-to-make-an-ssp/', kind: 'article' },
     ],
   },
   {
@@ -105,7 +105,7 @@ export const domains: Domain[] = [
     ],
     resources: [
       { title: 'NIST SP 800-53A Rev.5 — Assessing Security and Privacy Controls', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/53/a/r5/final', kind: 'pdf' },
-      { title: 'How to Write a POA&M', source: 'Kelly Handerhan (Cybrary)', url: 'https://www.cybrary.it', kind: 'video' },
+      { title: 'An Introduction to the Plan of Actions and Milestones (POA&M)', source: 'YouTube', url: 'https://www.youtube.com/watch?v=DmjRAJc2xXs', kind: 'video' },
     ],
   },
   {
@@ -125,7 +125,7 @@ export const domains: Domain[] = [
     ],
     resources: [
       { title: 'NIST SP 800-137 — Information Security Continuous Monitoring', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/137/final', kind: 'pdf' },
-      { title: 'The Authorization Decision Explained', source: 'Destination Certification', url: 'https://www.youtube.com/@DestinationCertification', kind: 'video' },
+      { title: 'Understanding Baselines and Impact Levels for FedRAMP Authorizations', source: 'FedRAMP.gov', url: 'https://www.fedramp.gov/rev5/baselines', kind: 'article' },
     ],
   },
   {
@@ -146,7 +146,7 @@ export const domains: Domain[] = [
     resources: [
       { title: 'NIST SP 800-61 Rev.2 — Computer Security Incident Handling Guide', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/61/r2/final', kind: 'pdf' },
       { title: 'NIST SP 800-34 Rev.1 — Contingency Planning Guide', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/34/r1/final', kind: 'pdf' },
-      { title: 'Incident Response Fundamentals', source: 'Cybrary', url: 'https://www.cybrary.it', kind: 'video' },
+      { title: 'Understanding the NIST SP 800-61 Incident Response Lifecycle, Simplified', source: 'YouTube', url: 'https://www.youtube.com/watch?v=BPQVaz6asdo', kind: 'video' },
     ],
   },
 ]
