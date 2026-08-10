@@ -8,8 +8,8 @@ export default function ExamPage() {
   useTrackVisit('/cgrc/exam', 'Full Practice Exam')
   const [started, setStarted] = useState(false)
 
-  // Bank currently has ~40 curated questions; the exam draws every question available,
-  // repeating the pool with fresh shuffles as more are added over time.
+  // The exam draws every curated question available in the bank (see src/data/quizzes.ts),
+  // shuffled fresh each attempt; the pool grows over time as more questions are added.
   const examQuestions = quizQuestions
 
   if (!started) {
@@ -23,7 +23,7 @@ export default function ExamPage() {
           <p className="mt-2 text-slate-500">
             {examQuestions.length} questions across all 7 domains, timed to simulate exam conditions.
           </p>
-          <p className="mt-1 text-sm text-slate-400">Time limit: 60 minutes</p>
+          <p className="mt-1 text-sm text-slate-400">Time limit: 90 minutes</p>
           <button
             onClick={() => setStarted(true)}
             className="mt-6 rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-700"
@@ -43,7 +43,7 @@ export default function ExamPage() {
         domainId="all"
         domainLabel="Full Practice Exam"
         mode="exam"
-        timedSeconds={60 * 60}
+        timedSeconds={90 * 60}
       />
     </div>
   )
