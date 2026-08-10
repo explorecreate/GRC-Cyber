@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { glossary, searchGlossary } from '../../data/glossary'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
+import MarkStudiedButton from '../../components/MarkStudiedButton'
 
 export default function Glossary() {
   useTrackVisit('/cgrc/glossary', 'Acronym Glossary')
@@ -10,9 +11,12 @@ export default function Glossary() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900">Acronym Glossary</h1>
-        <p className="mt-1 text-slate-500">RMF, ATO, POA&amp;M, SSP, ISCM, PII, FISMA, and more — searchable and filterable.</p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold text-slate-900">Acronym Glossary</h1>
+          <p className="mt-1 text-slate-500">RMF, ATO, POA&amp;M, SSP, ISCM, PII, FISMA, and more — searchable and filterable.</p>
+        </div>
+        <MarkStudiedButton topicId="glossary" />
       </div>
 
       <input

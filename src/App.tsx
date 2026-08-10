@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import CgrcHome from './pages/cgrc/CgrcHome'
 import DomainDetail from './pages/cgrc/DomainDetail'
+import Roadmap from './pages/cgrc/Roadmap'
 import Nist from './pages/cgrc/Nist'
 import Glossary from './pages/cgrc/Glossary'
 import Terms from './pages/cgrc/Terms'
@@ -25,6 +26,7 @@ export default function App() {
           <Route index element={<Dashboard />} />
 
           <Route path="cgrc" element={<CgrcHome />} />
+          <Route path="cgrc/roadmap" element={<Roadmap />} />
           <Route path="cgrc/nist" element={<Nist />} />
           <Route path="cgrc/glossary" element={<Glossary />} />
           <Route path="cgrc/terms" element={<Terms />} />

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { terms } from '../../data/terms'
 import { domains } from '../../data/domains'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
+import MarkStudiedButton from '../../components/MarkStudiedButton'
 
 export default function Terms() {
   useTrackVisit('/cgrc/terms', 'Terms to Know')
@@ -19,9 +20,12 @@ export default function Terms() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900">Terms to Know</h1>
-        <p className="mt-1 text-slate-500">Definition, real-world example, why it matters, how to apply it, and a memory tip — for each term.</p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold text-slate-900">Terms to Know</h1>
+          <p className="mt-1 text-slate-500">Definition, real-world example, why it matters, how to apply it, and a memory tip — for each term.</p>
+        </div>
+        <MarkStudiedButton topicId="terms" />
       </div>
 
       <div className="flex flex-wrap gap-3">

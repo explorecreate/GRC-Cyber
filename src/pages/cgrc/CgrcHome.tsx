@@ -13,6 +13,14 @@ export default function CgrcHome() {
         </p>
       </div>
 
+      <Link
+        to="/cgrc/roadmap"
+        className="block rounded-xl border border-brand-200 bg-brand-50 p-4 hover:bg-brand-100 transition"
+      >
+        <p className="font-semibold text-brand-800">🗺️ Not sure where to start? Follow the Study Roadmap</p>
+        <p className="text-sm text-brand-700/80">A suggested order through domains, vocabulary, practice, and the full exam — with milestones that track your progress</p>
+      </Link>
+
       <div className="grid gap-3 sm:grid-cols-2">
         <Link to="/cgrc/nist" className="rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-300 hover:shadow-sm transition">
           <p className="font-semibold text-slate-800">🧭 NIST &amp; RMF Deep-Dive</p>

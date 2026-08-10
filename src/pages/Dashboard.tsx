@@ -69,7 +69,8 @@ export default function Dashboard() {
         </div>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <QuickLink to="/cgrc/roadmap" title="Study Roadmap" desc="Not sure where to start? Follow the milestones" icon="🗺️" />
         <QuickLink to="/cgrc/quizzes" title="Practice Quizzes" desc="Domain-tagged, instant feedback" icon="📝" />
         <QuickLink to="/cgrc/exam" title="Full Practice Exam" desc="Timed, exam-simulation mode" icon="⏱️" />
         <QuickLink to="/ai" title="AI Learning Center" desc="LLMs, agents, RAG, AI governance" icon="🤖" />
