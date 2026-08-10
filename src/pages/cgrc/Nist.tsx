@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react'
 import { rmfSteps, nistPublications } from '../../data/nist'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
+import MarkStudiedButton from '../../components/MarkStudiedButton'
 
 export default function Nist() {
   useTrackVisit('/cgrc/nist', 'NIST & RMF Deep-Dive')
@@ -8,11 +9,14 @@ export default function Nist() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900">NIST &amp; RMF Deep-Dive</h1>
-        <p className="mt-1 text-slate-500">
-          The Risk Management Framework 7-step process, and the SP 800-series / FIPS publications behind it — explained plainly.
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold text-slate-900">NIST &amp; RMF Deep-Dive</h1>
+          <p className="mt-1 text-slate-500">
+            The Risk Management Framework 7-step process, and the SP 800-series / FIPS publications behind it — explained plainly.
+          </p>
+        </div>
+        <MarkStudiedButton topicId="nist-rmf" />
       </div>
 
       <div className="flex gap-2">
