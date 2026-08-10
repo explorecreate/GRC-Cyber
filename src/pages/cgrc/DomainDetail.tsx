@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { getDomain } from '../../data/domains'
 import { getTermsByDomain } from '../../data/terms'
 import ResourceList from '../../components/ResourceList'
+import TermCard from '../../components/TermCard'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
 import { isTopicStudied, markTopicStudied } from '../../lib/storage'
 import { useState } from 'react'
@@ -15,7 +16,7 @@ export default function DomainDetail() {
 
   if (!domain) return <Navigate to="/cgrc" replace />
 
-  const relatedTerms = getTermsByDomain(domain.id)
+  const domainTerms = getTermsByDomain(domain.id)
 
   return (
     <div className="space-y-6">
@@ -47,8 +48,36 @@ export default function DomainDetail() {
 
       <p className="text-slate-700 leading-relaxed">{domain.overview}</p>
 
+      {domain.aiNote && (
+        <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-violet-700">🤖 AI in this domain</p>
+          <p className="mt-1 text-sm text-violet-900">{domain.aiNote}</p>
+        </div>
+      )}
+
       <section>
-        <h2 className="mb-3 text-lg font-semibold text-slate-900">Key Concepts</h2>
+        <h2 className="mb-1 text-lg font-semibold text-slate-900">Domain Course</h2>
+        <p className="mb-3 text-sm text-slate-500">
+          A full walkthrough of this domain, not just a bullet-point summary — this is the material the quiz below
+          actually draws on.
+        </p>
+        <div className="space-y-3">
+          {domain.lessons.map((lesson) => (
+            <details key={lesson.title} className="group rounded-xl border border-slate-200 bg-white open:shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 font-medium text-slate-800">
+                {lesson.title}
+                <span className="ml-3 shrink-0 text-slate-400 transition-transform group-open:rotate-180">▾</span>
+              </summary>
+              <p className="border-t border-slate-100 px-4 py-3 text-sm leading-relaxed text-slate-700">
+                {lesson.body}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="mb-3 text-lg font-semibold text-slate-900">Key Concepts Checklist</h2>
         <ul className="space-y-2">
           {domain.keyConcepts.map((c) => (
             <li key={c} className="flex gap-2 text-slate-700">
@@ -59,25 +88,19 @@ export default function DomainDetail() {
         </ul>
       </section>
 
-      {domain.aiNote && (
-        <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-violet-700">🤖 AI in this domain</p>
-          <p className="mt-1 text-sm text-violet-900">{domain.aiNote}</p>
-        </div>
-      )}
-
-      {relatedTerms.length > 0 && (
+      {domainTerms.length > 0 && (
         <section>
-          <h2 className="mb-3 text-lg font-semibold text-slate-900">Related Terms</h2>
-          <div className="flex flex-wrap gap-2">
-            {relatedTerms.map((t) => (
-              <Link
-                key={t.id}
-                to="/cgrc/terms"
-                className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:border-brand-300"
-              >
-                {t.term}
-              </Link>
+          <h2 className="mb-1 text-lg font-semibold text-slate-900">Key Terms in This Domain</h2>
+          <p className="mb-3 text-sm text-slate-500">
+            The same depth as the master{' '}
+            <Link to="/cgrc/terms" className="text-brand-700 hover:underline">
+              Terms to Know
+            </Link>{' '}
+            page, filtered to just this domain.
+          </p>
+          <div className="space-y-4">
+            {domainTerms.map((t) => (
+              <TermCard key={t.id} term={t} />
             ))}
           </div>
         </section>

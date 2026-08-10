@@ -4,6 +4,7 @@ import { domains } from '../../data/domains'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
 import MarkStudiedButton from '../../components/MarkStudiedButton'
 import FlashcardDeck from '../../components/FlashcardDeck'
+import TermCard from '../../components/TermCard'
 
 export default function Terms() {
   useTrackVisit('/cgrc/terms', 'Terms to Know')
@@ -74,29 +75,11 @@ export default function Terms() {
       ) : (
         <div className="space-y-4">
           {filtered.map((t) => (
-            <article key={t.id} className="rounded-xl border border-slate-200 bg-white p-5">
-              <h2 className="text-lg font-semibold text-slate-900">{t.term}</h2>
-              <dl className="mt-3 space-y-3 text-sm">
-                <Row label="Definition" value={t.definition} />
-                <Row label="Real-world example" value={t.example} />
-                <Row label="Why it matters" value={t.whyItMatters} />
-                <Row label="How to apply it" value={t.howToApply} />
-                <Row label="Memory tip" value={t.memoryTip} highlight />
-              </dl>
-            </article>
+            <TermCard key={t.id} term={t} />
           ))}
           {filtered.length === 0 && <p className="text-slate-500">No matching terms.</p>}
         </div>
       )}
-    </div>
-  )
-}
-
-function Row({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
-  return (
-    <div>
-      <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">{label}</dt>
-      <dd className={`mt-0.5 ${highlight ? 'text-brand-700 font-medium' : 'text-slate-700'}`}>{value}</dd>
     </div>
   )
 }

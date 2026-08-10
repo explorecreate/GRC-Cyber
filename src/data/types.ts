@@ -5,6 +5,11 @@ export interface ResourceLink {
   kind: 'video' | 'article' | 'pdf' | 'doc'
 }
 
+export interface DomainLesson {
+  title: string
+  body: string
+}
+
 export interface Domain {
   id: string
   number: number
@@ -13,6 +18,7 @@ export interface Domain {
   rmfStep: string // the RMF step this domain corresponds to, e.g. "Prepare"
   overview: string
   keyConcepts: string[]
+  lessons: DomainLesson[] // a short mini-course walking through the domain in depth, not just bullet points
   aiNote?: string // how AI-specific tasks/subtasks show up in this domain per the current exam outline
   resources: ResourceLink[]
 }
