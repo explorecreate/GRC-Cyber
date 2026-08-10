@@ -10,13 +10,20 @@ export default function AiHome() {
         <p className="mt-1 text-slate-500">Fundamentals of AI, and a running feed of what AI is doing beyond apps and chatbots.</p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link to="/ai/learning" className="rounded-2xl border border-slate-200 bg-white p-6 hover:border-brand-300 hover:shadow-sm transition">
           <span className="text-3xl">🧠</span>
           <h2 className="mt-3 font-semibold text-slate-900">Learning AI</h2>
           <p className="mt-1 text-sm text-slate-500">
-            LLMs, prompting, agents, RAG, and AI governance — including how the NIST AI RMF ties back to what you're
-            already learning for CGRC.
+            LLMs, prompting, agents, and RAG — the fundamentals behind everything else in this section.
+          </p>
+        </Link>
+        <Link to="/ai/rmf" className="rounded-2xl border border-slate-200 bg-white p-6 hover:border-brand-300 hover:shadow-sm transition">
+          <span className="text-3xl">🧭</span>
+          <h2 className="mt-3 font-semibold text-slate-900">NIST AI RMF Deep-Dive</h2>
+          <p className="mt-1 text-sm text-slate-500">
+            Govern, Map, Measure, Manage — the AI-governance counterpart to the security RMF, mapped step-by-step
+            back to what you already know for CGRC.
           </p>
         </Link>
         <Link to="/ai/beyond" className="rounded-2xl border border-slate-200 bg-white p-6 hover:border-brand-300 hover:shadow-sm transition">

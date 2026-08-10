@@ -11,6 +11,7 @@ import QuizPage from './pages/cgrc/QuizPage'
 import ExamPage from './pages/cgrc/ExamPage'
 import AiHome from './pages/ai/AiHome'
 import LearningAi from './pages/ai/LearningAi'
+import AiRmf from './pages/ai/AiRmf'
 import BeyondApps from './pages/ai/BeyondApps'
 import UmgcHome from './pages/umgc/UmgcHome'
 import CourseDetail from './pages/umgc/CourseDetail'
@@ -34,6 +35,7 @@ export default function App() {
 
           <Route path="ai" element={<AiHome />} />
           <Route path="ai/learning" element={<LearningAi />} />
+          <Route path="ai/rmf" element={<AiRmf />} />
           <Route path="ai/beyond" element={<BeyondApps />} />
 
           <Route path="umgc" element={<UmgcHome />} />
