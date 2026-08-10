@@ -34,6 +34,13 @@ export default function LearningAi() {
           </a>
         ))}
       </div>
+
+      <Link
+        to="/ai/rmf"
+        className="block rounded-xl border border-brand-200 bg-brand-50 p-4 text-center font-medium text-brand-700 hover:bg-brand-100"
+      >
+        Go deeper: NIST AI RMF (Govern, Map, Measure, Manage) →
+      </Link>
     </div>
   )
 }
