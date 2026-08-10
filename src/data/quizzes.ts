@@ -1469,6 +1469,107 @@ export const quizQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation: 'Implementation and verification are separate steps — a control isn\'t "proven" until it\'s been independently assessed, even if the team implementing it believes it works.',
   },
+
+  // ---- Rounding out the bank to the exam's real 125-item count ----
+  {
+    id: 'gov-19',
+    domainId: 'governance',
+    question: 'The Job Task Analysis (JTA) that ISC2 periodically conducts for CGRC exists to:',
+    options: [
+      'Set individual candidates\' exam dates',
+      'Determine the tasks security professionals actually perform, keeping the exam relevant to current practice',
+      'Replace the need for the Code of Ethics',
+      'Certify testing centers',
+    ],
+    correctIndex: 1,
+    explanation: 'The JTA is a methodical process ISC2 uses to keep exam content aligned with what practicing CGRC-scope professionals actually do — it\'s why domain outlines get refreshed over time.',
+  },
+  {
+    id: 'scope-14',
+    domainId: 'scope',
+    question: 'When a third-party foundation model is accessed only via API (no code hosted on your infrastructure), current CGRC scoping guidance treats it as:',
+    options: [
+      'Automatically outside any authorization boundary consideration',
+      'A dependency worth scoping consideration, similar to other supply-chain/third-party risk',
+      'Irrelevant unless it\'s a government-built model',
+      'Something that eliminates the need for categorization',
+    ],
+    correctIndex: 1,
+    explanation: 'Even without hosting any code yourself, relying on an external model introduces a real dependency and risk that scoping should account for — conceptually similar to any other third-party service.',
+  },
+  {
+    id: 'sel-15',
+    domainId: 'control-selection',
+    question: 'Choosing which controls address "black box" AI model risk and explainability requirements happens primarily during which RMF step?',
+    options: ['Categorize', 'Select', 'Monitor', 'Authorize'],
+    correctIndex: 1,
+    explanation: 'Deciding which controls (or AI-specific overlays) will address explainability and model transparency is a Select-step decision, made before those controls are actually built.',
+  },
+  {
+    id: 'impl-18',
+    domainId: 'control-implementation',
+    question: 'Which of these is the clearest example of an Implementation-domain activity rather than a Selection-domain one?',
+    options: [
+      'Deciding a Moderate baseline applies to the system',
+      'Configuring the specific password-length parameter on the live authentication system',
+      'Choosing to tailor out a physical-access control for a cloud-only system',
+      'Approving the initial control set with stakeholders',
+    ],
+    correctIndex: 1,
+    explanation: 'Actually configuring the live system to enforce a specific parameter value is hands-on implementation — the other options are all decisions made during Selection.',
+  },
+  {
+    id: 'impl-19',
+    domainId: 'control-implementation',
+    question: 'A control marked "planned" rather than "implemented" in the SSP means:',
+    options: [
+      'The control is fully operational today',
+      'The control is intended but not yet actually built/deployed — it should not be treated as providing protection yet',
+      'The control has already passed assessment',
+      'The control was rejected during selection',
+    ],
+    correctIndex: 1,
+    explanation: '"Planned" status is an honest signal that the control doesn\'t yet exist in practice — treating a planned control as if it were protecting the system is a common and dangerous documentation error.',
+  },
+  {
+    id: 'aa-13',
+    domainId: 'assessment-audit',
+    question: 'A Security Control Assessor (SCA) is best described as:',
+    options: [
+      'The system owner performing a self-review',
+      'The individual or team responsible for conducting the independent, comprehensive assessment of a system\'s controls',
+      'A synonym for the Authorizing Official',
+      'The vendor who built the system',
+    ],
+    correctIndex: 1,
+    explanation: 'The SCA leads the independent assessment — distinct from the system owner or AO — which is part of what makes the resulting SAR credible.',
+  },
+  {
+    id: 'sc-10',
+    domainId: 'system-compliance',
+    question: 'FedRAMP\'s use of 3PAOs (Third-Party Assessment Organizations) exists primarily to:',
+    options: [
+      'Eliminate the need for an authorization decision entirely',
+      'Provide independent, accredited assessment that supports a credible System Compliance decision',
+      'Replace the cloud service provider\'s own staff',
+      'Set the system\'s FIPS 199 categorization',
+    ],
+    correctIndex: 1,
+    explanation: '3PAOs give FedRAMP authorizing officials independent, accredited assessment results to base their compliance decision on — reinforcing the AO\'s decision rather than replacing it.',
+  },
+  {
+    id: 'cm-17',
+    domainId: 'compliance-maintenance',
+    question: 'A system reaching end-of-life should trigger which Compliance Maintenance activity?',
+    options: [
+      'Nothing — expired systems require no further action',
+      'Secure decommissioning and disposal, including data sanitization and updating the system inventory',
+      'An immediate new FIPS 199 categorization',
+      'Automatic renewal of the existing ATO indefinitely',
+    ],
+    correctIndex: 1,
+    explanation: 'Maintaining compliance includes the end of a system\'s life — secure decommissioning, data sanitization, and inventory updates are part of the Monitor-step responsibilities, not an afterthought.',
+  },
 ]
 
 export function getQuestionsByDomain(domainId: string): QuizQuestion[] {
