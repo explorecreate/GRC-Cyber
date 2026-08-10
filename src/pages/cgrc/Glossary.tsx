@@ -1,21 +1,12 @@
 import { useMemo, useState } from 'react'
-import { glossary } from '../../data/glossary'
+import { glossary, searchGlossary } from '../../data/glossary'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
 
 export default function Glossary() {
   useTrackVisit('/cgrc/glossary', 'Acronym Glossary')
   const [query, setQuery] = useState('')
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    if (!q) return glossary
-    return glossary.filter(
-      (g) =>
-        g.acronym.toLowerCase().includes(q) ||
-        g.expansion.toLowerCase().includes(q) ||
-        g.definition.toLowerCase().includes(q),
-    )
-  }, [query])
+  const filtered = useMemo(() => searchGlossary(query), [query])
 
   return (
     <div className="space-y-6">

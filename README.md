@@ -1,4 +1,4 @@
-# GRC
+# GRC-Cyber
 
 A free, open-access study hub — no login required. Built with React, TypeScript, Tailwind CSS, and React Router.
 

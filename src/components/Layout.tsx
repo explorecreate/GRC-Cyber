@@ -16,7 +16,7 @@ export default function Layout() {
         <div className="px-5 py-5 border-b border-slate-200">
           <NavLink to="/" className="flex items-center gap-2 font-bold text-lg text-brand-700">
             <span className="text-2xl">📘</span>
-            <span>GRC</span>
+            <span>GRC-Cyber</span>
           </NavLink>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
@@ -59,7 +59,7 @@ export default function Layout() {
         </main>
 
         <footer className="hidden md:block border-t border-slate-200 px-8 py-4 text-xs text-slate-400">
-          GRC — free CGRC exam prep, AI fundamentals, and UMGC coursework prep. Not affiliated with ISC2 or UMGC.
+          GRC-Cyber — free CGRC exam prep, AI fundamentals, and UMGC coursework prep. Not affiliated with ISC2 or UMGC.
         </footer>
       </div>
 
