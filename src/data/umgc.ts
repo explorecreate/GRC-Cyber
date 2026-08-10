@@ -13,6 +13,7 @@ export const umgcCourses: UmgcCourse[] = [
       'Federal Enterprise Architecture and IT governance',
       'Government-specific compliance frameworks (FedRAMP, Circular A-130)',
       'Case studies of federal agency breaches and policy responses',
+      'The role of Inspectors General (IG) and GAO in oversight and reporting',
     ],
     resources: [
       { title: 'CISA — About the Agency', source: 'CISA', url: 'https://www.cisa.gov/about', kind: 'article' },
@@ -33,6 +34,7 @@ export const umgcCourses: UmgcCourse[] = [
       'Strategic vs. tactical vs. operational planning',
       'Plans of Action — turning findings into remediation programs',
       'Metrics and reporting for security program effectiveness',
+      'Stakeholder communication: translating technical risk into business language for leadership',
     ],
     resources: [
       { title: 'NIST SP 800-100 — Information Security Handbook: A Guide for Managers', source: 'NIST', url: 'https://csrc.nist.gov/pubs/sp/800/100/final', kind: 'pdf' },
@@ -52,6 +54,7 @@ export const umgcCourses: UmgcCourse[] = [
       'NIST AI Risk Management Framework as an evaluation model',
       'Cost-benefit and maturity-model approaches to adoption decisions',
       'Ethical and societal impact considerations in technology evaluation',
+      'Pilot programs and phased-adoption strategies for reducing rollout risk',
     ],
     resources: [
       { title: 'NIST AI Risk Management Framework', source: 'NIST', url: 'https://www.nist.gov/itl/ai-risk-management-framework', kind: 'article' },

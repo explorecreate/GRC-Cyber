@@ -799,6 +799,283 @@ export const quizQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation: 'COOP is a federal-agency-focused continuity plan specifically ensuring essential functions and leadership succession continue during emergencies.',
   },
+  // ---- Governance (added) ----
+  {
+    id: 'gov-13',
+    domainId: 'governance',
+    question: 'Which role has ultimate accountability for accepting residual risk on behalf of the organization?',
+    options: ['System Owner', 'Authorizing Official (AO)', 'Security Control Assessor', 'Help desk technician'],
+    correctIndex: 1,
+    explanation: 'The Authorizing Official formally accepts residual risk and grants (or denies) the authorization to operate; other roles support that decision but do not own it.',
+  },
+  {
+    id: 'gov-14',
+    domainId: 'governance',
+    question: 'A "guideline" in the security documentation hierarchy is:',
+    options: [
+      'A mandatory, enforceable rule',
+      'A recommended but not mandatory practice',
+      'A legal statute',
+      'A contractual obligation with a vendor',
+    ],
+    correctIndex: 1,
+    explanation: 'Guidelines offer recommended approaches and flexibility; unlike policies and standards, they are not mandatory.',
+  },
+  {
+    id: 'gov-15',
+    domainId: 'governance',
+    question: 'Separation of duties is primarily intended to:',
+    options: [
+      'Speed up approval workflows',
+      'Reduce the risk of fraud or error by requiring more than one person to complete a sensitive process',
+      'Eliminate the need for audit logging',
+      'Reduce staffing costs',
+    ],
+    correctIndex: 1,
+    explanation: 'Separation of duties splits critical tasks among multiple people so no single individual can complete a sensitive process alone, reducing fraud and error risk.',
+  },
+  {
+    id: 'gov-16',
+    domainId: 'governance',
+    question: 'Which of the following best describes "due diligence" in a governance context?',
+    options: [
+      'Reacting to an incident after it occurs',
+      'The ongoing research and investigation an organization performs before making a risk-based decision',
+      'A one-time signature on a policy document',
+      'Outsourcing all security responsibility to a vendor',
+    ],
+    correctIndex: 1,
+    explanation: 'Due diligence is the reasonable investigation and research performed before acting (e.g., before signing a vendor contract), distinct from "due care," which is acting on that information responsibly.',
+  },
+
+  // ---- Risk Management (added) ----
+  {
+    id: 'risk-13',
+    domainId: 'risk-management',
+    question: 'In qualitative risk analysis, risk is typically expressed as:',
+    options: [
+      'A dollar value derived from Annualized Loss Expectancy',
+      'Relative ratings such as High/Medium/Low',
+      'A percentage of IT budget',
+      'A federal compliance score',
+    ],
+    correctIndex: 1,
+    explanation: 'Qualitative analysis uses relative, descriptive ratings (High/Medium/Low) rather than the precise monetary figures used in quantitative analysis.',
+  },
+  {
+    id: 'risk-14',
+    domainId: 'risk-management',
+    question: 'Single Loss Expectancy (SLE) is calculated as:',
+    options: [
+      'Asset Value x Exposure Factor',
+      'Annualized Rate of Occurrence x Asset Value',
+      'Asset Value / Exposure Factor',
+      'Threat likelihood x number of vulnerabilities',
+    ],
+    correctIndex: 0,
+    explanation: 'SLE = Asset Value (AV) x Exposure Factor (EF), the expected monetary loss from a single occurrence of a risk event.',
+  },
+  {
+    id: 'risk-15',
+    domainId: 'risk-management',
+    question: 'Which risk response strategy is illustrated by purchasing cyber-insurance?',
+    options: ['Risk avoidance', 'Risk transfer', 'Risk acceptance', 'Risk mitigation'],
+    correctIndex: 1,
+    explanation: 'Buying insurance shifts financial impact to a third party — a classic example of risk transfer.',
+  },
+  {
+    id: 'risk-16',
+    domainId: 'risk-management',
+    question: 'The NIST Risk Management Framework (RMF) is documented primarily in which publication?',
+    options: ['SP 800-30', 'SP 800-37', 'SP 800-53', 'SP 800-171'],
+    correctIndex: 1,
+    explanation: 'SP 800-37 defines the RMF and its seven steps (Prepare, Categorize, Select, Implement, Assess, Authorize, Monitor).',
+  },
+
+  // ---- Third-Party Risk (added) ----
+  {
+    id: 'tpr-10',
+    domainId: 'third-party-risk',
+    question: 'A Service Organization Control (SOC) 2 report is most commonly used to:',
+    options: [
+      'Certify a product meets FIPS 140-2 cryptographic standards',
+      'Provide independent assurance about a service provider\'s controls relevant to security, availability, or confidentiality',
+      'Replace the need for a vendor contract',
+      'Grant an Authorization to Operate automatically',
+    ],
+    correctIndex: 1,
+    explanation: 'SOC 2 reports give customers independent, auditor-attested assurance about a service organization\'s controls across relevant trust service criteria.',
+  },
+  {
+    id: 'tpr-11',
+    domainId: 'third-party-risk',
+    question: 'Which contractual element defines the minimum expected service levels (e.g., uptime, response times) from a vendor?',
+    options: ['NDA', 'SLA', 'MOU', 'EULA'],
+    correctIndex: 1,
+    explanation: 'A Service Level Agreement (SLA) specifies measurable performance and service commitments a vendor is contractually obligated to meet.',
+  },
+  {
+    id: 'tpr-12',
+    domainId: 'third-party-risk',
+    question: 'Fourth-party risk refers to:',
+    options: [
+      'Risk from an organization\'s own employees',
+      'Risk introduced by a vendor\'s own subcontractors/suppliers',
+      'Risk from natural disasters only',
+      'Risk that has already been fully mitigated',
+    ],
+    correctIndex: 1,
+    explanation: 'Fourth-party risk is the risk an organization inherits indirectly through the vendors that its own third parties rely on.',
+  },
+
+  // ---- Controls (added) ----
+  {
+    id: 'ctrl-10',
+    domainId: 'controls',
+    question: 'A control baseline in SP 800-53 is best described as:',
+    options: [
+      'A random selection of controls',
+      'A pre-defined starting set of controls associated with a system\'s security categorization (Low/Moderate/High)',
+      'A list of controls that never require tailoring',
+      'A vendor-specific technical standard',
+    ],
+    correctIndex: 1,
+    explanation: 'Baselines provide a starting point of controls tied to impact level, which organizations then tailor to their specific environment and risk.',
+  },
+  {
+    id: 'ctrl-11',
+    domainId: 'controls',
+    question: 'Which control type is a security awareness training program?',
+    options: ['Technical', 'Physical', 'Administrative', 'Detective only'],
+    correctIndex: 2,
+    explanation: 'Awareness training is an administrative (management) control — a policy/process-based safeguard rather than a technical or physical one.',
+  },
+  {
+    id: 'ctrl-12',
+    domainId: 'controls',
+    question: 'A "compensating control" is used when:',
+    options: [
+      'The organization wants to remove a requirement entirely',
+      'A prescribed control cannot be implemented as specified, so an alternative control providing equivalent protection is applied',
+      'A control fails an audit with no remediation needed',
+      'Only during the Prepare step of the RMF',
+    ],
+    correctIndex: 1,
+    explanation: 'Compensating controls provide equivalent or comparable protection when the originally specified control cannot be implemented, and must be justified and documented.',
+  },
+
+  // ---- Assessment & Audit (added) ----
+  {
+    id: 'aa-9',
+    domainId: 'assessment-audit',
+    question: 'The Security Assessment Report (SAR) is produced during which RMF step?',
+    options: ['Categorize', 'Select', 'Assess', 'Monitor'],
+    correctIndex: 2,
+    explanation: 'The SAR documents the assessor\'s findings on control effectiveness and is the key output of the Assess step.',
+  },
+  {
+    id: 'aa-10',
+    domainId: 'assessment-audit',
+    question: 'Penetration testing differs from a vulnerability scan primarily in that it:',
+    options: [
+      'Only reads configuration files',
+      'Actively attempts to exploit identified weaknesses to demonstrate real-world impact',
+      'Is always automated with no human involvement',
+      'Cannot be scoped or authorized in advance',
+    ],
+    correctIndex: 1,
+    explanation: 'A pen test goes beyond identifying vulnerabilities (as a scan does) by actively attempting exploitation to show real impact and attack paths.',
+  },
+  {
+    id: 'aa-11',
+    domainId: 'assessment-audit',
+    question: 'An audit finding that a control is "not implemented" versus "partially implemented" affects the assessment primarily by:',
+    options: [
+      'Having no effect on the risk determination',
+      'Changing the residual risk calculation and often triggering a Plan of Action and Milestones (POA&M)',
+      'Automatically revoking the Authorization to Operate immediately',
+      'Only being relevant to physical controls',
+    ],
+    correctIndex: 1,
+    explanation: 'Gaps identified during assessment typically drive a POA&M documenting how and when the deficiency will be remediated, and factor into residual risk.',
+  },
+
+  // ---- Authorization (added) ----
+  {
+    id: 'auth-9',
+    domainId: 'authorization',
+    question: 'An Authorization to Operate (ATO) is best defined as:',
+    options: [
+      'A vendor warranty',
+      'The AO\'s formal, documented decision to accept the risk of operating a system based on the security assessment',
+      'A certificate issued by a third-party auditor with no organizational involvement',
+      'A one-time technical scan report',
+    ],
+    correctIndex: 1,
+    explanation: 'An ATO is the AO\'s risk-based, documented management decision — not merely a technical artifact — to authorize a system to operate.',
+  },
+  {
+    id: 'auth-10',
+    domainId: 'authorization',
+    question: 'An "Authorization to Operate with Conditions" typically means:',
+    options: [
+      'The system is denied authorization outright',
+      'The AO accepts the risk but requires specific remediation actions within a defined timeframe',
+      'No further monitoring is required',
+      'The system may only be operated by contractors',
+    ],
+    correctIndex: 1,
+    explanation: 'Conditional authorizations let a system operate while specific, time-bound remediation items (tracked in the POA&M) are addressed.',
+  },
+  {
+    id: 'auth-11',
+    domainId: 'authorization',
+    question: 'Ongoing Authorization (as opposed to a static, point-in-time ATO) relies most heavily on which RMF step?',
+    options: ['Categorize', 'Select', 'Implement', 'Monitor'],
+    correctIndex: 3,
+    explanation: 'Ongoing/continuous authorization depends on robust continuous monitoring data to keep the AO\'s risk picture current between full reassessments.',
+  },
+
+  // ---- Incident Management (added) ----
+  {
+    id: 'im-10',
+    domainId: 'incident-management',
+    question: 'The order of volatility in digital forensics guides responders to collect evidence:',
+    options: [
+      'In alphabetical order by file name',
+      'From most volatile (e.g., RAM, network state) to least volatile (e.g., archived media)',
+      'Only from disk images, never memory',
+      'Randomly, since order does not matter',
+    ],
+    correctIndex: 1,
+    explanation: 'Order of volatility prioritizes capturing the most easily lost evidence first — RAM and network connections before disk, backups, or archives.',
+  },
+  {
+    id: 'im-11',
+    domainId: 'incident-management',
+    question: 'A Recovery Time Objective (RTO) defines:',
+    options: [
+      'The maximum acceptable amount of data loss measured in time',
+      'The maximum acceptable time to restore a system/process after a disruption',
+      'The total cost of a disaster recovery plan',
+      'The frequency of employee security training',
+    ],
+    correctIndex: 1,
+    explanation: 'RTO is how long a system or business process can be down before the impact becomes unacceptable. (RPO, by contrast, measures acceptable data loss.)',
+  },
+  {
+    id: 'im-12',
+    domainId: 'incident-management',
+    question: 'Chain of custody documentation exists primarily to:',
+    options: [
+      'Track vendor invoices',
+      'Preserve the integrity and admissibility of evidence by recording who handled it and when',
+      'Replace the need for an incident response plan',
+      'Assign blame to a specific employee',
+    ],
+    correctIndex: 1,
+    explanation: 'Chain of custody records every person who handled evidence and when, which is essential to proving the evidence was not altered or tampered with.',
+  },
 ]
 
 export function getQuestionsByDomain(domainId: string): QuizQuestion[] {
