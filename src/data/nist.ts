@@ -145,4 +145,54 @@ export const nistPublications: NistItem[] = [
       'FIPS 200: minimum security requirements across 17 security-related areas, satisfied via SP 800-53 controls',
     ],
   },
+  {
+    id: '800-60',
+    title: 'NIST SP 800-60 Vol. 1 & 2',
+    summary: 'Guide for Mapping Types of Information and Information Systems to Security Categories — the companion reference used alongside FIPS 199.',
+    points: [
+      'Provides pre-defined provisional impact levels for common federal information types',
+      'Volume 1 covers the categorization methodology; Volume 2 is the information-type reference tables',
+      'Helps ensure consistent categorization decisions across agencies',
+    ],
+  },
+  {
+    id: '800-39',
+    title: 'NIST SP 800-39',
+    summary: 'Managing Information Security Risk — establishes the three-tiered risk management approach the RMF sits inside.',
+    points: [
+      'Defines risk management at Tier 1 (organization), Tier 2 (mission/business process), Tier 3 (information system)',
+      'Introduces the risk management cycle: Frame, Assess, Respond, Monitor',
+      'Positions the RMF (SP 800-37) as the Tier 3 implementation of this broader strategy',
+    ],
+  },
+  {
+    id: '800-137',
+    title: 'NIST SP 800-137',
+    summary: 'Information Security Continuous Monitoring (ISCM) for Federal Information Systems and Organizations.',
+    points: [
+      'Defines a 6-step ISCM process: Define, Establish, Implement, Analyze/Report, Respond, Review/Update',
+      'Drives the Monitor step of the RMF and supports ongoing/continuous authorization',
+      'Covers metrics, status reporting, and automated data feeds (e.g., via SCAP)',
+    ],
+  },
+  {
+    id: '800-171',
+    title: 'NIST SP 800-171 Rev.2',
+    summary: 'Protecting Controlled Unclassified Information (CUI) in Nonfederal Systems and Organizations.',
+    points: [
+      'Applies to contractors and nonfederal organizations handling federal CUI',
+      'A streamlined subset (14 families) derived from the SP 800-53 moderate baseline',
+      'Foundation for DoD\'s CMMC (Cybersecurity Maturity Model Certification) requirements',
+    ],
+  },
+  {
+    id: '800-61',
+    title: 'NIST SP 800-61 Rev.2',
+    summary: 'Computer Security Incident Handling Guide — the standard reference for incident response process.',
+    points: [
+      'Defines the incident response lifecycle: Preparation, Detection & Analysis, Containment/Eradication/Recovery, Post-Incident Activity',
+      'Covers incident categorization, prioritization, and coordination/reporting',
+      'Feeds directly into Domain 7 (Continuity, DR, and Incident Management)',
+    ],
+  },
 ]

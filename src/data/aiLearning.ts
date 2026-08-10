@@ -43,6 +43,20 @@ export const learningAiResources: AiResource[] = [
     kind: 'article',
     blurb: 'Free primers on governing AI systems — risk, accountability, and oversight structures for organizations deploying AI.',
   },
+  {
+    title: 'Model Context Protocol (MCP) Explained',
+    source: 'Anthropic',
+    url: 'https://modelcontextprotocol.io/',
+    kind: 'article',
+    blurb: 'The open standard for connecting AI models to external tools and data sources — increasingly relevant to how agentic systems are governed and audited.',
+  },
+  {
+    title: 'A Hackers\' Guide to AI',
+    source: 'Anthropic',
+    url: 'https://www.anthropic.com/news',
+    kind: 'article',
+    blurb: 'Practical grounding in how modern AI systems can be probed and misused — useful context for anyone assessing AI system risk.',
+  },
 ]
 
 export const useCases: UseCaseCard[] = [
@@ -90,5 +104,23 @@ export const useCases: UseCaseCard[] = [
     source: 'General industry coverage',
     url: 'https://www.nature.com/subjects/machine-learning',
     added: '2026-03-10',
+  },
+  {
+    id: 'ai-governance-tooling',
+    title: 'AI Governance & Compliance Tooling',
+    category: 'Governance',
+    summary: 'Purpose-built platforms for AI model inventory, risk scoring, and policy enforcement — the AI-era equivalent of GRC tooling, mapping model risk to frameworks like the NIST AI RMF.',
+    source: 'General industry coverage',
+    url: 'https://www.nist.gov/itl/ai-risk-management-framework',
+    added: '2026-07-10',
+  },
+  {
+    id: 'agentic-coding',
+    title: 'Agentic Software Development',
+    category: 'Workflow Automation',
+    summary: 'AI coding agents that read a codebase, plan multi-file changes, run tests, and open pull requests with minimal human steering — reshaping how software gets built and reviewed.',
+    source: 'Anthropic — Claude Code docs',
+    url: 'https://docs.claude.com/en/docs/claude-code',
+    added: '2026-07-28',
   },
 ]
