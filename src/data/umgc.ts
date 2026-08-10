@@ -8,7 +8,7 @@ export const umgcCourses: UmgcCourse[] = [
     credits: 3,
     prerequisites: 'CSIA 350',
     overview:
-      'A study of cybersecurity management and governance in the context of the missions, functions, and operations of federal, state, and municipal government agencies, departments, and programs. Covers the policy life cycle and the mechanisms governments use to formulate and implement laws, policies, regulations, and treaties to protect and defend government operations and society against cyberattacks and crimes, both foreign and domestic.',
+      'How government agencies at the federal, state, and city level manage cybersecurity. Covers how laws, policies, and regulations get written and put into practice to protect government systems and the public from cyberattacks, both foreign and domestic.',
     keyTopics: [
       'Federal cybersecurity governance structure (DHS, CISA, NIST, OMB roles)',
       'FISMA requirements and agency reporting obligations',
@@ -21,7 +21,7 @@ export const umgcCourses: UmgcCourse[] = [
       {
         title: 'Cybersecurity Risk Research Report: Open Government Data',
         summary:
-          'A common CSIA 360 project casts you as a cybersecurity consultant hired by a federal agency to research and write a short report on the cybersecurity risks of Open Data initiatives under the OPEN Government Data Act. You research and summarize confidentiality, integrity, availability, authenticity, and non-repudiation issues that arise when agencies publish datasets on sites like data.gov, weigh those risks against the benefits of open data for businesses and the public, and pull in relevant OMB guidance (e.g., memoranda on managing information as an asset) and NIST publications (FIPS 199 categorization is a common reference point). The report typically closes with practical recommendations for balancing transparency with security and privacy.',
+          'A common project in this course: you act as a cybersecurity consultant hired by a federal agency, researching the cybersecurity risks of publishing Open Data on sites like data.gov. You look at issues like confidentiality, data integrity, and accuracy, weigh those risks against the benefits of open data, and reference relevant OMB and NIST guidance. It usually wraps up with practical recommendations for balancing openness with security and privacy.',
       },
     ],
     resources: [
@@ -39,7 +39,7 @@ export const umgcCourses: UmgcCourse[] = [
     credits: 3,
     prerequisites: 'CSIA 360',
     overview:
-      'A study of applying cybersecurity principles, frameworks, standards, and best practices to organization-level strategies, policies, programs, plans, procedures, and processes. Includes content designed to help prepare for the IAPP Certified Information Privacy Professional/US (CIPP/US) certification. Covers principles and best practices for protecting privacy and ensuring compliance with laws and regulations.',
+      'How to apply cybersecurity principles and best practices to real organizational strategy, policy, and programs. Includes content that helps prepare for the IAPP CIPP/US privacy certification, and covers how to protect privacy and stay compliant with laws and regulations.',
     keyTopics: [
       'Policy development lifecycle: drafting, review, approval, dissemination, enforcement',
       'Security program management and organizational structure',
@@ -52,22 +52,22 @@ export const umgcCourses: UmgcCourse[] = [
       {
         title: 'Enterprise Security Policy Writing',
         summary:
-          'Draft one or more formal security policies for an organization-level scenario — practicing the structure, tone, and enforceability language expected of a real enterprise policy document, not just a summary of best practices.',
+          'Write one or more real security policies for a made-up organization — practicing the structure and tone of an actual enterprise policy document, not just summarizing best practices.',
       },
       {
         title: 'Security Program Metrics & Measures',
         summary:
-          'Develop a set of metrics and measures an organization could use to track the effectiveness of its information security program over time, and justify why each metric is meaningful to report to leadership.',
+          'Come up with a set of metrics an organization could use to track how well its security program is working over time, and explain why each one is worth reporting to leadership.',
       },
       {
         title: 'Compliance Audit Plan',
         summary:
-          'Plan an audit of an organization\'s compliance practices and processes against a named framework or regulation, defining scope, methods, and what a finding would look like.',
+          'Plan an audit checking an organization\'s compliance against a specific framework or regulation — deciding scope, methods, and what a finding would actually look like.',
       },
       {
         title: 'Organization-Level Security Policy for Enterprise IT Governance',
         summary:
-          'Develop a broader enterprise IT governance security policy that ties together the strategic and operational planning concepts covered earlier in the course.',
+          'Write a broader enterprise IT governance policy that pulls together the strategic and operational planning ideas covered earlier in the course.',
       },
     ],
     resources: [
@@ -84,7 +84,7 @@ export const umgcCourses: UmgcCourse[] = [
     credits: 3,
     prerequisites: 'CMIT 320 and CSIA 350',
     overview:
-      'A survey of emerging and leading technologies in the cybersecurity field. The aim is to research, evaluate, and recommend emerging technologies and determine secure implementation strategies for best-fit business solutions. Topics include evolutionary technology development and adoption in organizations. You\'ll build these skills across the term through an annotated bibliography, a white paper, an executive presentation, and an implementation plan.',
+      'A look at emerging and cutting-edge technologies in cybersecurity. The goal is to research a technology, evaluate whether it\'s a good fit for a business, and figure out how to roll it out securely. You\'ll build these skills through an annotated bibliography, a white paper, a presentation, and an implementation plan.',
     keyTopics: [
       'Technology risk assessment frameworks and evaluation criteria',
       'Building-block / foundational technologies underlying emerging tech',
@@ -99,22 +99,22 @@ export const umgcCourses: UmgcCourse[] = [
       {
         title: 'Annotated Bibliography',
         summary:
-          'Research and annotate a set of credible sources on an emerging technology of interest, building the evidence base you\'ll draw on for the rest of the term\'s deliverables.',
+          'Research a set of credible sources on an emerging technology you\'re interested in, with notes on each one — building the evidence base you\'ll use for the rest of the term\'s work.',
       },
       {
         title: 'White Paper',
         summary:
-          'Write a white paper researching, evaluating, and recommending an emerging technology for a business use case, working through its capabilities, risks, and adoption considerations.',
+          'Write a paper that researches, evaluates, and recommends an emerging technology for a specific business use — covering what it can do, its risks, and what adopting it would involve.',
       },
       {
         title: 'Executive Presentation',
         summary:
-          'Distill the white paper\'s findings and recommendation into a presentation aimed at organizational stakeholders/executives — practicing communicating technical risk in business terms.',
+          'Turn the white paper\'s findings into a presentation aimed at executives — practice explaining technical risk in plain business terms.',
       },
       {
         title: 'Implementation Plan',
         summary:
-          'Produce an implementation plan defining secure adoption steps and organizational considerations for actually rolling out the recommended technology.',
+          'Write a plan for actually rolling out the recommended technology securely, including what the organization needs to consider along the way.',
       },
     ],
     resources: [

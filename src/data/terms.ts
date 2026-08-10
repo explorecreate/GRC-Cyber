@@ -6,321 +6,321 @@ export const terms: TermEntry[] = [
     term: 'Authorization Boundary',
     domainId: 'scope',
     definition:
-      'The set of information resources, components, and connections that fall under the authority of a single AO and are included within a single system authorization.',
+      'Everything that falls under one Authorizing Official\'s authority, and gets covered by one authorization decision.',
     example:
-      'A cloud-hosted HR application, its database, and its API gateway are inside the boundary; the SaaS identity provider it federates to is outside it and treated as an interconnection.',
+      'A cloud-hosted HR app, its database, and its API gateway are inside the boundary. The outside identity provider it connects to is not — that\'s treated as a separate connection.',
     whyItMatters:
-      'Everything you categorize, select controls for, assess, and authorize is scoped to this boundary — get it wrong and you either under-protect the system or waste effort protecting things outside your control.',
+      'Every step after this — categorizing, selecting controls, assessing, authorizing — only applies to what\'s inside this boundary. Draw it wrong, and you either leave things unprotected or waste effort on things you don\'t control.',
     howToApply:
-      'Draw the boundary diagram early, list every interconnection crossing it, and document each with an ISA/MOU before authorization.',
-    memoryTip: '"Boundary = what the AO owns the risk for." If the AO can\'t accept the risk for it, it\'s outside the boundary.',
+      'Draw the boundary as a diagram early on. List every connection crossing it, and document each one with an ISA/MOU before authorization.',
+    memoryTip: 'The boundary is whatever the AO can actually take responsibility for. If they can\'t own the risk for it, it\'s outside the boundary.',
   },
   {
     id: 'poam',
     term: 'Plan of Action and Milestones (POA&M)',
     domainId: 'assessment-audit',
     definition:
-      'A living document that tracks known weaknesses or deficiencies in a system, the planned remediation actions, resources required, and target completion dates.',
+      'A living tracking document for known weaknesses in a system — what\'s wrong, the plan to fix it, what it will take, and by when.',
     example:
-      'An assessment finds that multi-factor authentication is not enforced for admin accounts. The POA&M entry records the weakness, assigns an owner, allocates budget, and sets a 90-day remediation deadline.',
+      'An assessment finds that admin accounts don\'t require multi-factor authentication. The POA&M records this, assigns someone to fix it, sets a budget, and gives a 90-day deadline.',
     whyItMatters:
-      'It is the mechanism that turns "we found a problem" into "we are accountable for fixing it" — the AO reviews open POA&M items as part of every authorization decision.',
+      'It\'s what turns "we found a problem" into "someone is accountable for fixing it." The AO checks open POA&M items every time they make an authorization decision.',
     howToApply:
-      'Every SAR finding that isn\'t immediately remediated becomes a POA&M entry; review and update it on a recurring cadence, not just before reauthorization.',
-    memoryTip: 'POA&M = "Promise Of Action, & Milestones" — it\'s a tracked promise, not a one-time report.',
+      'Any assessment finding that isn\'t fixed right away becomes a POA&M entry. Review and update it regularly — not just right before reauthorization.',
+    memoryTip: 'POA&M = a tracked promise to fix something, not a one-time report you file and forget.',
   },
   {
     id: 'common-control',
     term: 'Common Control',
     domainId: 'control-selection',
     definition:
-      'A security or privacy control whose implementation is inherited by multiple information systems from a single, centrally-managed source rather than implemented separately by each system.',
+      'A control that\'s built once, in a central place, and shared (inherited) by multiple systems instead of each system building its own version.',
     example:
-      'A single enterprise physical-access-control program (badge readers, guards) protects the data center that hosts ten different applications; each application inherits that control rather than re-implementing it.',
+      'One badge-and-guard program protects a data center that hosts ten different applications. Each application inherits that physical security control rather than building its own.',
     whyItMatters:
-      'Inheriting common controls avoids duplicated work and ensures consistency, but it also means a system\'s risk posture depends on a control it doesn\'t directly manage — inheritance has to be documented and tracked.',
+      'Sharing controls saves duplicated work and keeps things consistent. But it also means a system\'s security depends on something it doesn\'t directly manage — that dependency has to be tracked.',
     howToApply:
-      'In the SSP, mark inherited controls as "common," name the providing system/organization, and confirm the common control provider\'s own assessment results are current.',
-    memoryTip: '"Common" = shared house rules everyone in the building follows, set once by the landlord.',
+      'In the SSP, mark inherited controls as "common," name who provides them, and confirm that provider\'s own assessment is up to date.',
+    memoryTip: '"Common" is like shared house rules everyone in the building follows — set once, by the landlord.',
   },
   {
     id: 'residual-risk',
     term: 'Residual Risk',
     domainId: 'governance',
-    definition: 'The risk that remains after controls have been applied — risk is rarely reduced to zero.',
+    definition: 'The risk that\'s left over after you\'ve put controls in place. You almost never get risk down to zero.',
     example:
-      'After implementing encryption, MFA, and monitoring for a database, some risk of insider misuse still remains; that leftover exposure is the residual risk the AO must weigh.',
+      'A database gets encryption, MFA, and monitoring — but there\'s still some risk that an employee with legitimate access could misuse it. That leftover risk is the residual risk.',
     whyItMatters:
-      'Authorization decisions are fundamentally about accepting residual risk, not eliminating all risk — understanding this distinction is core to the whole RMF philosophy.',
+      'Authorizing a system isn\'t about eliminating all risk. It\'s about accepting the risk that\'s left over. Understanding that difference is central to the whole RMF.',
     howToApply:
-      'Document residual risk explicitly in the SAR/authorization package so the AO makes an informed, risk-based (not compliance-checkbox) decision.',
-    memoryTip: '"Residual" = what\'s left in the glass after you pour some out. You never empty it completely.',
+      'Write the residual risk down clearly in the authorization package, so the AO can make a real, informed decision — not just check a box.',
+    memoryTip: 'Think of pouring water out of a glass: residual risk is what\'s still left in the glass. You never empty it all the way.',
   },
   {
     id: 'tailoring',
     term: 'Control Tailoring',
     domainId: 'control-selection',
     definition:
-      'The process of adjusting an initial control baseline to fit the specific system, environment, and mission — through scoping, compensating controls, and setting organization-defined parameters.',
+      'Adjusting a starting set of controls (a baseline) to actually fit your system, instead of applying it exactly as written.',
     example:
-      'A Moderate baseline control requiring badge-based physical access doesn\'t apply to a purely cloud-hosted SaaS system with no physical facility — it\'s scoped out and a cloud provider\'s equivalent control is referenced instead.',
+      'A baseline control about badge-based physical access doesn\'t make sense for a cloud-only system with no physical office — so it gets scoped out and replaced with the cloud provider\'s equivalent.',
     whyItMatters:
-      'Baselines are a starting point, not a final answer; applying them blindly either leaves gaps (system-specific risks the baseline doesn\'t cover) or wastes resources on irrelevant controls.',
+      'A baseline is a starting point, not a finished answer. Applying it blindly either leaves gaps or wastes effort on controls that don\'t make sense for your system.',
     howToApply:
-      'For every baseline control, ask: does this apply as-is, does it need a compensating control, or should it be scoped out — and document the rationale.',
-    memoryTip: '"Tailoring" = a tailor altering an off-the-rack suit (the baseline) to actually fit you (the system).',
+      'For every baseline control, ask: does this apply as-is, does it need a substitute, or should it be dropped — and write down why.',
+    memoryTip: 'Tailoring is like a tailor altering a suit off the rack so it actually fits you.',
   },
   {
     id: 'ongoing-authorization',
     term: 'Ongoing Authorization',
     domainId: 'system-compliance',
     definition:
-      'An approach where the AO\'s risk determination is continuously informed by real-time or near-real-time monitoring data, rather than relying solely on a static, point-in-time reauthorization every few years.',
+      'Keeping the AO\'s risk picture current using real-time or near-real-time monitoring data, instead of relying only on a full reassessment every few years.',
     example:
-      'Instead of a full 3-year reassessment cycle, a system feeds vulnerability scan results, configuration drift alerts, and access reviews into a dashboard the AO checks monthly.',
+      'Instead of a full 3-year reassessment cycle, a system feeds scan results, configuration alerts, and access reviews into a dashboard the AO checks every month.',
     whyItMatters:
-      'Threats and system configurations change constantly; a stale authorization based on data from years ago doesn\'t reflect actual current risk.',
+      'Threats and systems change constantly. An authorization based on data from years ago doesn\'t reflect the risk that actually exists today.',
     howToApply:
-      'Build an ISCM strategy that defines what\'s monitored, how often, and what triggers an AO risk review outside the normal cycle.',
-    memoryTip: '"Ongoing" authorization is a movie, not a photograph — it keeps updating instead of freezing risk at one moment.',
+      'Build a monitoring strategy that defines what gets watched, how often, and what triggers a fresh AO review outside the normal schedule.',
+    memoryTip: 'Ongoing authorization is a video, not a photo — it keeps updating instead of freezing risk at one moment.',
   },
   {
     id: 'assessment-object',
     term: 'Assessment Object',
     domainId: 'assessment-audit',
     definition:
-      'The specific item being assessed by a control assessment method — one of: specifications (documents/policies), mechanisms (technical/hardware/software), activities (processes performed), or individuals (people applying a control).',
+      'The specific thing being checked during an assessment: a document, a piece of technology, a process, or a person.',
     example:
-      'Assessing an access-control policy might examine the specification (the written policy doc), test the mechanism (the actual login system), and interview individuals (the admins who apply it).',
+      'Checking an access-control policy might mean reading the written policy (the document), testing the login system (the technology), and interviewing the admins who use it (the people).',
     whyItMatters:
-      'Matching the right assessment method (examine/interview/test) to the right object type is what makes an assessment credible instead of superficial.',
+      'Matching the right method to the right kind of object is what makes an assessment thorough instead of shallow.',
     howToApply:
-      'When building a SAP, identify the assessment objects for each control before picking methods — don\'t just interview when testing is needed.',
-    memoryTip: '"SMAI" — Specifications, Mechanisms, Activities, Individuals — the four things you can actually assess.',
+      'Before picking a method, figure out what type of object you\'re checking — don\'t just default to interviews when a real test is needed.',
+    memoryTip: 'Four things you can check: a document, a piece of tech, a process, or a person.',
   },
   {
     id: 'privacy-by-design',
     term: 'Privacy by Design',
     domainId: 'governance',
     definition:
-      'A principle requiring privacy protections to be built into systems and processes from the earliest design stages, rather than added on afterward.',
+      'The idea that privacy protections should be built into a system from the very start of design — not bolted on later.',
     example:
-      'A new mobile app is designed to collect only the minimum location data needed for its feature, with retention limits built into the database schema from day one — not bolted on after a privacy complaint.',
+      'A new mobile app is built to collect only the location data it actually needs, with data-deletion rules built into the database from day one — not added later after a complaint.',
     whyItMatters:
-      'Retrofitting privacy protections is expensive and often incomplete; regulators (and NIST Privacy Framework/AI RMF) increasingly expect privacy to be proactive, not reactive.',
+      'Adding privacy protections after a system is already built is expensive and often incomplete. Regulators increasingly expect organizations to plan for privacy up front, not react to problems after the fact.',
     howToApply:
-      'Include Privacy Officer/Privacy Impact Assessment checkpoints at the requirements and design phases of the SDLC, not just before launch.',
-    memoryTip: '"By design" = privacy is in the blueprint, not the paint job applied after the building\'s built.',
+      'Bring in the Privacy Officer (or do a Privacy Impact Assessment) at the very start of a project — during requirements and design — not just before launch.',
+    memoryTip: '"By design" means privacy is part of the blueprint, not paint you add after the building is finished.',
   },
   {
     id: 'three-lines-of-defense',
     term: 'Three Lines of Defense',
     domainId: 'governance',
     definition:
-      'A governance model separating risk responsibility into three groups: operational management (owns and manages risk), risk/compliance functions (oversee and monitor), and internal audit (independent assurance).',
+      'A model that splits risk responsibility into three separate groups: the people who manage risk day to day, the people who oversee them, and independent auditors who check that everything actually works.',
     example:
-      'A system owner (1st line) implements access controls; the compliance team (2nd line) reviews whether they meet policy; internal audit (3rd line) independently verifies the whole process actually works.',
+      'A system owner (1st line) sets up access controls. The compliance team (2nd line) checks that those controls follow policy. Internal audit (3rd line) independently verifies the whole process actually works.',
     whyItMatters:
-      'Without this separation, the people implementing controls would also be the only ones checking their own work — undermining objectivity and letting risk go unnoticed.',
+      'Without this split, the same people building controls would be the only ones checking their own work. That makes it easy for problems to go unnoticed.',
     howToApply:
-      'When designing governance structures, make sure no single function is playing more than one "line" role for the same system.',
-    memoryTip: 'Think of it like a sports team: players (1st line), coaches (2nd line), and referees (3rd line) — each has a distinct, non-overlapping job.',
+      'When setting up governance, make sure no single team is doing more than one of these three jobs for the same system.',
+    memoryTip: 'Think of a sports team: players (1st line) play the game, coaches (2nd line) oversee them, and referees (3rd line) make the independent call. Each job stays separate.',
   },
   {
     id: 'risk-appetite',
     term: 'Risk Appetite / Risk Tolerance',
     domainId: 'governance',
     definition:
-      'Risk appetite is the amount and type of risk an organization is willing to pursue in service of its objectives; risk tolerance is the acceptable variation around that target.',
+      'Risk appetite is how much risk an organization is willing to take on to reach its goals. Risk tolerance is how much that can vary before it becomes a problem.',
     example:
-      'A bank may have low risk appetite for fraud losses but a higher appetite for innovation risk when piloting new fintech products.',
+      'A bank might have very low appetite for fraud losses, but a higher appetite for risk when testing a new fintech product.',
     whyItMatters:
-      'Every risk decision — accept, mitigate, transfer, avoid — is ultimately measured against this baseline; without a defined appetite, "acceptable risk" is just a guess.',
+      'Every risk decision — accept it, reduce it, transfer it, or avoid it — gets measured against this baseline. Without a clear risk appetite, "acceptable risk" is just a guess, and everyone guesses differently.',
     howToApply:
-      'Document risk appetite at the organizational level (often set by the board/executives) and reference it explicitly when the AO makes authorization decisions.',
-    memoryTip: '"Appetite" = how much risk you want to eat; "tolerance" = how much you can stomach without getting sick.',
+      'Make sure risk appetite is written down at the organizational level (usually set by leadership), and refer back to it whenever the AO makes an authorization decision.',
+    memoryTip: 'Appetite = how much risk you want to take on. Tolerance = how much you can handle before it hurts.',
   },
   {
     id: 'threat-vulnerability-pairing',
     term: 'Threat/Vulnerability Pairing',
     domainId: 'governance',
     definition:
-      'The risk-assessment practice of matching a specific threat source or event to the specific vulnerability it could exploit, in order to estimate likelihood.',
+      'Matching a specific threat to the specific weakness it could exploit, so you can estimate how likely an attack really is.',
     example:
-      'Threat: a phishing actor. Vulnerability: employees haven\'t completed security awareness training. Pairing these two estimates the likelihood of a successful phishing compromise.',
+      'Threat: a phishing scammer. Vulnerability: employees haven\'t had security training. Put those two together, and you get a real estimate of how likely a phishing attack is to succeed.',
     whyItMatters:
-      'Risk isn\'t just "we have a vulnerability" or "there\'s a threat out there" in isolation — it\'s the intersection of the two that actually produces risk.',
+      'A weakness by itself isn\'t risk. A threat by itself isn\'t risk either. Risk shows up when the two are paired together — that\'s the piece people often miss.',
     howToApply:
-      'When building a risk assessment, explicitly list threat sources next to the vulnerabilities they could exploit rather than tracking them as separate, unconnected lists.',
-    memoryTip: 'No pairing, no risk: a lock (vulnerability) with no burglar (threat) nearby isn\'t much of a risk.',
+      'When you\'re assessing risk, list threats next to the specific weaknesses they could exploit — don\'t track them as two separate, unconnected lists.',
+    memoryTip: 'No pairing, no risk: a lock with no burglar nearby isn\'t much of a risk at all.',
   },
   {
     id: 'interconnection-agreement',
     term: 'Interconnection (ISA/MOU pairing)',
     domainId: 'scope',
     definition:
-      'A formal arrangement — typically an MOU (business terms) paired with an ISA (technical/security requirements) — governing how two systems owned by different parties connect and exchange data.',
+      'A formal agreement — usually an MOU (the business terms) paired with an ISA (the technical requirements) — that governs how two systems from different organizations connect and share data.',
     example:
-      'Agency A\'s case-management system connects to Agency B\'s identity-verification service; the MOU sets responsibilities and costs, the ISA specifies encryption, ports, and authentication requirements for the actual connection.',
+      'Agency A\'s case-management system connects to Agency B\'s identity-verification service. The MOU sets who\'s responsible for what; the ISA spells out the encryption, ports, and login requirements for the actual connection.',
     whyItMatters:
-      'Every interconnection crossing an authorization boundary introduces risk from a system you don\'t fully control — these agreements are how that shared risk gets formally acknowledged and managed.',
+      'Any connection crossing your authorization boundary brings in risk you don\'t fully control. These agreements are how that shared risk gets formally recognized and managed.',
     howToApply:
-      'Inventory every interconnection at boundary-definition time, and don\'t authorize a system with undocumented connections.',
-    memoryTip: 'MOU = the "why/who" handshake; ISA = the "how" wiring diagram.',
+      'List out every connection when you\'re defining the boundary, and never authorize a system that has undocumented connections.',
+    memoryTip: 'MOU is the "who and why" handshake. ISA is the "how" — the technical wiring diagram.',
   },
   {
     id: 'general-support-system',
     term: 'General Support System (GSS)',
     domainId: 'scope',
     definition:
-      'An interconnected set of information resources under the same direct management control that shares common functionality, e.g., a local area network or data center infrastructure.',
+      'Shared infrastructure — like a network or data center — that many different applications rely on, all under one management.',
     example:
-      'An agency\'s enterprise network — routers, switches, shared file servers — is a GSS that many individual applications rely on.',
+      'An agency\'s enterprise network — routers, switches, shared file servers — is a GSS that many separate applications depend on.',
     whyItMatters:
-      'GSSs are often the source of common/inherited controls; understanding whether something is a GSS or a major application changes how it\'s categorized and authorized.',
+      'A GSS is often where shared controls come from. Knowing whether something is a GSS or a standalone application changes how it gets categorized and authorized.',
     howToApply:
-      'Identify which parts of your environment are shared infrastructure (GSS) versus a distinct, mission-specific application, and document the difference in your system inventory.',
-    memoryTip: '"General Support" = the shared plumbing everyone\'s apps run through.',
+      'When you\'re listing your systems, clearly mark which parts are shared infrastructure (GSS) and which are standalone applications.',
+    memoryTip: '"General Support" is the shared plumbing that everyone\'s apps run through.',
   },
   {
     id: 'baseline-tailoring-vs-baseline-selection',
     term: 'Control Baseline',
     domainId: 'control-selection',
     definition:
-      'A pre-defined set of controls (Low, Moderate, or High) from SP 800-53B, selected based on a system\'s FIPS 199 categorization, that serves as the starting point before tailoring.',
+      'A ready-made set of controls (Low, Moderate, or High) you pick based on your system\'s FIPS 199 rating — your starting point before you adjust it to fit.',
     example:
-      'A system categorized Moderate-Moderate-Low for C-I-A uses the overall Moderate baseline as its starting control set, per NIST guidance for handling mixed impact levels.',
+      'A system rated Moderate-Moderate-Low across confidentiality, integrity, and availability uses the overall Moderate baseline as its starting control set.',
     whyItMatters:
-      'Skipping straight to "what controls do we want" without starting from the correct baseline risks both gaps and wasted effort — baselines exist so organizations aren\'t reinventing control selection from scratch.',
+      'Skipping the right starting point and just picking controls that "sound good" risks both gaps and wasted effort. Baselines exist so you\'re not reinventing this every time.',
     howToApply:
-      'Always select the baseline from the categorization result first, then tailor — never tailor before you\'ve established the correct starting baseline.',
-    memoryTip: 'Baseline = the recipe\'s base ingredients; tailoring = adjusting the seasoning to taste.',
+      'Always pick the baseline from your categorization result first, then adjust it (tailor it) — never adjust before you\'ve picked the right starting baseline.',
+    memoryTip: 'The baseline is the recipe\'s base ingredients; tailoring is adjusting the seasoning to taste.',
   },
   {
     id: 'assessment-methods',
     term: 'Examine / Interview / Test',
     domainId: 'assessment-audit',
     definition:
-      'The three assessment methods defined in SP 800-53A: examine (review specifications like policy documents), interview (talk to individuals who apply a control), and test (exercise a mechanism or activity directly).',
+      'The three ways to check a control: examine (review a document, like a policy), interview (talk to the people who use it), and test (try the mechanism yourself).',
     example:
-      'To assess an access-control policy: examine the written policy, interview the system administrator about how they apply it, and test by attempting an unauthorized login.',
+      'To check an access-control policy: examine the written policy, interview the admin about how it\'s applied, and test by trying an unauthorized login.',
     whyItMatters:
-      'Relying on only one method (e.g., just reading the policy) gives a shallow, unreliable picture — credible assessments combine methods appropriate to what\'s being verified.',
+      'Using just one method gives a shallow, unreliable picture. A solid check combines methods that actually fit what\'s being verified.',
     howToApply:
-      'For each control in the SAP, explicitly choose which method(s) fit the assessment object being evaluated, rather than defaulting to interviews for everything.',
-    memoryTip: '"Read it, ask about it, try it" — examine, interview, test.',
+      'For each control you\'re checking, choose the method (or methods) that fit — don\'t default to interviews when a real test is what\'s needed.',
+    memoryTip: 'Read it, ask about it, try it — examine, interview, test.',
   },
   {
     id: 'independent-assessor',
     term: 'Assessor Independence',
     domainId: 'assessment-audit',
     definition:
-      'The principle that the individual or team assessing a system\'s controls should have no vested interest in the outcome — ideally organizationally separate from those who implemented the controls.',
+      'The rule that whoever checks a system\'s controls shouldn\'t have any personal stake in the outcome — ideally a completely separate team from whoever built the controls.',
     example:
-      'A third-party assessment organization (3PAO), rather than the system\'s own development team, performs the control assessment before authorization.',
+      'A third-party assessment organization (3PAO), rather than the system\'s own development team, is the one who checks the controls before authorization.',
     whyItMatters:
-      'An assessor grading their own work is far more likely to miss or downplay real weaknesses — independence is what makes the SAR credible to the AO.',
+      'Someone checking their own work is much more likely to miss or downplay real problems. Independence is what makes the results trustworthy to the AO.',
     howToApply:
-      'When assigning assessors, verify they had no role in implementing the controls being assessed, and document that independence in the SAP.',
-    memoryTip: 'You wouldn\'t trust a student to grade their own exam — same logic applies to control assessments.',
+      'When assigning assessors, confirm they had no role in building the controls being checked, and write that down.',
+    memoryTip: 'You wouldn\'t trust a student to grade their own exam — same logic applies here.',
   },
   {
     id: 'authorization-decision-document',
     term: 'Authorization Decision Document',
     domainId: 'system-compliance',
     definition:
-      'The formal record of the AO\'s risk-based decision — including the type of authorization granted (or denied), any terms/conditions, and the authorization termination date.',
+      'The formal written record of the AO\'s decision — what type of authorization was given (or denied), any conditions attached, and when it expires.',
     example:
-      'An AO issues an ATO valid for three years, conditioned on closing two high-risk POA&M items within 90 days; both the decision and conditions are captured in this document.',
+      'An AO issues a 3-year ATO on the condition that two high-risk POA&M items get closed within 90 days. Both the decision and that condition are written into this document.',
     whyItMatters:
-      'Without a documented decision, there\'s no formal accountability trail showing who accepted what risk, when, and under what conditions.',
+      'Without a written decision, there\'s no record of who accepted what risk, when, or under what terms.',
     howToApply:
-      'Ensure every authorization decision — full ATO, IATT, or denial — is captured in writing with explicit conditions and an expiration/reauthorization trigger.',
-    memoryTip: 'If it isn\'t written down, the AO didn\'t really decide it — no paper, no accountability.',
+      'Make sure every authorization decision — approved, limited, or denied — gets written down with clear conditions and an expiration date.',
+    memoryTip: 'If it isn\'t written down, the AO didn\'t really decide it.',
   },
   {
     id: 'event-driven-reauthorization',
     term: 'Event-Driven Reauthorization',
     domainId: 'system-compliance',
     definition:
-      'Reauthorization triggered by a significant event or change (e.g., a major breach, architecture change, or new threat) rather than waiting for the scheduled reauthorization date.',
+      'A fresh authorization review triggered by a major event or change — not by waiting for the next scheduled review date.',
     example:
-      'A system migrates from on-premises to a new cloud provider mid-cycle; that architecture change triggers an out-of-cycle risk review and possible reauthorization instead of waiting three years.',
+      'A system moves from an in-house data center to a new cloud provider mid-cycle. That change alone triggers a new risk review, instead of waiting three years for the next scheduled one.',
     whyItMatters:
-      'Risk doesn\'t wait for a calendar date — an authorization based on a system that no longer exists in that form is meaningless.',
+      'Risk doesn\'t wait for a calendar date. An authorization based on a system that no longer exists in that form doesn\'t mean much.',
     howToApply:
-      'Define clear triggers (e.g., major change categories) in the ISCM strategy that automatically prompt an AO risk review outside the normal cycle.',
-    memoryTip: '"Event-driven" = the calendar isn\'t the trigger, the change is.',
+      'Define clear triggers ahead of time — like specific types of major changes — that automatically kick off a fresh AO review.',
+    memoryTip: 'Event-driven means the change is the trigger, not the calendar.',
   },
   {
     id: 'incident-categorization',
     term: 'Incident Categorization',
     domainId: 'compliance-maintenance',
     definition:
-      'Classifying a security incident by type and severity (e.g., using a scale like CISA\'s functional impact categories) to drive appropriate response and reporting.',
+      'Sorting a security incident by type and severity, so the response and any required reporting actually match how serious it is.',
     example:
-      'A phishing email caught before any compromise might be categorized low-severity; a ransomware outage affecting mission-critical systems is categorized as a high-severity, reportable incident.',
+      'A phishing email caught before anyone clicked it might be low severity. A ransomware outage hitting critical systems is high severity and legally reportable.',
     whyItMatters:
-      'Categorization determines response urgency, escalation path, and whether external reporting (e.g., to CISA) is legally required.',
+      'Categorization decides how urgently to respond, who gets pulled in, and whether outside reporting is legally required.',
     howToApply:
-      'Build a categorization scheme into the incident response plan before an incident happens, so responders aren\'t guessing severity in the moment.',
-    memoryTip: 'Triage like an ER: not every "incident" needs the same response — sort first, act second.',
+      'Build a severity scale into your incident response plan ahead of time, so responders aren\'t guessing how serious something is in the moment.',
+    memoryTip: 'Triage like an ER: sort by severity first, then act.',
   },
   {
     id: 'lessons-learned',
     term: 'Lessons Learned / Post-Incident Review',
     domainId: 'compliance-maintenance',
     definition:
-      'A structured review conducted after an incident is resolved, capturing what happened, what worked, what didn\'t, and what should change going forward.',
+      'A structured review after an incident is over — what happened, what worked, what didn\'t, and what needs to change.',
     example:
-      'After a ransomware incident, the team documents that backups were outdated and updates the backup policy and RPO targets as a direct result.',
+      'After a ransomware incident, the team finds their backups were outdated and updates their backup policy and recovery targets as a direct result.',
     whyItMatters:
-      'Without this step, organizations repeat the same mistakes — the whole point of incident response maturing over time depends on this feedback loop.',
+      'Skip this step, and the same mistakes tend to repeat. This review is what makes incident response actually get better over time.',
     howToApply:
-      'Schedule a lessons-learned review as a mandatory, non-skippable final phase of every incident response — not an optional nice-to-have.',
-    memoryTip: 'An incident without a lessons-learned review is a mistake you\'re scheduled to repeat.',
+      'Make a lessons-learned review a required final step of every incident response — not an optional extra.',
+    memoryTip: 'Skipping the review means signing up to repeat the same mistake.',
   },
   {
     id: 'implementation-statement',
     term: 'Implementation Statement',
     domainId: 'control-implementation',
     definition:
-      'The system-specific portion of the SSP describing exactly how a selected control is actually implemented — the configured values, mechanisms, and processes in place, not just the control\'s generic name.',
+      'The part of the SSP that says exactly how a control actually works on your real system — the settings, the tool, the process — not just the control\'s generic name.',
     example:
-      'For AC-7 (unsuccessful login attempts), a strong implementation statement says "the system locks an account for 30 minutes after 5 failed attempts, enforced by [specific mechanism]" rather than just restating the control text.',
+      '"We enforce strong passwords" is not an implementation statement. "The system requires a 14-character minimum password, enforced by [specific tool], reviewed every 90 days" is.',
     whyItMatters:
-      'Assessors can only verify what\'s concretely documented — a vague or copy-pasted implementation statement is one of the most common findings in real-world assessments, and it usually means the control was selected but never actually built out.',
+      'An assessor can only verify what\'s written down clearly. A vague or copy-pasted statement is one of the most common problems found in real assessments — and usually means the control was never actually built.',
     howToApply:
-      'When writing an SSP, always ask "could an assessor verify this exact sentence against my actual system?" If not, the statement needs more specificity.',
-    memoryTip: 'Selection says "we will." Implementation says "we did, and here\'s exactly how" — the implementation statement is the "how."',
+      'Before writing an implementation statement, ask: could someone else check this exact sentence against my real system? If not, add more detail.',
+    memoryTip: 'Selection says "we will." Implementation says "we did, and here\'s exactly how."',
   },
   {
     id: 'stig',
     term: 'Security Technical Implementation Guide (STIG)',
     domainId: 'control-implementation',
     definition:
-      'A detailed, product-specific configuration/hardening standard (published by DISA) used to implement secure configuration controls consistently across systems.',
+      'A detailed, product-specific hardening checklist (published by DISA) that tells you exactly how to securely configure something.',
     example:
-      'A team hardening a Windows Server deployment applies the relevant Windows STIG to set specific registry keys, service configurations, and audit policies rather than inventing hardening settings from scratch.',
+      'A team setting up a Windows Server applies the Windows STIG to configure specific security settings, instead of guessing at good defaults.',
     whyItMatters:
-      'STIGs turn a vague "harden the system" requirement into a concrete, auditable checklist — directly supporting the Implementation domain\'s emphasis on building controls correctly, not just selecting them.',
+      'STIGs turn a vague "harden the system" instruction into a real, checkable list — exactly what implementation is supposed to do.',
     howToApply:
-      'When implementing configuration management controls, check whether a STIG exists for your specific product before writing custom hardening guidance.',
-    memoryTip: '"STIG" = the recipe card for exactly how to configure one specific product securely.',
+      'Before writing custom hardening rules, check whether a STIG already exists for the exact product you\'re using.',
+    memoryTip: 'A STIG is the recipe card for securely configuring one specific product.',
   },
   {
     id: 'change-control-board',
     term: 'Change Control Board (CCB)',
     domainId: 'control-implementation',
     definition:
-      'A formal body that reviews and approves proposed changes to a system\'s configuration, ensuring changes don\'t silently undo implemented controls.',
+      'A group that reviews and approves proposed changes to a system, so changes don\'t accidentally undo controls that were already built.',
     example:
-      'An engineer wants to open a new firewall port for a vendor integration; the CCB reviews the request and confirms it doesn\'t weaken the system\'s implemented boundary protection controls before approving it.',
+      'An engineer wants to open a new firewall port for a vendor. The CCB reviews the request first, to confirm it doesn\'t weaken any existing security controls.',
     whyItMatters:
-      'A control that was carefully implemented can be broken just as easily by an uncontrolled change — the CCB is what protects implementation integrity over time, feeding directly into ongoing compliance maintenance.',
+      'A carefully built control can be broken just as easily by an uncontrolled change. The CCB is what protects that work over time.',
     howToApply:
-      'Route any change touching a documented control through change management before deployment, and update the SSP\'s implementation statement if the change affects it.',
-    memoryTip: 'Implementation builds the control; the CCB is the guard that keeps someone from accidentally tearing it back down.',
+      'Route any change that touches a documented control through change management first, and update the SSP if the change affects it.',
+    memoryTip: 'Implementation builds the control. The CCB is the guard that stops someone from accidentally tearing it back down.',
   },
 
   // ---- Filling out every domain to real course depth ----
@@ -329,83 +329,83 @@ export const terms: TermEntry[] = [
     term: 'Enterprise Risk Management (ERM)',
     domainId: 'governance',
     definition:
-      'A holistic, organization-wide approach to identifying and managing risk across all business functions — financial, operational, reputational, and cyber — rather than looking at a single system in isolation.',
+      'A big-picture approach to managing risk across the whole organization — financial, operational, reputational, and cyber — instead of just looking at one system by itself.',
     example:
-      'A hospital\'s ERM program tracks cyber risk to patient records alongside supply-chain risk for medical equipment and reputational risk from a billing scandal, all on the same risk register.',
+      'A hospital\'s ERM program tracks cyber risk to patient records, supply-chain risk for medical equipment, and reputational risk from a billing scandal, all in one place.',
     whyItMatters:
-      'A system-level risk decision made without reference to the organization\'s broader risk picture can be locally reasonable but globally wrong — ERM is what connects the two.',
+      'A decision that looks fine for one system can still be wrong for the organization as a whole. ERM is what connects the two levels together.',
     howToApply:
-      'When framing a system\'s risk, reference the organization\'s documented risk appetite (set at the ERM level) rather than inventing a system-specific standard of "acceptable."',
-    memoryTip: '"Enterprise" = the whole company\'s risk picture, not just one system\'s slice of it.',
+      'When you\'re deciding whether a system\'s risk is acceptable, check it against the organization\'s overall risk appetite (set at the ERM level) instead of inventing your own standard.',
+    memoryTip: '"Enterprise" means the whole company\'s risk picture — not just one system\'s little slice of it.',
   },
   {
     id: 'business-impact-analysis',
     term: 'Business Impact Analysis (BIA)',
     domainId: 'governance',
     definition:
-      'An analysis identifying an organization\'s critical business functions and quantifying the impact of their disruption, used to set recovery priorities and targets.',
+      'A study that identifies an organization\'s most critical business functions and estimates the cost if each one goes down. Used to set recovery priorities.',
     example:
-      'A BIA determines that order processing must be restored within 4 hours (its RTO) because every hour of downtime costs the business $50,000 in lost sales, while internal reporting can wait 3 days.',
+      'A BIA finds that order processing must come back within 4 hours, because every hour of downtime costs $50,000 in lost sales — while internal reporting can wait three days.',
     whyItMatters:
-      'Without a BIA, RTO/RPO targets in Domain 7 are just guesses — the BIA is what grounds contingency planning in actual business consequences instead of arbitrary numbers.',
+      'Without a BIA, recovery targets are just guesses. The BIA is what grounds recovery planning in real business consequences instead of made-up numbers.',
     howToApply:
-      'Conduct or reference a current BIA before setting any RTO/RPO target, and revisit it whenever a business function\'s criticality changes.',
-    memoryTip: 'BIA answers "what actually breaks, and how badly, if this goes down?" — everything downstream depends on that answer.',
+      'Do (or check) a current BIA before setting any recovery time targets, and update it whenever a business function becomes more or less critical.',
+    memoryTip: 'BIA answers one question: "what actually breaks, and how badly, if this goes down?" Everything else builds on that answer.',
   },
   {
     id: 'documentation-hierarchy',
     term: 'Documentation Hierarchy (Policy → Standard → Procedure → Guideline)',
     domainId: 'governance',
     definition:
-      'The layered structure of organizational documentation: policy (mandatory intent), standard (mandatory specifics), procedure (step-by-step instructions), and guideline (recommended, non-mandatory).',
+      'The four levels of organizational documentation, from most to least mandatory: policy (broad intent), standard (specific rule), procedure (step-by-step instructions), and guideline (recommendation only).',
     example:
-      'Policy: "all systems must enforce strong authentication." Standard: "MFA is required for all privileged accounts." Procedure: the exact steps to enroll a user in MFA. Guideline: recommended (not required) use of a password manager.',
+      'Policy: "all systems must use strong authentication." Standard: "MFA is required for privileged accounts." Procedure: the exact steps to set up MFA. Guideline: a suggestion (not a requirement) to also use a password manager.',
     whyItMatters:
-      'Knowing where a requirement sits in this hierarchy tells you how mandatory and how specific it is — treating a guideline as a policy (or vice versa) misrepresents what\'s actually required.',
+      'Knowing which level a rule sits at tells you how mandatory it is. Mixing up a guideline with a policy misrepresents what\'s actually required.',
     howToApply:
-      'When writing or citing organizational documentation, be explicit about which layer you\'re operating at, since that determines whether deviation requires a formal exception.',
-    memoryTip: 'Policy says why, standard says what exactly, procedure says how, guideline says "here\'s a good idea."',
+      'When you write or reference a rule, be clear about which level it belongs to — that determines whether skipping it needs a formal exception.',
+    memoryTip: 'Policy says why. Standard says exactly what. Procedure says how. Guideline says "here\'s a good idea."',
   },
   {
     id: 'fips-199-categorization',
     term: 'FIPS 199 Categorization',
     domainId: 'scope',
     definition:
-      'The mandatory process of rating a system\'s impact level (Low/Moderate/High) separately for confidentiality, integrity, and availability, then taking the highest ("high-water mark") as the overall categorization.',
+      'The required process of rating a system\'s impact — Low, Moderate, or High — separately for confidentiality, integrity, and availability, then using the highest of the three as the overall rating.',
     example:
-      'A system rated Low-Confidentiality, Moderate-Integrity, Low-Availability is categorized Moderate overall, because the highest of the three impact ratings governs.',
+      'A system rated Low for confidentiality, Moderate for integrity, and Low for availability is categorized Moderate overall, because the highest rating wins.',
     whyItMatters:
-      'This single decision determines which control baseline the system starts from in Domain 3 — an error here propagates through the entire rest of the RMF.',
+      'This one decision determines which set of controls the system starts with in Domain 3. Get it wrong, and everything built after it is built on the wrong foundation.',
     howToApply:
-      'Rate each of the three security objectives independently first, then apply the high-water mark rule rather than trying to average or eyeball an overall rating.',
-    memoryTip: 'High-water mark = the tide\'s highest point decides the overall level, even if the other two are much lower.',
+      'Rate each of the three security goals separately first, then apply the "highest wins" rule — don\'t try to average or eyeball an overall score.',
+    memoryTip: 'Highest wins: like a tide mark, the highest point decides the overall level, even if the other two are much lower.',
   },
   {
     id: 'major-application',
     term: 'Major Application',
     domainId: 'scope',
     definition:
-      'A system performing a clearly defined function significant enough to warrant its own dedicated security planning, as distinct from a General Support System providing shared infrastructure.',
+      'A system with a clear, specific purpose that\'s significant enough to need its own dedicated security planning — as opposed to shared infrastructure like a GSS.',
     example:
-      'An agency\'s benefits-processing system is a major application; the enterprise network it runs on is the GSS supporting it and many other applications.',
+      'An agency\'s benefits-processing system is a major application. The enterprise network it runs on is the GSS supporting it and many other applications.',
     whyItMatters:
-      'Whether something is a major application or part of a GSS affects how it\'s categorized, authorized, and which controls it inherits versus implements itself.',
+      'Whether something is a major application or part of a shared GSS changes how it gets categorized, authorized, and which controls it builds itself vs. borrows.',
     howToApply:
-      'When inventorying systems, explicitly classify each as a major application or GSS component rather than leaving the distinction implicit.',
-    memoryTip: '"Major" = significant enough to stand on its own for authorization purposes, not just a piece of shared plumbing.',
+      'When listing out your systems, clearly mark each one as a major application or part of a GSS, rather than leaving it unclear.',
+    memoryTip: '"Major" means significant enough to stand on its own — not just a piece of shared plumbing.',
   },
   {
     id: 'shared-responsibility-model',
     term: 'Shared Responsibility Model',
     domainId: 'scope',
     definition:
-      'The cloud computing principle that security responsibility is split between the cloud provider and the customer, with the split point depending on the service model (IaaS, PaaS, or SaaS).',
+      'The cloud computing rule that security duties are split between the cloud provider and the customer — where the split happens depends on the service type (IaaS, PaaS, or SaaS).',
     example:
-      'In SaaS, the provider secures nearly the entire stack; the customer is still responsible for data classification and who has access to their own data within the app.',
+      'With SaaS, the provider secures almost the entire system. The customer is still responsible for deciding who has access to their own data inside the app.',
     whyItMatters:
-      'Misunderstanding where the provider\'s responsibility ends and the customer\'s begins is one of the most common sources of real-world cloud security gaps.',
+      'Misunderstanding where the provider\'s job ends and the customer\'s begins is one of the most common causes of real-world cloud security problems.',
     howToApply:
-      'Explicitly document the responsibility split for every cloud service in scope, rather than assuming the provider "handles security."',
+      'Write down the exact responsibility split for every cloud service you use — don\'t just assume the provider "handles security."',
     memoryTip: 'The customer always keeps the keys to their own data, no matter how much the provider manages underneath.',
   },
   {
@@ -413,223 +413,223 @@ export const terms: TermEntry[] = [
     term: 'Software Bill of Materials (SBOM)',
     domainId: 'scope',
     definition:
-      'A formal, itemized inventory of the components — including third-party and open-source — that make up a piece of software, used to manage supply chain risk.',
+      'A complete, itemized list of everything — including third-party and open-source pieces — that makes up a piece of software.',
     example:
-      'When a critical vulnerability is disclosed in a popular open-source library, an SBOM lets an organization instantly check which of its systems include that library, instead of manually auditing every codebase.',
+      'When a serious flaw is found in a popular open-source library, an SBOM lets an organization instantly check which of its systems use that library, instead of manually checking every codebase.',
     whyItMatters:
-      'You can\'t assess or respond to supply chain risk in components you don\'t know you\'re using — an SBOM makes that risk visible instead of hidden inside a dependency tree.',
+      'You can\'t manage a risk you don\'t know exists. An SBOM makes hidden dependencies visible instead of buried.',
     howToApply:
-      'Require an SBOM as part of scoping any system with significant third-party or open-source components, and keep it current as dependencies change.',
-    memoryTip: 'SBOM = the ingredients label for software — you can\'t manage a recall if you don\'t know what\'s inside.',
+      'Require an SBOM for any system with significant third-party or open-source components, and keep it up to date as things change.',
+    memoryTip: 'An SBOM is the ingredients label for software — you can\'t manage a recall if you don\'t know what\'s inside.',
   },
   {
     id: 'control-enhancement',
     term: 'Control Enhancement',
     domainId: 'control-selection',
     definition:
-      'An addition to a base control in SP 800-53 that increases its strength or adds functionality, layered on top of (not replacing) the base requirement.',
+      'An add-on to a base control that increases its strength, layered on top of the base requirement rather than replacing it.',
     example:
-      'The base access control statement might require unique user IDs; an enhancement adds automated enforcement of account lockout after repeated failed attempts.',
+      'The base access-control rule might just require unique user IDs. An enhancement adds automatic account lockout after repeated failed login attempts.',
     whyItMatters:
-      'Higher-impact systems (Moderate/High baselines) require more enhancements — recognizing the difference between a base control and its enhancements is essential to correctly reading the 800-53 catalog.',
+      'Higher-risk systems need more enhancements. Knowing the difference between a base control and its enhancements is essential to reading the control catalog correctly.',
     howToApply:
-      'When selecting controls, check whether the relevant baseline requires specific enhancements, not just the base control, before finalizing the selection.',
-    memoryTip: 'Base control = the minimum; enhancement = the upgrade bolted on top for higher-risk systems.',
+      'When selecting controls, check whether your baseline requires specific enhancements — not just the base control — before finalizing your selection.',
+    memoryTip: 'The base control is the minimum. The enhancement is the upgrade added for higher-risk systems.',
   },
   {
     id: 'organization-defined-parameter',
     term: 'Organization-Defined Parameter (ODP)',
     domainId: 'control-selection',
     definition:
-      'A blank within a control\'s statement that the organization fills in with its own specific value, tailoring the control\'s rigor to its own risk tolerance.',
+      'A blank in a control\'s requirement that your organization fills in with its own specific value.',
     example:
-      'A control might read "enforce a minimum password length of [Assignment: organization-defined value]" — the organization decides and documents that the value is 14 characters.',
+      'A control might say "enforce a minimum password length of [X]" — your organization decides and writes down that X is 14 characters.',
     whyItMatters:
-      'A control isn\'t truly "selected" until its ODPs are filled in with real values — an unfilled parameter is an incomplete selection decision, not a finished one.',
+      'A control isn\'t really finished being selected until its blanks are filled in with real values. An unfilled parameter is an unfinished decision.',
     howToApply:
-      'Document every ODP value explicitly during selection, and carry that exact value forward into the SSP\'s implementation statement in Domain 4.',
-    memoryTip: 'ODP = the fill-in-the-blank the organization owns; the control isn\'t finished until the blank is filled.',
+      'Write down every parameter value clearly during selection, and carry that exact value into the SSP\'s implementation statement later.',
+    memoryTip: 'An ODP is the fill-in-the-blank the organization owns — the control isn\'t done until the blank is filled.',
   },
   {
     id: 'hybrid-control',
     term: 'Hybrid Control',
     domainId: 'control-selection',
     definition:
-      'A control allocated so that part of its implementation is inherited from a common control provider and part is implemented specifically by the system itself.',
+      'A control that\'s split between two sources: part shared from a central provider, and part built specifically by the system itself.',
     example:
-      'An organization-wide incident response policy is inherited (common), while the system\'s specific detection tooling and escalation contacts are implemented locally (system-specific) — together forming a hybrid control.',
+      'A company-wide incident response policy is shared (common). But the system\'s specific detection tools and contact list are built locally — together, that makes it a hybrid control.',
     whyItMatters:
-      'Hybrid controls require documenting and later assessing both halves separately — treating them as fully inherited (or fully system-specific) misses real risk.',
+      'Both halves of a hybrid control need to be documented and later checked separately. Treating it as fully shared (or fully local) misses real risk.',
     howToApply:
-      'When allocating a control, explicitly separate which portion is inherited versus system-specific before implementation begins.',
-    memoryTip: 'Hybrid = split down the middle — part borrowed, part built by you.',
+      'When assigning a control, clearly split out which part is shared and which part is built by the system, before implementation starts.',
+    memoryTip: 'Hybrid means split down the middle — part borrowed, part built by you.',
   },
   {
     id: 'privacy-control-baseline',
     term: 'Privacy Control Baseline (PT family)',
     domainId: 'control-selection',
     definition:
-      'The set of SP 800-53 controls (primarily the PT — PII Processing and Transparency — family) addressing privacy-specific requirements like consent, transparency, and data minimization, selected alongside the traditional security baseline.',
+      'The set of controls (mostly the PT family) that cover privacy-specific needs like consent and how personal data is handled — chosen alongside the regular security baseline.',
     example:
-      'A system collecting PII selects PT controls governing consent management and data retention limits in addition to its Moderate security baseline.',
+      'A system that collects personal data selects PT controls for managing consent and setting data retention limits, on top of its regular Moderate security baseline.',
     whyItMatters:
-      'Privacy risk isn\'t automatically covered by security controls — a system can be fully secure (confidential, available, tamper-proof) while still processing PII in a way that violates privacy expectations or law.',
+      'Privacy risk isn\'t automatically handled by security controls. A system can be fully secure and still mishandle personal data in a way that breaks the law or people\'s trust.',
     howToApply:
-      'For any system processing PII, select privacy controls as a first-class part of the baseline decision, not an optional add-on considered later.',
-    memoryTip: 'Security asks "can someone steal it?" Privacy asks "should we even be collecting it this way?" — different questions, both need selected controls.',
+      'For any system handling personal data, treat privacy controls as a required part of the baseline decision — not an optional extra considered later.',
+    memoryTip: 'Security asks "can someone steal it?" Privacy asks "should we even be collecting it this way?" Both need selected controls.',
   },
   {
     id: 'secure-configuration-management',
     term: 'Secure Configuration Management',
     domainId: 'control-implementation',
     definition:
-      'The implementation practice of applying and maintaining hardened, standardized configuration settings across systems, turning a general security requirement into a concrete, auditable baseline.',
+      'Applying and maintaining hardened, standardized settings across systems, so "hardened" is a real, checkable state instead of just a goal.',
     example:
-      'A team applies a standardized hardening baseline to every new server image before deployment, rather than configuring each server ad hoc.',
+      'A team applies the same hardening baseline to every new server before it goes live, instead of configuring each one differently by hand.',
     whyItMatters:
-      'Inconsistent configuration is one of the most common real-world sources of exploitable weakness — secure configuration management is what makes "hardened" a verifiable state rather than a vague aspiration.',
+      'Inconsistent settings are one of the most common real-world weaknesses. This is what makes "we hardened it" something you can actually prove.',
     howToApply:
-      'Use a documented, repeatable hardening baseline (like a STIG) for each product type, and track configuration drift from that baseline over time.',
-    memoryTip: 'Configuration management is how "we said we\'d harden it" becomes "here\'s proof it\'s actually hardened, every time."',
+      'Use a repeatable, documented hardening baseline (like a STIG) for each type of product, and track when systems drift away from it.',
+    memoryTip: 'Configuration management turns "we said we\'d harden it" into "here\'s proof it\'s hardened, every time."',
   },
   {
     id: 'devsecops-integration',
     term: 'DevSecOps Integration',
     domainId: 'control-implementation',
     definition:
-      'Building control implementation and verification directly into the development/deployment pipeline (CI/CD), rather than treating security as a separate step performed after development is complete.',
+      'Building security checks directly into the development pipeline, instead of treating security as a separate step done after development finishes.',
     example:
-      'A CI/CD pipeline automatically scans infrastructure-as-code templates for misconfigurations and blocks deployment if a required control setting is missing.',
+      'A deployment pipeline automatically scans for misconfigurations and blocks the release if a required security setting is missing.',
     whyItMatters:
-      'Catching implementation gaps during development is far cheaper than catching them at formal assessment — DevSecOps shifts the discovery of problems as early as possible.',
+      'Catching a problem during development is far cheaper than catching it during the formal assessment. DevSecOps moves problem-finding as early as possible.',
     howToApply:
-      'Add automated security/configuration checks as gates in the deployment pipeline for any control that can be verified programmatically.',
-    memoryTip: 'DevSecOps = security checked at every commit, not just once at the end.',
+      'Add automated security checks as required steps in the deployment pipeline, for anything that can be checked automatically.',
+    memoryTip: 'DevSecOps means security gets checked at every step, not just once at the very end.',
   },
   {
     id: 'implementation-verification',
     term: 'Implementation Verification / Self-Testing',
     domainId: 'control-implementation',
     definition:
-      'A readiness check — self-testing or peer review — performed by the implementation team before formal, independent assessment, to catch obvious gaps early.',
+      'A team checking its own work before the formal, independent assessment — to catch obvious problems early.',
     example:
-      'Before the formal SAR-producing assessment, a team runs its own penetration test against a newly implemented boundary control and fixes what it finds.',
+      'Before the official assessment, a team runs its own test against a newly built security control and fixes whatever it finds.',
     whyItMatters:
-      'Self-testing isn\'t a substitute for independent assessment (Domain 5) — but skipping it means the formal assessment wastes time and credibility on easily preventable findings.',
+      'Self-testing doesn\'t replace the independent assessment — but skipping it means wasting the formal review on problems that could have been caught earlier.',
     howToApply:
-      'Build a self-testing or peer-review checkpoint into the implementation process before requesting formal assessment.',
-    memoryTip: 'Self-testing is proofreading your own work before you hand it to an editor — it doesn\'t replace the editor, it just avoids embarrassing typos.',
+      'Build a self-check step into your process before requesting the formal, independent assessment.',
+    memoryTip: 'Self-testing is proofreading your own work before handing it to an editor — it doesn\'t replace the editor.',
   },
   {
     id: 'security-assessment-report',
     term: 'Security Assessment Report (SAR)',
     domainId: 'assessment-audit',
     definition:
-      'The document reporting the results of a control assessment — findings, risk ratings, and recommendations — produced after the assessment defined in the SAP is carried out.',
+      'The document reporting what an assessment actually found — results, how serious each problem is, and what to do about it.',
     example:
-      'A SAR documents that 47 of 50 assessed controls are satisfied, with 3 findings rated Moderate risk and specific remediation recommendations for each.',
+      'A SAR shows that 47 of 50 checked controls are working properly, with 3 findings rated moderate risk and specific fixes recommended for each.',
     whyItMatters:
-      'The SAR is the primary evidence the AO relies on in Domain 6 — without a credible SAR, an authorization decision would just be a guess.',
+      'The SAR is the main evidence the AO relies on to make their decision. Without a solid SAR, an authorization decision would just be a guess.',
     howToApply:
-      'Ensure every finding in the SAR is specific and actionable enough to become a concrete POA&M entry, not a vague general concern.',
-    memoryTip: 'SAP is the plan for the exam; SAR is the graded results that come back afterward.',
+      'Make sure every finding in the SAR is specific enough to turn directly into a POA&M entry, not a vague general concern.',
+    memoryTip: 'The SAP is the plan; the SAR is the graded results that come back afterward.',
   },
   {
     id: 'security-assessment-plan',
     term: 'Security Assessment Plan (SAP)',
     domainId: 'assessment-audit',
     definition:
-      'The plan, written before assessment begins, describing scope, methods (examine/interview/test), and procedures for assessing a system\'s controls.',
+      'The plan, written before an assessment begins, that lays out what will be checked, how, and by whom.',
     example:
-      'A SAP specifies that access control (AC family) will be assessed via testing and interview, while planning documents (PL family) will be assessed via examination only.',
+      'A SAP might say access controls will be checked by testing and interview, while planning documents will just be reviewed on paper.',
     whyItMatters:
-      'Assessing without a plan risks inconsistent, incomplete coverage — the SAP is what makes an assessment systematic and repeatable rather than ad hoc.',
+      'Checking things without a plan leads to inconsistent, incomplete coverage. The SAP is what makes an assessment systematic instead of random.',
     howToApply:
-      'Match assessment methods to each control\'s assessment object (specification, mechanism, activity, or individual) explicitly in the SAP before assessment starts.',
-    memoryTip: 'No SAP, no structure — you can\'t grade a test that was never designed.',
+      'For each control, decide the right method ahead of time and write it into the SAP before the assessment starts.',
+    memoryTip: 'No plan, no structure — you can\'t grade a test that was never designed.',
   },
   {
     id: 'reciprocity',
     term: 'Reciprocity',
     domainId: 'assessment-audit',
     definition:
-      'The practice of accepting an existing, credible assessment or authorization from one organization rather than duplicating that work from scratch.',
+      'Accepting an existing, trustworthy assessment or authorization from someone else instead of redoing that work from scratch.',
     example:
-      'A federal agency accepts a cloud service\'s existing FedRAMP authorization instead of requiring its own full independent assessment of the same service.',
+      'A federal agency accepts a cloud service\'s existing FedRAMP authorization instead of doing its own full independent check of the same service.',
     whyItMatters:
-      'Reciprocity avoids wasted duplicate effort across organizations assessing the same system or service, as long as the existing assessment is genuinely credible and current.',
+      'Reciprocity avoids wasted, duplicated work across organizations checking the exact same system — as long as the existing check is genuinely trustworthy and current.',
     howToApply:
-      'Before commissioning a new assessment, check whether a credible, current assessment or authorization already exists that can be reused instead.',
-    memoryTip: 'Reciprocity = "don\'t regrade a paper someone trustworthy already graded."',
+      'Before ordering a new assessment, check whether a trustworthy, current one already exists that you can reuse instead.',
+    memoryTip: 'Reciprocity means not regrading a paper someone trustworthy already graded.',
   },
   {
     id: 'coverage-and-depth',
     term: 'Coverage & Depth (Assessment Attributes)',
     domainId: 'assessment-audit',
     definition:
-      'Two attributes describing assessment rigor: coverage is how much of the system was assessed (a sample vs. every instance), and depth is how thoroughly each method was applied (a basic review vs. a comprehensive one).',
+      'Coverage is how much of the system got checked (a sample vs. everything). Depth is how carefully each method was applied (a quick look vs. a thorough one).',
     example:
-      'An assessment with high coverage but low depth might briefly check every server; one with low coverage but high depth might exhaustively test just a representative sample.',
+      'One assessment might briefly check every single server (high coverage, low depth). Another might thoroughly test just a sample (low coverage, high depth).',
     whyItMatters:
-      'Two assessments of the same system can reach very different conclusions depending on their coverage and depth — knowing these attributes lets you judge how much confidence a SAR\'s conclusions deserve.',
+      'Two assessments of the same system can reach very different conclusions depending on their coverage and depth — knowing this helps you judge how much to trust a report.',
     howToApply:
-      'Specify target coverage and depth explicitly in the SAP for each control, rather than leaving assessment rigor implicit or inconsistent.',
-    memoryTip: 'Coverage = how much ground you covered; depth = how hard you dug where you did look.',
+      'Spell out the target coverage and depth for each control in the plan, instead of leaving it vague or inconsistent.',
+    memoryTip: 'Coverage is how much ground you covered. Depth is how hard you dug where you looked.',
   },
   {
     id: 'authorizing-official-role',
     term: 'Authorizing Official (AO)',
     domainId: 'system-compliance',
     definition:
-      'The senior official with the formal authority to accept responsibility for operating a system at an acceptable level of risk, and who makes the final compliance decision.',
+      'The senior official with the formal authority to accept a system\'s risk and make the final decision on whether it can operate.',
     example:
-      'A Chief Information Officer serving as AO reviews the authorization package for a new payroll system and formally accepts the documented residual risk before it goes live.',
+      'A Chief Information Officer acting as AO reviews the authorization package for a new payroll system and formally accepts the documented risk before it goes live.',
     whyItMatters:
-      'Every prior domain — governance, scoping, selection, implementation, assessment — ultimately exists to give the AO enough information to make one accountable, risk-based decision.',
+      'Every earlier domain — governance, scoping, selection, implementation, assessment — exists to give the AO enough information to make this one accountable decision.',
     howToApply:
-      'Ensure the AO (not the system owner or ISSO) is the one formally documented as making and signing the authorization decision.',
-    memoryTip: 'Everyone else builds the case; the AO is the one who signs the verdict.',
+      'Make sure the AO — not the system owner or ISSO — is the one formally documented as making and signing the final decision.',
+    memoryTip: 'Everyone else builds the case. The AO is the one who signs the verdict.',
   },
   {
     id: 'iatt-term',
     term: 'Interim Authorization to Test (IATT)',
     domainId: 'system-compliance',
     definition:
-      'A time-limited authorization allowing a system to operate in a test environment only, not production, typically issued when a system needs real-world testing before full authorization.',
+      'A time-limited authorization that lets a system run in a test environment only — not production.',
     example:
-      'A new system is granted an IATT to run integration tests against live-like data in a staging environment, while its full ATO is still pending final assessment.',
+      'A new system gets an IATT to run tests in a staging environment, while its full authorization is still pending.',
     whyItMatters:
-      'An IATT is not a shortcut to production — mistaking it for a full ATO is a common and serious compliance error.',
+      'An IATT is not a shortcut to production. Treating it like a full authorization is a serious and common mistake.',
     howToApply:
-      'Track IATT expiration dates carefully, and never allow a system operating under an IATT to process production data or workloads.',
-    memoryTip: 'IATT = "test only, not for real" — a rehearsal permit, not opening night.',
+      'Track when every IATT expires, and never let a system running under an IATT touch real production data.',
+    memoryTip: 'IATT means "test only, not for real" — a rehearsal pass, not opening night.',
   },
   {
     id: 'denial-of-authorization',
     term: 'Denial of Authorization',
     domainId: 'system-compliance',
     definition:
-      'A formal AO decision that a system\'s residual risk is unacceptable and it may not operate until that risk is sufficiently addressed.',
+      'A formal decision by the AO that a system\'s risk is too high, and it may not operate until that risk is fixed.',
     example:
-      'An AO denies authorization for a system with several unmitigated high-risk findings and no credible remediation plan, rather than issuing a conditional ATO.',
+      'An AO denies authorization for a system with several serious, unfixed problems and no real plan to fix them — rather than approving it with conditions.',
     whyItMatters:
-      'Denial is a legitimate, expected outcome of a genuine risk-based process — a framework where every system always gets authorized regardless of risk isn\'t really risk-based at all.',
+      'Denial is a normal, expected outcome of a real risk-based process. A system that\'s always approved no matter the risk isn\'t really being evaluated at all.',
     howToApply:
-      'Document the specific reasons for denial and the conditions that would need to change before reconsideration, just as thoroughly as you would document an approval.',
-    memoryTip: 'Denial isn\'t a failure of the process — it\'s the process working exactly as intended when risk is too high.',
+      'Write down the specific reasons for a denial and what would need to change, just as thoroughly as you would document an approval.',
+    memoryTip: 'Denial isn\'t a failure of the process — it\'s the process working the way it\'s supposed to when risk is too high.',
   },
   {
     id: 'authorization-package',
     term: 'Authorization Package',
     domainId: 'system-compliance',
     definition:
-      'The complete set of documents — SSP, SAR, and POA&M — assembled and submitted to the AO to support a compliance decision.',
+      'The full set of documents — SSP, SAR, and POA&M — put together and handed to the AO to support their decision.',
     example:
-      'Before requesting authorization, a system owner assembles the current SSP, the latest SAR, and an up-to-date POA&M into a single package for AO review.',
+      'Before asking for authorization, a system owner gathers the current SSP, the latest SAR, and an up-to-date POA&M into one package for the AO to review.',
     whyItMatters:
-      'An incomplete package (e.g., a stale SAR or missing POA&M items) undermines the AO\'s ability to make an informed decision, regardless of how good the underlying controls actually are.',
+      'An incomplete package — like a stale SAR or missing POA&M items — makes it impossible for the AO to make a fully informed decision, no matter how good the actual controls are.',
     howToApply:
-      'Verify all three components are current and consistent with each other before submitting a package for authorization.',
+      'Double-check that all three documents are current and consistent with each other before submitting the package.',
     memoryTip: 'Three documents, one package, one decision: SSP (what it is), SAR (does it work), POA&M (what\'s still open).',
   },
   {
@@ -637,55 +637,55 @@ export const terms: TermEntry[] = [
     term: 'Risk Acceptance vs. Risk Transfer',
     domainId: 'system-compliance',
     definition:
-      'Risk acceptance means the organization chooses to live with a risk as-is; risk transfer means shifting some of the impact to another party, such as through insurance or contract terms.',
+      'Risk acceptance means choosing to live with a risk as-is. Risk transfer means shifting some of the impact to someone else, like through insurance.',
     example:
-      'An AO accepts the residual risk of a low-impact system directly, while an organization transfers some financial impact of a potential breach by purchasing cyber insurance.',
+      'An AO directly accepts the leftover risk of a low-impact system. Meanwhile, the organization transfers some financial risk of a breach by buying cyber insurance.',
     whyItMatters:
-      'These are two different treatment strategies with different implications — transfer reduces financial impact but doesn\'t reduce the likelihood or technical risk itself.',
+      'These are two different strategies with different effects — transfer softens the financial hit, but it doesn\'t actually make the risk less likely to happen.',
     howToApply:
-      'When documenting a compliance decision, be explicit about which treatment strategy (acceptance, transfer, mitigation, or avoidance) was chosen for each significant risk.',
-    memoryTip: 'Acceptance = you keep the risk; transfer = someone else absorbs part of the fallout — the risk itself doesn\'t vanish either way.',
+      'When documenting a decision, be clear about which strategy — accept, transfer, reduce, or avoid — was chosen for each significant risk.',
+    memoryTip: 'Acceptance means you keep the risk. Transfer means someone else absorbs part of the cost — either way, the risk itself doesn\'t disappear.',
   },
   {
     id: 'iscm-strategy',
     term: 'ISCM Strategy',
     domainId: 'compliance-maintenance',
     definition:
-      'A documented strategy (per NIST SP 800-137) defining what will be monitored, how often, and what triggers escalation — the operational plan behind continuous monitoring.',
+      'A written plan for continuous monitoring — what gets watched, how often, and what triggers escalation.',
     example:
-      'An ISCM strategy specifies daily vulnerability scans, monthly access reviews, and an automatic AO alert if any critical vulnerability remains unpatched for more than 15 days.',
+      'An ISCM strategy might call for daily vulnerability scans, monthly access reviews, and an automatic alert if a serious flaw goes unpatched for more than 15 days.',
     whyItMatters:
-      'Without a defined strategy, "continuous monitoring" becomes whatever gets checked informally and inconsistently — the strategy is what makes it a real, auditable program.',
+      'Without a real strategy, "continuous monitoring" ends up being whatever gets checked informally. A strategy is what makes it a real, trackable program.',
     howToApply:
-      'Define monitoring frequency and escalation triggers explicitly for each control category, not just for the system as a whole.',
-    memoryTip: 'ISCM strategy = the answer to "what exactly are we watching, how often, and who gets called when it matters?"',
+      'Spell out how often each type of control gets monitored, and what should trigger an alert — not just for the system overall, but by category.',
+    memoryTip: 'An ISCM strategy answers: what are we watching, how often, and who gets called when it matters?',
   },
   {
     id: 'configuration-drift',
     term: 'Configuration Drift',
     domainId: 'compliance-maintenance',
     definition:
-      'The gradual, often unnoticed divergence of a system\'s actual configuration from its documented, approved baseline over time.',
+      'The slow, often unnoticed way a system\'s real settings stop matching what\'s documented as approved.',
     example:
-      'A server\'s hardening baseline required a specific firewall rule set, but over six months of ad hoc changes, several unauthorized ports were opened without anyone updating the documentation.',
+      'A server\'s approved firewall rules get changed bit by bit over six months, opening several unauthorized ports — but no one updates the documentation.',
     whyItMatters:
-      'Drift means the SSP\'s implementation statements no longer reflect reality — a control that was correctly implemented and assessed can silently stop being true.',
+      'Drift means the SSP no longer describes reality. A control that was correctly built and checked can quietly stop being true.',
     howToApply:
-      'Monitor for configuration drift as part of the ISCM strategy, and route any detected drift through change management to either fix it or formally update the baseline.',
-    memoryTip: 'Drift is entropy for compliance — left unchecked, documented reality and actual reality slowly stop matching.',
+      'Watch for configuration drift as part of your monitoring strategy, and fix (or formally update) anything that\'s drifted from the approved baseline.',
+    memoryTip: 'Drift is what happens when documented reality and actual reality slowly stop matching, if no one\'s watching.',
   },
   {
     id: 'incident-response-lifecycle',
     term: 'Incident Response Lifecycle',
     domainId: 'compliance-maintenance',
     definition:
-      'The four-phase NIST SP 800-61 model for handling security incidents: Preparation, Detection & Analysis, Containment/Eradication/Recovery, and Post-Incident Activity.',
+      'The four stages of handling a security incident: prepare, detect and analyze, contain and fix, then review afterward.',
     example:
-      'A phishing-triggered compromise moves through detection (an alert fires), containment (the account is disabled), eradication (malware is removed), recovery (the account is restored), and finally a post-incident review.',
+      'A phishing-triggered compromise moves through detection (an alert fires), containment (the account is disabled), fixing (malware is removed), and a final review.',
     whyItMatters:
-      'Skipping a phase — especially jumping straight to eradication without proper containment — can let an incident spread further or destroy evidence needed for analysis.',
+      'Skipping a stage — especially jumping straight to fixing without first containing the problem — can let it spread further, or destroy evidence you\'ll need later.',
     howToApply:
-      'Map your organization\'s incident response plan explicitly to these four phases, so responders always know which phase they\'re in and what comes next.',
+      'Map your response plan clearly to these four stages, so responders always know where they are and what\'s next.',
     memoryTip: 'Prepare, detect, contain-and-fix, learn — in that order, every time.',
   },
   {
@@ -693,42 +693,42 @@ export const terms: TermEntry[] = [
     term: 'BCP vs. DRP',
     domainId: 'compliance-maintenance',
     definition:
-      'A Business Continuity Plan (BCP) keeps business functions running during and after a disruption; a Disaster Recovery Plan (DRP) specifically restores IT systems and infrastructure.',
+      'A Business Continuity Plan (BCP) keeps the business running during a disruption. A Disaster Recovery Plan (DRP) restores the IT systems specifically.',
     example:
-      'During a data center outage, the DRP governs failing over servers to a backup site, while the BCP governs how the business keeps serving customers (e.g., via manual processes) while that failover happens.',
+      'During a data center outage, the DRP handles moving servers to a backup site, while the BCP handles how the business keeps serving customers in the meantime.',
     whyItMatters:
-      'Conflating the two leaves gaps — a DRP alone doesn\'t address how the business functions while IT is being restored, and a BCP alone doesn\'t specify the technical recovery steps.',
+      'Mixing these two up leaves gaps — the DRP alone doesn\'t cover how the business functions while IT is down, and the BCP alone doesn\'t give the technical recovery steps.',
     howToApply:
-      'Maintain both plans, cross-referenced, and test them together rather than treating IT recovery and business continuity as unrelated concerns.',
-    memoryTip: 'DRP fixes the systems; BCP keeps the business alive while the systems get fixed.',
+      'Keep both plans, cross-referenced, and test them together instead of treating them as unrelated.',
+    memoryTip: 'The DRP fixes the systems. The BCP keeps the business alive while the systems get fixed.',
   },
   {
     id: 'rto-rpo-term',
     term: 'RTO & RPO',
     domainId: 'compliance-maintenance',
     definition:
-      'Recovery Time Objective (RTO) is the maximum acceptable downtime after a disruption; Recovery Point Objective (RPO) is the maximum acceptable data loss, measured backward in time from the incident.',
+      'Recovery Time Objective (RTO) is the longest acceptable downtime. Recovery Point Objective (RPO) is the most data loss you can tolerate, measured in time.',
     example:
-      'An RTO of 4 hours means the system must be back up within 4 hours; an RPO of 1 hour means at most 1 hour of data (e.g., the last hour of transactions) can be lost.',
+      'An RTO of 4 hours means the system must be back up within 4 hours. An RPO of 1 hour means at most the last hour of data can be lost.',
     whyItMatters:
-      'These targets, grounded in the BIA from Domain 1, directly drive technical decisions like backup frequency (for RPO) and failover architecture (for RTO) — they\'re not just paperwork.',
+      'These targets, grounded in the BIA, directly shape real decisions — like how often to back up data (RPO) and how fast the failover system needs to be (RTO).',
     howToApply:
-      'Set RTO/RPO targets based on the BIA\'s actual business-impact findings, then verify backup and recovery infrastructure can actually meet them — don\'t just pick numbers that sound reasonable.',
-    memoryTip: 'RTO = how long can we be down; RPO = how much can we lose — time down vs. data lost, two different clocks.',
+      'Set RTO and RPO based on the BIA\'s real findings, then check that your backup and recovery systems can actually hit those targets.',
+    memoryTip: 'RTO is how long you can be down. RPO is how much you can lose — two different clocks.',
   },
   {
     id: 'system-decommissioning',
     term: 'System Decommissioning',
     domainId: 'compliance-maintenance',
     definition:
-      'The secure retirement of a system at end-of-life, including data sanitization, access revocation, and updating the system inventory and authorization records.',
+      'Securely retiring a system at the end of its life — wiping its data, shutting off access, and updating your records.',
     example:
-      'When a legacy application is retired, its data is securely wiped from storage media, its accounts are deactivated, and its entry is removed from the active system inventory and authorization tracking.',
+      'When an old application is retired, its data is securely wiped, its accounts are turned off, and it\'s removed from the active system inventory.',
     whyItMatters:
-      'An improperly decommissioned system can leak data (unsanitized storage) or leave a "ghost" authorization/attack surface that no one is actively monitoring or accounting for.',
+      'A system retired the wrong way can leak data or leave a "ghost" system no one is watching or tracking anymore.',
     howToApply:
-      'Treat decommissioning as a formal, checklist-driven process — including data sanitization and inventory updates — rather than simply turning a system off.',
-    memoryTip: 'Compliance maintenance doesn\'t end when a system goes live — it ends when the system is properly buried, not just abandoned.',
+      'Treat decommissioning as a formal checklist — including wiping data and updating records — not just turning something off.',
+    memoryTip: 'Staying compliant doesn\'t end when a system goes live — it ends when the system is properly retired, not just abandoned.',
   },
 ]
 
