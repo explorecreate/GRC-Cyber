@@ -16,7 +16,9 @@ export default function CourseDetail() {
         <Link to="/umgc" className="text-sm text-brand-700 hover:underline">
           ← UMGC Coursework Prep
         </Link>
-        <p className="mt-2 text-xs font-semibold text-slate-400">{course.code}</p>
+        <p className="mt-2 text-xs font-semibold text-slate-400">
+          {course.code} · {course.credits} credits · Prerequisite{course.prerequisites.includes(' and ') ? 's' : ''}: {course.prerequisites}
+        </p>
         <h1 className="mt-1 text-2xl md:text-3xl font-bold text-slate-900">{course.title}</h1>
       </div>
 
@@ -33,6 +35,24 @@ export default function CourseDetail() {
           ))}
         </ul>
       </section>
+
+      {course.projects.length > 0 && (
+        <section>
+          <h2 className="mb-3 text-lg font-semibold text-slate-900">Typical Projects &amp; Deliverables</h2>
+          <p className="mb-3 text-sm text-slate-500">
+            Based on past sections of this course — actual assignments vary by term and instructor, so treat these as a
+            preview of the kind of work involved, not a guarantee of your specific syllabus.
+          </p>
+          <div className="space-y-3">
+            {course.projects.map((p) => (
+              <div key={p.title} className="rounded-xl border border-slate-200 bg-white p-4">
+                <p className="font-medium text-slate-800">{p.title}</p>
+                <p className="mt-1 text-sm text-slate-600">{p.summary}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section>
         <h2 className="mb-3 text-lg font-semibold text-slate-900">Recommended Free Resources</h2>

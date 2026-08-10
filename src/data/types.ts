@@ -66,11 +66,19 @@ export interface UseCaseCard {
   added: string // ISO date
 }
 
+export interface UmgcProject {
+  title: string
+  summary: string
+}
+
 export interface UmgcCourse {
   id: string
   code: string
   title: string
+  credits: number
+  prerequisites: string
   overview: string
   keyTopics: string[]
+  projects: UmgcProject[]
   resources: ResourceLink[]
 }
