@@ -1,6 +1,8 @@
-# GRC-Cyber
+# GRC Learning
 
 A free, open-access study hub — no login required. Built with React, TypeScript, Tailwind CSS, and React Router.
+
+_Repository: [explorecreate/GRC-Cyber](https://github.com/explorecreate/GRC-Cyber)_
 
 ## Sections
 
