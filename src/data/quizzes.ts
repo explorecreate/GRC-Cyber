@@ -799,6 +799,463 @@ export const quizQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation: 'COOP is a federal-agency-focused continuity plan specifically ensuring essential functions and leadership succession continue during emergencies.',
   },
+
+  // ---- Governance (round 3) ----
+  {
+    id: 'gov-13',
+    domainId: 'governance',
+    question: 'A "procedure" in the documentation hierarchy is best described as:',
+    options: [
+      'A high-level statement of management intent',
+      'Step-by-step instructions for carrying out a policy or standard',
+      'An optional, non-binding suggestion',
+      'A federal law',
+    ],
+    correctIndex: 1,
+    explanation: 'Procedures translate policy and standards into concrete, repeatable steps — "how exactly do I do this," as opposed to "what must be done."',
+  },
+  {
+    id: 'gov-14',
+    domainId: 'governance',
+    question: 'Which of the following best describes "accountability" in a governance context?',
+    options: [
+      'Everyone shares equal, undifferentiated responsibility for every decision',
+      'A specific individual or role is designated as answerable for a given decision or outcome',
+      'Accountability applies only to the CEO',
+      'Accountability is the same thing as authority',
+    ],
+    correctIndex: 1,
+    explanation: 'Good governance assigns clear accountability — a named role answerable for an outcome — rather than diffusing responsibility so broadly that no one owns it.',
+  },
+  {
+    id: 'gov-15',
+    domainId: 'governance',
+    question: 'GDPR is most useful in a CGRC context as an example of:',
+    options: [
+      'A US federal law identical to FISMA',
+      'A non-US regulatory framework illustrating how privacy/legal obligations shape governance',
+      'A NIST special publication',
+      'An (ISC)² ethics requirement',
+    ],
+    correctIndex: 1,
+    explanation: 'GDPR is used as a comparator to show that legal/regulatory drivers of governance extend beyond US federal law like FISMA.',
+  },
+
+  // ---- Risk Management (round 3) ----
+  {
+    id: 'risk-13',
+    domainId: 'risk-management',
+    question: 'Risk avoidance, as a treatment option, means:',
+    options: [
+      'Purchasing insurance to cover potential losses',
+      'Eliminating the activity or exposure that creates the risk entirely',
+      'Accepting the risk as-is without change',
+      'Reducing the risk with additional controls',
+    ],
+    correctIndex: 1,
+    explanation: 'Avoidance removes the risk by not engaging in the risky activity at all — e.g., declining to launch a product feature that would introduce unacceptable exposure.',
+  },
+  {
+    id: 'risk-14',
+    domainId: 'risk-management',
+    question: 'Risk transfer commonly takes which form?',
+    options: [
+      'Ignoring the risk entirely',
+      'Purchasing cyber insurance or outsourcing the risky function to a third party under contract',
+      'Increasing the system\'s FIPS 199 categorization',
+      'Writing a new organizational policy with no other action',
+    ],
+    correctIndex: 1,
+    explanation: 'Transfer shifts some financial or operational impact of a risk to another party, commonly via insurance or contractual risk-sharing.',
+  },
+  {
+    id: 'risk-15',
+    domainId: 'risk-management',
+    question: 'A risk assessment conducted at the organizational tier (per SP 800-39) primarily supports:',
+    options: [
+      'Only a single system\'s authorization decision',
+      'Enterprise-wide risk management strategy and investment decisions',
+      'Only employee performance reviews',
+      'Physical badge issuance',
+    ],
+    correctIndex: 1,
+    explanation: 'SP 800-39\'s tiered approach uses organization-level risk assessments to inform strategy and resource allocation across the entire enterprise, not just one system.',
+  },
+
+  // ---- Third-Party / Scope (round 3) ----
+  {
+    id: 'tpr-10',
+    domainId: 'third-party-risk',
+    question: 'In a SaaS (Software as a Service) model, the customer typically retains responsibility for:',
+    options: [
+      'Patching the underlying operating system',
+      'Data classification, user access management, and appropriate use of the application',
+      'Maintaining the physical data center',
+      'Managing the hypervisor',
+    ],
+    correctIndex: 1,
+    explanation: 'In SaaS, the provider manages nearly the entire stack; the customer\'s responsibility narrows to how they classify, access, and use their own data within the app.',
+  },
+  {
+    id: 'tpr-11',
+    domainId: 'third-party-risk',
+    question: 'A system interconnection that is discovered but was never documented poses risk primarily because:',
+    options: [
+      'Undocumented connections cannot technically transmit data',
+      'It falls outside the authorization boundary\'s documented risk picture, meaning its risk was never assessed or accepted',
+      'It automatically triggers a FIPS 199 recategorization',
+      'It has no effect on system risk',
+    ],
+    correctIndex: 1,
+    explanation: 'An undocumented interconnection means risk is flowing across a boundary that was never evaluated or formally accepted by the AO — a blind spot in the risk picture.',
+  },
+
+  // ---- Controls (round 3) ----
+  {
+    id: 'ctrl-10',
+    domainId: 'controls',
+    question: 'Scoping guidance, as part of tailoring, allows an organization to:',
+    options: [
+      'Add controls indiscriminately without justification',
+      'Narrow which parts of a control apply based on factors like technology, operational environment, or policy',
+      'Skip documenting the SSP entirely',
+      'Ignore FIPS 200 minimum requirements',
+    ],
+    correctIndex: 1,
+    explanation: 'Scoping considerations (technology-specific, operational, policy/regulatory, etc.) let an organization narrow a control\'s applicability to what genuinely applies to the system.',
+  },
+  {
+    id: 'ctrl-11',
+    domainId: 'controls',
+    question: 'Organization-defined parameters (ODPs) in SP 800-53 controls exist so that:',
+    options: [
+      'Every organization uses identical values for every control',
+      'Organizations can specify values (e.g., password length, review frequency) appropriate to their own risk tolerance',
+      'Only the AO can ever set them',
+      'They only apply to privacy controls',
+    ],
+    correctIndex: 1,
+    explanation: 'ODPs let organizations fill in specific values (like "90 days" or "14 characters") for a control\'s variable elements, tailoring rigor to their own context.',
+  },
+
+  // ---- Assessment/Audit (round 3) ----
+  {
+    id: 'aa-9',
+    domainId: 'assessment-audit',
+    question: 'The "coverage" attribute of an assessment describes:',
+    options: [
+      'How many assessors were paid',
+      'The scope/breadth of assessment objects included (e.g., a sample vs. every instance)',
+      'The insurance coverage for the assessment team',
+      'The number of controls in the SP 800-53 catalog',
+    ],
+    correctIndex: 1,
+    explanation: 'Coverage describes how much of the system was actually assessed — e.g., a representative sample of servers vs. every single server in the environment.',
+  },
+  {
+    id: 'aa-10',
+    domainId: 'assessment-audit',
+    question: 'Reciprocity, in the context of control assessments, refers to:',
+    options: [
+      'Never accepting another organization\'s assessment results',
+      'Accepting an existing assessment or authorization from one organization to avoid duplicating work in another',
+      'A requirement that assessors be paid twice',
+      'A synonym for the SAR',
+    ],
+    correctIndex: 1,
+    explanation: 'Reciprocity allows organizations to leverage existing, credible assessment results (e.g., a FedRAMP authorization) instead of re-assessing the same system from scratch.',
+  },
+
+  // ---- Authorization / Continuous Monitoring (round 3) ----
+  {
+    id: 'auth-9',
+    domainId: 'authorization',
+    question: 'A "denial of authorization" decision means:',
+    options: [
+      'The system may operate with no restrictions',
+      'The AO has determined the risk is unacceptable and the system may not operate',
+      'The system automatically receives an IATT instead',
+      'The categorization must be redone before any other action',
+    ],
+    correctIndex: 1,
+    explanation: 'Denial is a formal AO decision that residual risk is unacceptable — the system is not authorized to operate until risk is addressed.',
+  },
+  {
+    id: 'auth-10',
+    domainId: 'authorization',
+    question: 'Automated data feeds in an ISCM program are valuable primarily because they:',
+    options: [
+      'Eliminate the need for any assessment ever again',
+      'Reduce manual effort and provide more timely, consistent risk-relevant data to support ongoing decisions',
+      'Are required to replace the SSP',
+      'Only apply to privacy controls',
+    ],
+    correctIndex: 1,
+    explanation: 'Automation (e.g., vulnerability scanners feeding a dashboard) reduces the lag and manual burden of continuous monitoring, keeping risk data fresher for decision-makers.',
+  },
+
+  // ---- Incident Management (round 3) ----
+  {
+    id: 'im-10',
+    domainId: 'incident-management',
+    question: 'Containment, as a phase of incident response, primarily aims to:',
+    options: [
+      'Permanently fix the root cause immediately',
+      'Limit the scope and spread of damage while a fuller response is planned',
+      'Notify the media',
+      'Skip straight to lessons learned',
+    ],
+    correctIndex: 1,
+    explanation: 'Containment focuses on stopping an incident from getting worse (e.g., isolating an infected host) before eradication and full recovery take place.',
+  },
+  {
+    id: 'im-11',
+    domainId: 'incident-management',
+    question: 'A full-scale exercise, compared to a tabletop or functional exercise, is best described as:',
+    options: [
+      'Purely a paper-based discussion',
+      'The most realistic and resource-intensive test, closely simulating an actual event including operational response',
+      'Never used in continuity planning',
+      'Always the cheapest option',
+    ],
+    correctIndex: 1,
+    explanation: 'Full-scale exercises are the most comprehensive and costly test type, closely mimicking a real incident/disaster to validate plans under near-real conditions.',
+  },
+
+  // ---- Governance (round 4) ----
+  {
+    id: 'gov-16',
+    domainId: 'governance',
+    question: 'Which best distinguishes a "law" from a "policy" in the governance hierarchy?',
+    options: [
+      'They are the same thing at different organizational levels',
+      'A law is externally imposed by a governing body (e.g., Congress); a policy is internally created by the organization to comply with laws and set its own direction',
+      'Policies always override laws',
+      'Laws only apply to private companies',
+    ],
+    correctIndex: 1,
+    explanation: 'Laws come from external legal authorities and are mandatory regardless of the organization; policies are internal documents organizations write, partly to ensure compliance with those laws.',
+  },
+  {
+    id: 'gov-17',
+    domainId: 'governance',
+    question: 'An organizational chart showing the CISO reporting directly to the CEO (rather than the CIO) is often cited as an example of:',
+    options: [
+      'A violation of federal law',
+      'A governance structure intended to preserve security\'s independence and visibility at the top level',
+      'An irrelevant detail with no governance implications',
+      'A requirement under FIPS 199',
+    ],
+    correctIndex: 1,
+    explanation: 'Reporting structure affects independence and influence — a CISO reporting to the CEO (vs. buried under the CIO) is a governance design choice that can reduce conflicts of interest.',
+  },
+  {
+    id: 'gov-18',
+    domainId: 'governance',
+    question: 'Which of the following is most clearly an "ethics" issue rather than a purely technical one under the (ISC)² Code of Ethics?',
+    options: [
+      'Choosing which encryption algorithm to implement',
+      'A practitioner using insider knowledge of a vulnerability for personal gain rather than disclosing it responsibly',
+      'Selecting a cloud region for data residency',
+      'Configuring a firewall rule set',
+    ],
+    correctIndex: 1,
+    explanation: 'Ethics issues involve professional conduct and integrity — like disclosing rather than exploiting a discovered vulnerability — as opposed to purely technical implementation choices.',
+  },
+
+  // ---- Risk Management (round 4) ----
+  {
+    id: 'risk-16',
+    domainId: 'risk-management',
+    question: 'A heat map in risk management is typically used to:',
+    options: [
+      'Track server room temperature',
+      'Visually plot risks by likelihood and impact to prioritize attention',
+      'Replace the need for a risk register entirely',
+      'Show network topology only',
+    ],
+    correctIndex: 1,
+    explanation: 'Risk heat maps plot likelihood against impact so stakeholders can quickly see which risks need the most urgent attention.',
+  },
+  {
+    id: 'risk-17',
+    domainId: 'risk-management',
+    question: 'Inherent risk, as opposed to residual risk, refers to:',
+    options: [
+      'The risk remaining after controls are applied',
+      'The level of risk that exists before any controls are applied',
+      'A risk that has already been transferred',
+      'A risk that has been formally accepted by the AO',
+    ],
+    correctIndex: 1,
+    explanation: 'Inherent risk is the "raw" exposure before mitigation; residual risk is what remains after controls are applied — the gap between the two shows how much a control reduced risk.',
+  },
+  {
+    id: 'risk-18',
+    domainId: 'risk-management',
+    question: 'Which of these is most clearly an example of a supply chain risk (as opposed to a purely internal risk)?',
+    options: [
+      'An employee choosing a weak password',
+      'A hardware component sourced from a vendor containing an undisclosed backdoor',
+      'A misconfigured internal firewall rule',
+      'A missed internal training deadline',
+    ],
+    correctIndex: 1,
+    explanation: 'Supply chain risk originates outside the organization\'s direct control — such as a compromised component from a vendor — as opposed to risks arising purely from internal missteps.',
+  },
+
+  // ---- Third-Party / Scope (round 4) ----
+  {
+    id: 'tpr-12',
+    domainId: 'third-party-risk',
+    question: 'When a system\'s authorization boundary spans multiple cloud regions operated by the same CSP, the organization should:',
+    options: [
+      'Assume no additional documentation is needed since it\'s the same provider',
+      'Document each region\'s role and any data residency/interconnection implications within the boundary description',
+      'Automatically categorize the system as Low impact',
+      'Treat each region as a completely separate, unrelated system with no relationship to the others',
+    ],
+    correctIndex: 1,
+    explanation: 'Even within a single provider, multi-region architecture can introduce data residency, latency, and interconnection considerations that belong in the boundary documentation.',
+  },
+  {
+    id: 'tpr-13',
+    domainId: 'third-party-risk',
+    question: 'A PaaS (Platform as a Service) model shifts responsibility for which of the following to the customer, unlike SaaS?',
+    options: [
+      'The physical data center',
+      'The application code and configuration built on top of the platform',
+      'The network backbone',
+      'The hypervisor',
+    ],
+    correctIndex: 1,
+    explanation: 'PaaS gives the customer a managed platform (runtime, OS, middleware) but the customer is responsible for the application they build and deploy on it — more responsibility than SaaS, less than IaaS.',
+  },
+
+  // ---- Controls (round 4) ----
+  {
+    id: 'ctrl-12',
+    domainId: 'controls',
+    question: 'Which best describes the relationship between FIPS 200 and SP 800-53?',
+    options: [
+      'They are unrelated documents',
+      'FIPS 200 establishes minimum security requirement areas; SP 800-53 provides the specific controls organizations use to satisfy them',
+      'SP 800-53 replaced FIPS 200 entirely',
+      'FIPS 200 only applies to privacy, not security',
+    ],
+    correctIndex: 1,
+    explanation: 'FIPS 200 sets out minimum security requirement categories; SP 800-53 supplies the actual catalog of controls organizations select and implement to meet those requirements.',
+  },
+  {
+    id: 'ctrl-13',
+    domainId: 'controls',
+    question: 'A system-specific control (as opposed to common or hybrid) is one that is:',
+    options: [
+      'Inherited entirely from another system',
+      'Implemented uniquely by and for that one system, with no inheritance involved',
+      'Never documented in the SSP',
+      'Only relevant to privacy',
+    ],
+    correctIndex: 1,
+    explanation: 'System-specific controls are implemented directly by the system itself, unlike common controls (fully inherited) or hybrid controls (partly inherited, partly system-specific).',
+  },
+
+  // ---- Assessment/Audit (round 4) ----
+  {
+    id: 'aa-11',
+    domainId: 'assessment-audit',
+    question: 'When an assessment reveals a control is "not satisfied," the appropriate next step is generally to:',
+    options: [
+      'Remove the control from the SSP so it doesn\'t show as a finding',
+      'Document the finding in the SAR and determine remediation via a POA&M entry',
+      'Immediately shut the system down permanently',
+      'Ignore it if the system has already been authorized once before',
+    ],
+    correctIndex: 1,
+    explanation: 'A "not satisfied" finding gets documented in the SAR and tracked to resolution through the POA&M — not hidden or ignored.',
+  },
+  {
+    id: 'aa-12',
+    domainId: 'assessment-audit',
+    question: 'Which is the best reason to use a "test" method rather than just an "examine" method when assessing a technical control?',
+    options: [
+      'Testing is always faster than examining documents',
+      'Testing exercises the actual mechanism to confirm it behaves as intended, rather than just trusting the written description',
+      'Examine methods are never used for technical controls',
+      'Testing replaces the need for a SAR',
+    ],
+    correctIndex: 1,
+    explanation: 'A written policy or configuration standard (examine) might not reflect what a system actually does — testing verifies real-world behavior directly.',
+  },
+
+  // ---- Authorization / Continuous Monitoring (round 4) ----
+  {
+    id: 'auth-11',
+    domainId: 'authorization',
+    question: 'A key input the AO considers before renewing an ATO is:',
+    options: [
+      'The system\'s marketing budget',
+      'Current POA&M status, recent assessment/monitoring results, and any significant changes since the last authorization',
+      'The number of employees in the organization',
+      'The color scheme of the system\'s user interface',
+    ],
+    correctIndex: 1,
+    explanation: 'Reauthorization decisions rest on current risk data — open POA&M items, recent monitoring/assessment results, and any material changes — not unrelated organizational details.',
+  },
+  {
+    id: 'auth-12',
+    domainId: 'authorization',
+    question: 'The purpose of setting a defined authorization termination date is to:',
+    options: [
+      'Permanently end the system\'s operation on that date with no exceptions',
+      'Force a periodic review point ensuring the risk decision doesn\'t go stale indefinitely',
+      'Determine the system\'s FIPS 199 categorization',
+      'Set the AO\'s salary review date',
+    ],
+    correctIndex: 1,
+    explanation: 'A termination date forces a scheduled checkpoint so authorization doesn\'t continue indefinitely without a fresh risk review, complementing (not replacing) event-driven reauthorization.',
+  },
+
+  // ---- Incident Management (round 4) ----
+  {
+    id: 'im-12',
+    domainId: 'incident-management',
+    question: 'Eradication, as a phase within Containment/Eradication/Recovery, focuses on:',
+    options: [
+      'Simply monitoring the incident without acting',
+      'Removing the root cause of the incident (e.g., malware, unauthorized access) from affected systems',
+      'Notifying customers of a data breach',
+      'Writing the final lessons-learned report',
+    ],
+    correctIndex: 1,
+    explanation: 'Eradication removes the actual cause of the incident — deleting malware, closing an exploited vulnerability, revoking compromised credentials — before systems are restored to normal operation.',
+  },
+  {
+    id: 'im-13',
+    domainId: 'incident-management',
+    question: 'A Continuity of Operations Plan (COOP) most directly complements which other plan by focusing specifically on essential-function continuity during an emergency?',
+    options: [
+      'The Business Continuity Plan (BCP)',
+      'The System Security Plan (SSP)',
+      'The Security Assessment Plan (SAP)',
+      'The Plan of Action and Milestones (POA&M)',
+    ],
+    correctIndex: 0,
+    explanation: 'COOP and BCP are closely related continuity concepts — COOP is the federal-agency-specific term emphasizing essential functions and leadership succession, paralleling BCP\'s broader business-continuity focus.',
+  },
+  {
+    id: 'ctrl-14',
+    domainId: 'controls',
+    question: 'When a control is inherited but the common control provider\'s own assessment is out of date, the system relying on it should:',
+    options: [
+      'Assume everything is fine and proceed with authorization',
+      'Flag this as a risk item, since the inheriting system\'s risk posture depends on that unverified control',
+      'Automatically fail categorization',
+      'Remove the control from its SSP entirely',
+    ],
+    correctIndex: 1,
+    explanation: 'Inheriting a control doesn\'t remove risk accountability — if the provider\'s assessment is stale, the inheriting system\'s AO is accepting risk based on outdated assurance, which should be flagged.',
+  },
 ]
 
 export function getQuestionsByDomain(domainId: string): QuizQuestion[] {

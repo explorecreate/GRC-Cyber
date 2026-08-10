@@ -2,9 +2,9 @@ import type { AiResource, UseCaseCard } from './types'
 
 export const learningAiResources: AiResource[] = [
   {
-    title: 'Large Language Models Explained Briefly',
+    title: 'Large Language Models, Explained Briefly',
     source: '3Blue1Brown',
-    url: 'https://www.youtube.com/@3blue1brown',
+    url: 'https://www.youtube.com/watch?v=WMcwoIyK4DA',
     kind: 'video',
     blurb: 'A visual, intuitive walkthrough of how LLMs actually predict text — the best starting point before anything else.',
   },
@@ -18,14 +18,14 @@ export const learningAiResources: AiResource[] = [
   {
     title: 'What are AI Agents?',
     source: 'IBM Technology',
-    url: 'https://www.youtube.com/@IBMTechnology',
+    url: 'https://www.youtube.com/watch?v=F8NKVhkZZWI',
     kind: 'video',
     blurb: 'Clear explanation of agentic AI — planning, tool use, and multi-step task execution — without the hype.',
   },
   {
-    title: 'Retrieval-Augmented Generation (RAG), Explained',
+    title: 'What is Retrieval-Augmented Generation (RAG)?',
     source: 'IBM Technology',
-    url: 'https://www.youtube.com/@IBMTechnology',
+    url: 'https://www.youtube.com/watch?v=T-D1OfcDW1M',
     kind: 'video',
     blurb: 'How RAG grounds LLM responses in external data, and why it matters for accuracy and up-to-date answers.',
   },
