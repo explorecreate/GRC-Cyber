@@ -26,7 +26,7 @@ export default function DomainDetail() {
         <div className="mt-2 flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-semibold text-slate-400">
-              Domain {domain.number} · {domain.weight} of exam
+              Domain {domain.number} · {domain.weight} of exam · RMF step: {domain.rmfStep}
             </p>
             <h1 className="mt-1 text-2xl md:text-3xl font-bold text-slate-900">{domain.title}</h1>
           </div>
@@ -58,6 +58,13 @@ export default function DomainDetail() {
           ))}
         </ul>
       </section>
+
+      {domain.aiNote && (
+        <div className="rounded-xl border border-violet-200 bg-violet-50 p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-violet-700">🤖 AI in this domain</p>
+          <p className="mt-1 text-sm text-violet-900">{domain.aiNote}</p>
+        </div>
+      )}
 
       {relatedTerms.length > 0 && (
         <section>

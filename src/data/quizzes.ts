@@ -74,7 +74,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Risk Management ----
   {
     id: 'risk-1',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Which NIST publication provides guidance specifically for conducting risk assessments?',
     options: ['SP 800-53', 'SP 800-30', 'SP 800-18', 'FIPS 200'],
     correctIndex: 1,
@@ -82,7 +82,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-2',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Risk tolerance is best defined as:',
     options: [
       'The total elimination of all identified risk',
@@ -95,7 +95,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-3',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Integrating risk management into the SDLC is most effective when it begins during which phase?',
     options: ['Only after deployment', 'Requirements/design, at the earliest phases', 'Only during decommissioning', 'Only during the assess step of RMF'],
     correctIndex: 1,
@@ -103,7 +103,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-4',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Enterprise Risk Management (ERM) differs from system-level risk management primarily because it:',
     options: [
       'Only applies to IT systems',
@@ -116,7 +116,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-5',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'A Business Impact Analysis (BIA) primarily helps an organization determine:',
     options: [
       'Which firewall vendor to select',
@@ -129,7 +129,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-6',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Under NIST SP 800-30, risk is generally a function of:',
     options: [
       'Cost and schedule only',
@@ -144,7 +144,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Third-Party / Scope ----
   {
     id: 'tpr-1',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'FIPS 199 is used to determine:',
     options: [
       'The specific technical controls a system must implement',
@@ -157,7 +157,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-2',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'An Interconnection Security Agreement (ISA) is primarily used to:',
     options: [
       'Document technical security requirements for a connection between two systems',
@@ -170,7 +170,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-3',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'In a cloud "shared responsibility model," the customer is typically always responsible for:',
     options: [
       'Physical data center security',
@@ -183,7 +183,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-4',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'An authorization boundary should be drawn around:',
     options: [
       'Every system in the entire organization',
@@ -196,7 +196,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-5',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'A Software Bill of Materials (SBOM) primarily supports:',
     options: [
       'Employee performance reviews',
@@ -211,7 +211,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Controls ----
   {
     id: 'ctrl-1',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Which NIST publication contains the actual catalog of security and privacy controls?',
     options: ['SP 800-37', 'SP 800-53', 'SP 800-61', 'SP 800-34'],
     correctIndex: 1,
@@ -219,7 +219,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-2',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'A control implemented once and inherited by multiple systems is called a:',
     options: ['System-specific control', 'Hybrid control', 'Common control', 'Compensating control'],
     correctIndex: 2,
@@ -227,7 +227,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-3',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'The System Security Plan (SSP) primarily documents:',
     options: [
       'The organization\'s annual budget',
@@ -240,7 +240,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-4',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Tailoring a control baseline can include all of the following EXCEPT:',
     options: ['Scoping guidance', 'Applying compensating controls', 'Setting organization-defined parameters', 'Ignoring the categorization result entirely'],
     correctIndex: 3,
@@ -248,7 +248,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-5',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'A control implemented partly by a common control provider and partly by the system owner is called:',
     options: ['A hybrid control', 'A compensating control', 'An inherited-only control', 'A privacy control'],
     correctIndex: 0,
@@ -310,7 +310,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Authorization / Continuous Monitoring ----
   {
     id: 'auth-1',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'The Authorization to Operate (ATO) decision is ultimately made by:',
     options: ['The ISSO', 'The Authorizing Official (AO)', 'The external auditor', 'The system\'s end users'],
     correctIndex: 1,
@@ -318,7 +318,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-2',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'An Interim Authorization to Test (IATT) permits a system to:',
     options: [
       'Operate permanently in production',
@@ -331,7 +331,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-3',
-    domainId: 'authorization',
+    domainId: 'compliance-maintenance',
     question: 'NIST SP 800-137 provides guidance specifically on:',
     options: ['Incident handling', 'Information Security Continuous Monitoring (ISCM)', 'Contingency planning', 'Control assessment procedures'],
     correctIndex: 1,
@@ -339,7 +339,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-4',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'Ongoing authorization relies most heavily on:',
     options: [
       'A single assessment performed once every five years with no updates',
@@ -352,7 +352,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-5',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'The authorization package typically includes:',
     options: [
       'SSP, SAR, and POA&M',
@@ -367,7 +367,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Incident Management ----
   {
     id: 'im-1',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Which phase comes immediately after "Detection & Analysis" in the NIST incident response lifecycle?',
     options: ['Preparation', 'Containment, Eradication & Recovery', 'Post-Incident Activity', 'Categorization'],
     correctIndex: 1,
@@ -375,7 +375,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-2',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Recovery Time Objective (RTO) measures:',
     options: [
       'The maximum acceptable data loss in time',
@@ -388,7 +388,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-3',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'A Disaster Recovery Plan (DRP) is best described as focused on:',
     options: [
       'Restoring IT systems and infrastructure after a disaster',
@@ -401,7 +401,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-4',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'A tabletop exercise is best described as:',
     options: [
       'A live, full-scale failover of production systems',
@@ -414,7 +414,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-5',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Recovery Point Objective (RPO) is best described as:',
     options: [
       'The maximum tolerable amount of data loss, measured in time',
@@ -499,7 +499,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Risk Management (additional) ----
   {
     id: 'risk-7',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'A risk register is best described as:',
     options: [
       'A list of all employees with security clearances',
@@ -512,7 +512,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-8',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Which of the following is a common risk treatment/response option?',
     options: ['Accept, transfer, mitigate, avoid', 'Encrypt, hash, salt, sign', 'Examine, interview, test', 'Prepare, categorize, select'],
     correctIndex: 0,
@@ -520,7 +520,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-9',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'A threat source in risk assessment terminology refers to:',
     options: [
       'A weakness in a system that could be exploited',
@@ -533,7 +533,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-10',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Qualitative risk assessment differs from quantitative risk assessment because it:',
     options: [
       'Always produces a precise dollar figure',
@@ -546,7 +546,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-11',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Which NIST publication focuses on organization-wide (not just system-level) risk management?',
     options: ['SP 800-39', 'SP 800-53A', 'SP 800-18', 'FIPS 199'],
     correctIndex: 0,
@@ -554,7 +554,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-12',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Vulnerability, in risk assessment terms, is best defined as:',
     options: [
       'A weakness that could be exploited by a threat source',
@@ -569,7 +569,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Third-Party / Scope (additional) ----
   {
     id: 'tpr-6',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'A "major application" (as opposed to a general support system) is typically distinguished by:',
     options: [
       'Requiring no security controls at all',
@@ -582,7 +582,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-7',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'In an IaaS (Infrastructure as a Service) model, the cloud provider is typically responsible for:',
     options: [
       'The customer\'s application code',
@@ -595,7 +595,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-8',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'Third-party risk assessments are important primarily because:',
     options: [
       'Vendors are never a source of risk',
@@ -608,7 +608,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-9',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'Which best describes the difference between an ISA and an MOU in an interconnection?',
     options: [
       'They are identical documents required by law to be combined into one',
@@ -623,7 +623,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Controls (additional) ----
   {
     id: 'ctrl-6',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'A control enhancement in SP 800-53 is best described as:',
     options: [
       'A completely separate, unrelated control',
@@ -636,7 +636,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-7',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Which NIST publication provides the pre-defined Low/Moderate/High control baselines?',
     options: ['SP 800-53B', 'SP 800-30', 'SP 800-137', 'SP 800-61'],
     correctIndex: 0,
@@ -644,7 +644,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-8',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'A compensating control is used when:',
     options: [
       'The organization wants to skip documentation entirely',
@@ -657,7 +657,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-9',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Privacy controls in the NIST framework are best understood as:',
     options: [
       'Entirely separate from security controls with no overlap',
@@ -713,7 +713,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Authorization / Continuous Monitoring (additional) ----
   {
     id: 'auth-6',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'If an AO determines residual risk is unacceptable and cannot be mitigated, the appropriate decision is to:',
     options: [
       'Issue an ATO anyway to avoid delays',
@@ -726,7 +726,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-7',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'A significant change to a system (e.g., a major architecture change) after authorization typically requires:',
     options: [
       'No action, since the ATO covers all future changes automatically',
@@ -739,7 +739,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-8',
-    domainId: 'authorization',
+    domainId: 'compliance-maintenance',
     question: 'Security metrics and dashboards used in ISCM primarily serve to:',
     options: [
       'Replace the need for any human risk decision-making',
@@ -754,7 +754,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Incident Management (additional) ----
   {
     id: 'im-6',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Post-Incident Activity in the NIST incident response lifecycle primarily focuses on:',
     options: [
       'Immediately closing the incident with no further action',
@@ -767,7 +767,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-7',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Which entity is a common destination for incident reporting for U.S. federal agencies?',
     options: ['CISA', 'OSHA', 'FCC', 'FTC'],
     correctIndex: 0,
@@ -775,7 +775,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-8',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'A functional exercise, compared to a tabletop exercise, typically:',
     options: [
       'Involves no discussion at all',
@@ -788,7 +788,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-9',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Continuity of Operations Plan (COOP) is most closely associated with:',
     options: [
       'Commercial marketing strategy',
@@ -844,7 +844,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Risk Management (round 3) ----
   {
     id: 'risk-13',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Risk avoidance, as a treatment option, means:',
     options: [
       'Purchasing insurance to cover potential losses',
@@ -857,7 +857,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-14',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Risk transfer commonly takes which form?',
     options: [
       'Ignoring the risk entirely',
@@ -870,7 +870,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-15',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'A risk assessment conducted at the organizational tier (per SP 800-39) primarily supports:',
     options: [
       'Only a single system\'s authorization decision',
@@ -885,7 +885,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Third-Party / Scope (round 3) ----
   {
     id: 'tpr-10',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'In a SaaS (Software as a Service) model, the customer typically retains responsibility for:',
     options: [
       'Patching the underlying operating system',
@@ -898,7 +898,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-11',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'A system interconnection that is discovered but was never documented poses risk primarily because:',
     options: [
       'Undocumented connections cannot technically transmit data',
@@ -913,7 +913,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Controls (round 3) ----
   {
     id: 'ctrl-10',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Scoping guidance, as part of tailoring, allows an organization to:',
     options: [
       'Add controls indiscriminately without justification',
@@ -926,7 +926,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-11',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Organization-defined parameters (ODPs) in SP 800-53 controls exist so that:',
     options: [
       'Every organization uses identical values for every control',
@@ -969,7 +969,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Authorization / Continuous Monitoring (round 3) ----
   {
     id: 'auth-9',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'A "denial of authorization" decision means:',
     options: [
       'The system may operate with no restrictions',
@@ -982,7 +982,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-10',
-    domainId: 'authorization',
+    domainId: 'compliance-maintenance',
     question: 'Automated data feeds in an ISCM program are valuable primarily because they:',
     options: [
       'Eliminate the need for any assessment ever again',
@@ -997,7 +997,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Incident Management (round 3) ----
   {
     id: 'im-10',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Containment, as a phase of incident response, primarily aims to:',
     options: [
       'Permanently fix the root cause immediately',
@@ -1010,7 +1010,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-11',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'A full-scale exercise, compared to a tabletop or functional exercise, is best described as:',
     options: [
       'Purely a paper-based discussion',
@@ -1066,7 +1066,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Risk Management (round 4) ----
   {
     id: 'risk-16',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'A heat map in risk management is typically used to:',
     options: [
       'Track server room temperature',
@@ -1079,7 +1079,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-17',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Inherent risk, as opposed to residual risk, refers to:',
     options: [
       'The risk remaining after controls are applied',
@@ -1092,7 +1092,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'risk-18',
-    domainId: 'risk-management',
+    domainId: 'governance',
     question: 'Which of these is most clearly an example of a supply chain risk (as opposed to a purely internal risk)?',
     options: [
       'An employee choosing a weak password',
@@ -1107,7 +1107,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Third-Party / Scope (round 4) ----
   {
     id: 'tpr-12',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'When a system\'s authorization boundary spans multiple cloud regions operated by the same CSP, the organization should:',
     options: [
       'Assume no additional documentation is needed since it\'s the same provider',
@@ -1120,7 +1120,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'tpr-13',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     question: 'A PaaS (Platform as a Service) model shifts responsibility for which of the following to the customer, unlike SaaS?',
     options: [
       'The physical data center',
@@ -1135,7 +1135,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Controls (round 4) ----
   {
     id: 'ctrl-12',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'Which best describes the relationship between FIPS 200 and SP 800-53?',
     options: [
       'They are unrelated documents',
@@ -1148,7 +1148,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-13',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'A system-specific control (as opposed to common or hybrid) is one that is:',
     options: [
       'Inherited entirely from another system',
@@ -1191,7 +1191,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Authorization / Continuous Monitoring (round 4) ----
   {
     id: 'auth-11',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'A key input the AO considers before renewing an ATO is:',
     options: [
       'The system\'s marketing budget',
@@ -1204,7 +1204,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'auth-12',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     question: 'The purpose of setting a defined authorization termination date is to:',
     options: [
       'Permanently end the system\'s operation on that date with no exceptions',
@@ -1219,7 +1219,7 @@ export const quizQuestions: QuizQuestion[] = [
   // ---- Incident Management (round 4) ----
   {
     id: 'im-12',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'Eradication, as a phase within Containment/Eradication/Recovery, focuses on:',
     options: [
       'Simply monitoring the incident without acting',
@@ -1232,7 +1232,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'im-13',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     question: 'A Continuity of Operations Plan (COOP) most directly complements which other plan by focusing specifically on essential-function continuity during an emergency?',
     options: [
       'The Business Continuity Plan (BCP)',
@@ -1245,7 +1245,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'ctrl-14',
-    domainId: 'controls',
+    domainId: 'control-selection',
     question: 'When a control is inherited but the common control provider\'s own assessment is out of date, the system relying on it should:',
     options: [
       'Assume everything is fine and proceed with authorization',
@@ -1255,6 +1255,219 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation: 'Inheriting a control doesn\'t remove risk accountability — if the provider\'s assessment is stale, the inheriting system\'s AO is accepting risk based on outdated assurance, which should be flagged.',
+  },
+
+  // ---- Implementation of Security and Privacy Controls (Domain 4) ----
+  {
+    id: 'impl-1',
+    domainId: 'control-implementation',
+    question: 'Which RMF step does the "Implementation of Security and Privacy Controls" domain correspond to?',
+    options: ['Select', 'Implement', 'Assess', 'Authorize'],
+    correctIndex: 1,
+    explanation: 'Selecting a control (Domain 3) is a decision; implementing it (Domain 4) is building and deploying it — the RMF\'s Implement step.',
+  },
+  {
+    id: 'impl-2',
+    domainId: 'control-implementation',
+    question: 'A control\'s "implementation statement" in the SSP should describe:',
+    options: [
+      'Only the control\'s ID number from SP 800-53',
+      'Specifically how the control is implemented for this system, in enough detail for an assessor to verify it',
+      'The organization\'s annual budget for security',
+      'A generic copy-paste of the control\'s base statement with no system-specific detail',
+    ],
+    correctIndex: 1,
+    explanation: 'A useful implementation statement explains exactly how a control operates on this particular system — vague or copy-pasted statements are a common finding in real assessments.',
+  },
+  {
+    id: 'impl-3',
+    domainId: 'control-implementation',
+    question: 'Secure configuration management (hardening baselines) is best classified as part of which RMF activity?',
+    options: ['Categorize', 'Select', 'Implement', 'Monitor only, never Implement'],
+    correctIndex: 2,
+    explanation: 'Applying hardening baselines/secure configuration standards to a system is a concrete implementation activity — it\'s where a selected control becomes a real, testable configuration.',
+  },
+  {
+    id: 'impl-4',
+    domainId: 'control-implementation',
+    question: 'Implementing a hybrid control means:',
+    options: [
+      'The control is entirely inherited with no system-specific work required',
+      'Part of the control is inherited from a common control provider and part is implemented specifically for this system',
+      'The control only applies to hybrid cloud environments',
+      'The control cannot be documented in the SSP',
+    ],
+    correctIndex: 1,
+    explanation: 'A hybrid control combines an inherited (common) portion with system-specific implementation — both parts need to be documented and, later, assessed.',
+  },
+  {
+    id: 'impl-5',
+    domainId: 'control-implementation',
+    question: 'Integrating control implementation into a DevSecOps pipeline primarily helps by:',
+    options: [
+      'Removing the need for any documentation',
+      'Catching control implementation gaps early in development rather than only at assessment time',
+      'Replacing the need for an SSP',
+      'Guaranteeing zero vulnerabilities forever',
+    ],
+    correctIndex: 1,
+    explanation: 'Building controls (e.g., automated security scanning, IaC hardening checks) into the pipeline surfaces implementation problems while they\'re still cheap to fix, instead of waiting for a formal assessment.',
+  },
+  {
+    id: 'impl-6',
+    domainId: 'control-implementation',
+    question: 'Before formal assessment, a system owner performing self-testing/peer review of control implementation is primarily trying to:',
+    options: [
+      'Replace the need for an independent assessor entirely',
+      'Catch obvious implementation gaps early, so the formal assessment isn\'t the first time issues surface',
+      'Skip the SAP',
+      'Guarantee a passing SAR regardless of actual risk',
+    ],
+    correctIndex: 1,
+    explanation: 'Self-testing is a readiness check, not a substitute for independent assessment — it just avoids wasting the formal assessment on easily-fixable, obvious gaps.',
+  },
+  {
+    id: 'impl-7',
+    domainId: 'control-implementation',
+    question: 'A Security Technical Implementation Guide (STIG) is best described as:',
+    options: [
+      'A risk acceptance memo',
+      'A detailed, product-specific hardening/configuration standard used to implement secure configuration controls',
+      'A synonym for the SSP',
+      'A privacy impact assessment',
+    ],
+    correctIndex: 1,
+    explanation: 'STIGs (published by DISA) give granular, product-specific configuration settings — a concrete implementation resource for secure configuration controls.',
+  },
+  {
+    id: 'impl-8',
+    domainId: 'control-implementation',
+    question: 'When a system-specific control is implemented, responsibility for its correct operation lies with:',
+    options: [
+      'The common control provider only',
+      'The system\'s own owner/team, since it isn\'t inherited from anywhere',
+      'No one — system-specific controls are self-monitoring',
+      'The AO exclusively, with no involvement from the system team',
+    ],
+    correctIndex: 1,
+    explanation: 'Unlike common or hybrid controls, a system-specific control is implemented entirely by the system\'s own team, who are directly accountable for it.',
+  },
+  {
+    id: 'impl-9',
+    domainId: 'control-implementation',
+    question: 'For a generative AI system, "implementing guardrails/output filtering" is an example of:',
+    options: [
+      'A governance-only activity with no technical component',
+      'A concrete Implement-step activity — building a specific technical mitigation for a risk identified earlier',
+      'A step that only happens after authorization',
+      'An activity unrelated to control implementation',
+    ],
+    correctIndex: 1,
+    explanation: 'Guardrails and output filtering are technical controls being built and deployed — squarely an Implement-step activity, just applied to an AI-specific risk (harmful/unintended output).',
+  },
+  {
+    id: 'impl-10',
+    domainId: 'control-implementation',
+    question: 'Which of the following is the clearest sign a control was selected but never actually implemented?',
+    options: [
+      'The SSP lists the control with a specific, verifiable implementation statement',
+      'The SSP lists the control but the implementation statement just repeats the generic 800-53 control text with no system-specific detail',
+      'The control has an assigned implementation owner',
+      'The control has passed a recent assessment',
+    ],
+    correctIndex: 1,
+    explanation: 'A generic, copy-pasted statement with no system-specific detail is a red flag that a control exists on paper (Selected) but was never concretely built (Implemented).',
+  },
+  {
+    id: 'impl-11',
+    domainId: 'control-implementation',
+    question: 'Control inheritance documentation during implementation should specify:',
+    options: [
+      'Nothing — inheritance is automatic and needs no documentation',
+      'Which common control provider supplies the control and confirmation that its own implementation/assessment is current',
+      'Only the AO\'s name',
+      'The dollar cost of the common control'
+    ],
+    correctIndex: 1,
+    explanation: 'Documenting inheritance means naming the source and confirming that source\'s implementation is real and current — otherwise you\'re inheriting an assumption, not a control.',
+  },
+  {
+    id: 'impl-12',
+    domainId: 'control-implementation',
+    question: 'Why does the current CGRC outline weight the Implementation domain the highest of all seven domains?',
+    options: [
+      'Because implementation is the least technically demanding step',
+      'Because building controls correctly — not just selecting or documenting them — is where most real-world security gaps actually occur',
+      'Because it replaces the need for the Assess domain',
+      'Because it only applies to government systems',
+    ],
+    correctIndex: 1,
+    explanation: 'A control that\'s selected on paper but poorly built provides no real protection — the exam weights implementation heavily because that\'s where theory turns into (or fails to turn into) actual risk reduction.',
+  },
+  {
+    id: 'impl-13',
+    domainId: 'control-implementation',
+    question: 'A Change Control Board (CCB) is most relevant to implementation because it:',
+    options: [
+      'Approves marketing materials',
+      'Reviews and approves changes to a system\'s configuration, helping ensure implemented controls aren\'t broken by uncontrolled changes',
+      'Replaces the need for an SSP',
+      'Only exists after decommissioning',
+    ],
+    correctIndex: 1,
+    explanation: 'A CCB gates changes to the system, which protects the integrity of controls that were carefully implemented — an uncontrolled change is a common way a working control silently stops working.',
+  },
+  {
+    id: 'impl-14',
+    domainId: 'control-implementation',
+    question: 'Which best describes the difference between Domain 3 (Selection) and Domain 4 (Implementation) on the exam?',
+    options: [
+      'They are the same domain tested twice',
+      'Domain 3 is about choosing and tailoring the right controls; Domain 4 is about actually building and deploying them',
+      'Domain 4 comes before Domain 3 in the RMF',
+      'Domain 3 only applies to privacy controls',
+    ],
+    correctIndex: 1,
+    explanation: 'Selection (Select step) decides what should apply; Implementation (Implement step) is the separate, hands-on work of actually building it — treating them as one domain would blur two distinct skill sets.',
+  },
+  {
+    id: 'impl-15',
+    domainId: 'control-implementation',
+    question: 'Documenting an implemented control\'s "parameter values" (e.g., password length, session timeout) matters because:',
+    options: [
+      'Parameters are optional and rarely checked',
+      'An assessor needs the specific value implemented, not just the control name, to verify it meets the organization-defined requirement',
+      'Parameters only apply to privacy controls',
+      'Parameters replace the need for testing',
+    ],
+    correctIndex: 1,
+    explanation: 'A control like "enforce minimum password length" is only assessable if the SSP states the actual configured value — otherwise there\'s nothing concrete to verify.',
+  },
+  {
+    id: 'impl-16',
+    domainId: 'control-implementation',
+    question: 'Monitoring for AI model drift is best classified under implementation when it refers to:',
+    options: [
+      'Deciding whether to build an AI system at all',
+      'Actually deploying the technical monitoring mechanism that will later feed the Monitor step',
+      'The AO\'s final authorization decision',
+      'The organization\'s ethics policy',
+    ],
+    correctIndex: 1,
+    explanation: 'Building and deploying the drift-monitoring mechanism itself is an Implement-step activity — the ongoing use of that data to inform decisions is where it feeds into Domain 7 (Compliance Maintenance).',
+  },
+  {
+    id: 'impl-17',
+    domainId: 'control-implementation',
+    question: 'A newly implemented control that has not yet been formally assessed should be treated as:',
+    options: [
+      'Already authorized for production use with no further action',
+      'Implemented but not yet verified — its effectiveness is still unconfirmed until assessment',
+      'Automatically a POA&M item',
+      'Irrelevant until the next RMF cycle',
+    ],
+    correctIndex: 1,
+    explanation: 'Implementation and verification are separate steps — a control isn\'t "proven" until it\'s been independently assessed, even if the team implementing it believes it works.',
   },
 ]
 

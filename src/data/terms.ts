@@ -4,7 +4,7 @@ export const terms: TermEntry[] = [
   {
     id: 'authorization-boundary',
     term: 'Authorization Boundary',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     definition:
       'The set of information resources, components, and connections that fall under the authority of a single AO and are included within a single system authorization.',
     example:
@@ -32,7 +32,7 @@ export const terms: TermEntry[] = [
   {
     id: 'common-control',
     term: 'Common Control',
-    domainId: 'controls',
+    domainId: 'control-selection',
     definition:
       'A security or privacy control whose implementation is inherited by multiple information systems from a single, centrally-managed source rather than implemented separately by each system.',
     example:
@@ -46,7 +46,7 @@ export const terms: TermEntry[] = [
   {
     id: 'residual-risk',
     term: 'Residual Risk',
-    domainId: 'risk-management',
+    domainId: 'governance',
     definition: 'The risk that remains after controls have been applied — risk is rarely reduced to zero.',
     example:
       'After implementing encryption, MFA, and monitoring for a database, some risk of insider misuse still remains; that leftover exposure is the residual risk the AO must weigh.',
@@ -59,7 +59,7 @@ export const terms: TermEntry[] = [
   {
     id: 'tailoring',
     term: 'Control Tailoring',
-    domainId: 'controls',
+    domainId: 'control-selection',
     definition:
       'The process of adjusting an initial control baseline to fit the specific system, environment, and mission — through scoping, compensating controls, and setting organization-defined parameters.',
     example:
@@ -73,7 +73,7 @@ export const terms: TermEntry[] = [
   {
     id: 'ongoing-authorization',
     term: 'Ongoing Authorization',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     definition:
       'An approach where the AO\'s risk determination is continuously informed by real-time or near-real-time monitoring data, rather than relying solely on a static, point-in-time reauthorization every few years.',
     example:
@@ -129,7 +129,7 @@ export const terms: TermEntry[] = [
   {
     id: 'risk-appetite',
     term: 'Risk Appetite / Risk Tolerance',
-    domainId: 'risk-management',
+    domainId: 'governance',
     definition:
       'Risk appetite is the amount and type of risk an organization is willing to pursue in service of its objectives; risk tolerance is the acceptable variation around that target.',
     example:
@@ -143,7 +143,7 @@ export const terms: TermEntry[] = [
   {
     id: 'threat-vulnerability-pairing',
     term: 'Threat/Vulnerability Pairing',
-    domainId: 'risk-management',
+    domainId: 'governance',
     definition:
       'The risk-assessment practice of matching a specific threat source or event to the specific vulnerability it could exploit, in order to estimate likelihood.',
     example:
@@ -157,7 +157,7 @@ export const terms: TermEntry[] = [
   {
     id: 'interconnection-agreement',
     term: 'Interconnection (ISA/MOU pairing)',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     definition:
       'A formal arrangement — typically an MOU (business terms) paired with an ISA (technical/security requirements) — governing how two systems owned by different parties connect and exchange data.',
     example:
@@ -171,7 +171,7 @@ export const terms: TermEntry[] = [
   {
     id: 'general-support-system',
     term: 'General Support System (GSS)',
-    domainId: 'third-party-risk',
+    domainId: 'scope',
     definition:
       'An interconnected set of information resources under the same direct management control that shares common functionality, e.g., a local area network or data center infrastructure.',
     example:
@@ -185,7 +185,7 @@ export const terms: TermEntry[] = [
   {
     id: 'baseline-tailoring-vs-baseline-selection',
     term: 'Control Baseline',
-    domainId: 'controls',
+    domainId: 'control-selection',
     definition:
       'A pre-defined set of controls (Low, Moderate, or High) from SP 800-53B, selected based on a system\'s FIPS 199 categorization, that serves as the starting point before tailoring.',
     example:
@@ -227,7 +227,7 @@ export const terms: TermEntry[] = [
   {
     id: 'authorization-decision-document',
     term: 'Authorization Decision Document',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     definition:
       'The formal record of the AO\'s risk-based decision — including the type of authorization granted (or denied), any terms/conditions, and the authorization termination date.',
     example:
@@ -241,7 +241,7 @@ export const terms: TermEntry[] = [
   {
     id: 'event-driven-reauthorization',
     term: 'Event-Driven Reauthorization',
-    domainId: 'authorization',
+    domainId: 'system-compliance',
     definition:
       'Reauthorization triggered by a significant event or change (e.g., a major breach, architecture change, or new threat) rather than waiting for the scheduled reauthorization date.',
     example:
@@ -255,7 +255,7 @@ export const terms: TermEntry[] = [
   {
     id: 'incident-categorization',
     term: 'Incident Categorization',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     definition:
       'Classifying a security incident by type and severity (e.g., using a scale like CISA\'s functional impact categories) to drive appropriate response and reporting.',
     example:
@@ -269,7 +269,7 @@ export const terms: TermEntry[] = [
   {
     id: 'lessons-learned',
     term: 'Lessons Learned / Post-Incident Review',
-    domainId: 'incident-management',
+    domainId: 'compliance-maintenance',
     definition:
       'A structured review conducted after an incident is resolved, capturing what happened, what worked, what didn\'t, and what should change going forward.',
     example:
@@ -279,6 +279,48 @@ export const terms: TermEntry[] = [
     howToApply:
       'Schedule a lessons-learned review as a mandatory, non-skippable final phase of every incident response — not an optional nice-to-have.',
     memoryTip: 'An incident without a lessons-learned review is a mistake you\'re scheduled to repeat.',
+  },
+  {
+    id: 'implementation-statement',
+    term: 'Implementation Statement',
+    domainId: 'control-implementation',
+    definition:
+      'The system-specific portion of the SSP describing exactly how a selected control is actually implemented — the configured values, mechanisms, and processes in place, not just the control\'s generic name.',
+    example:
+      'For AC-7 (unsuccessful login attempts), a strong implementation statement says "the system locks an account for 30 minutes after 5 failed attempts, enforced by [specific mechanism]" rather than just restating the control text.',
+    whyItMatters:
+      'Assessors can only verify what\'s concretely documented — a vague or copy-pasted implementation statement is one of the most common findings in real-world assessments, and it usually means the control was selected but never actually built out.',
+    howToApply:
+      'When writing an SSP, always ask "could an assessor verify this exact sentence against my actual system?" If not, the statement needs more specificity.',
+    memoryTip: 'Selection says "we will." Implementation says "we did, and here\'s exactly how" — the implementation statement is the "how."',
+  },
+  {
+    id: 'stig',
+    term: 'Security Technical Implementation Guide (STIG)',
+    domainId: 'control-implementation',
+    definition:
+      'A detailed, product-specific configuration/hardening standard (published by DISA) used to implement secure configuration controls consistently across systems.',
+    example:
+      'A team hardening a Windows Server deployment applies the relevant Windows STIG to set specific registry keys, service configurations, and audit policies rather than inventing hardening settings from scratch.',
+    whyItMatters:
+      'STIGs turn a vague "harden the system" requirement into a concrete, auditable checklist — directly supporting the Implementation domain\'s emphasis on building controls correctly, not just selecting them.',
+    howToApply:
+      'When implementing configuration management controls, check whether a STIG exists for your specific product before writing custom hardening guidance.',
+    memoryTip: '"STIG" = the recipe card for exactly how to configure one specific product securely.',
+  },
+  {
+    id: 'change-control-board',
+    term: 'Change Control Board (CCB)',
+    domainId: 'control-implementation',
+    definition:
+      'A formal body that reviews and approves proposed changes to a system\'s configuration, ensuring changes don\'t silently undo implemented controls.',
+    example:
+      'An engineer wants to open a new firewall port for a vendor integration; the CCB reviews the request and confirms it doesn\'t weaken the system\'s implemented boundary protection controls before approving it.',
+    whyItMatters:
+      'A control that was carefully implemented can be broken just as easily by an uncontrolled change — the CCB is what protects implementation integrity over time, feeding directly into ongoing compliance maintenance.',
+    howToApply:
+      'Route any change touching a documented control through change management before deployment, and update the SSP\'s implementation statement if the change affects it.',
+    memoryTip: 'Implementation builds the control; the CCB is the guard that keeps someone from accidentally tearing it back down.',
   },
 ]
 

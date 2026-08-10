@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { domains } from '../../data/domains'
+import { examInfo } from '../../data/examInfo'
 import { useTrackVisit } from '../../hooks/useTrackVisit'
 
 export default function CgrcHome() {
@@ -9,8 +10,15 @@ export default function CgrcHome() {
       <div>
         <h1 className="text-2xl md:text-3xl font-bold text-slate-900">CGRC Study Center</h1>
         <p className="mt-1 text-slate-500">
-          Certified in Governance, Risk and Compliance (ISC2) — domain-by-domain breakdown of the current exam outline.
+          Certified in Governance, Risk and Compliance (ISC2) — domain-by-domain breakdown of the current official exam outline.
         </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <ExamStat label="Length" value={`${examInfo.lengthHours} hrs`} />
+        <ExamStat label="Items" value={`${examInfo.itemCount}`} />
+        <ExamStat label="Passing score" value={examInfo.passingScore.split(' ')[0] + '/1000'} />
+        <ExamStat label="Testing center" value="Pearson VUE" />
       </div>
 
       <Link
@@ -55,7 +63,9 @@ export default function CgrcHome() {
               className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-300 hover:shadow-sm transition"
             >
               <div>
-                <p className="text-xs font-semibold text-slate-400">Domain {d.number} · {d.weight} of exam</p>
+                <p className="text-xs font-semibold text-slate-400">
+                  Domain {d.number} · {d.weight} of exam · RMF: {d.rmfStep}
+                </p>
                 <p className="mt-0.5 font-medium text-slate-800">{d.title}</p>
               </div>
               <span className="text-slate-300">→</span>
@@ -63,6 +73,20 @@ export default function CgrcHome() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-slate-400">
+        Domain names, order, and weights sourced from the official CGRC Certification Exam Outline published by ISC2,
+        the organization that writes and proctors the exam.
+      </p>
+    </div>
+  )
+}
+
+function ExamStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3 text-center">
+      <p className="text-lg font-bold text-brand-700">{value}</p>
+      <p className="mt-0.5 text-xs text-slate-500">{label}</p>
     </div>
   )
 }

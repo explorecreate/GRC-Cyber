@@ -9,9 +9,11 @@ export interface Domain {
   id: string
   number: number
   title: string
-  weight: string // exam weighting, e.g. "17%"
+  weight: string // official exam weighting, e.g. "17%"
+  rmfStep: string // the RMF step this domain corresponds to, e.g. "Prepare"
   overview: string
   keyConcepts: string[]
+  aiNote?: string // how AI-specific tasks/subtasks show up in this domain per the current exam outline
   resources: ResourceLink[]
 }
 
